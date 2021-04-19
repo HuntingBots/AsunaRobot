@@ -12,8 +12,10 @@
  "repository": "https://github.com/HuntingBots/AsunaRobot",
    "addons": [
       {
-       
-     
+       "version": "12"
+         },
+         "plan": "heroku-postgresql"
+      }
    ],
    "buildpacks": [
     {

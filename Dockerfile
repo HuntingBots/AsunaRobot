@@ -81,7 +81,7 @@ RUN git clone -b shiken https://github.com/AnimeKaizoku/AsunaRobot /root/AsunaRo
 WORKDIR /root/AsunaRobot
 
 #Copy config file to /root/AsunaRobot/AsunaRobot
-COPY ./AsunaRobot/sample_config.py ./AsunaRobot/config.py* /root/AsunaRobot/AsunaRobot/
+COPY ./LaylaRobot/sample_config.py ./AsunaRobot/config.py* /root/LaylaRobot/LaylaRobot/
 
 ENV PATH="/home/bot/bin:$PATH"
 
@@ -144,12 +144,12 @@ CMD ["python3","-m","AsunaRobot"]
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
-# Copy Python Requirements to /root/AsunaRobot
-RUN git clone -b shiken https://github.com/AnimeKaizoku/AsunaRobot /root/AsunaRobot
-WORKDIR /root/AsunaRobot
+# Copy Python Requirements to /root/SaitamaRobot
+RUN git clone -b shiken https://github.com/AnimeKaizoku/SaitamaRobot /root/SaitamaRobot
+WORKDIR /root/SaitamaRobot
 
-#Copy config file to /root/SaitamaRobot/AsunaRobot
-COPY ./AsunaRobot/sample_config.py ./AsunaRobot/config.py* /root/AsunaRobot/AsunaRobot/
+#Copy config file to /root/SaitamaRobot/SaitamaRobot
+COPY ./SaitamaRobot/sample_config.py ./SaitamaRobot/config.py* /root/SaitamaRobot/SaitamaRobot/
 
 ENV PATH="/home/bot/bin:$PATH"
 
@@ -157,4 +157,4 @@ ENV PATH="/home/bot/bin:$PATH"
 RUN pip3 install -U -r requirements.txt
 
 # Starting Worker
-CMD ["python3","-m","AsunaRobot"]
+CMD ["python3","-m","SaitamaRobot"]

@@ -77,11 +77,11 @@ RUN apt update && apt upgrade -y && \
 RUN pip3 install --upgrade pip setuptools
 
 # Copy Python Requirements to /root/AsunaRobot
-RUN git clone -b shiken https://github.com/AnimeKaizoku/AsunaRobot /root/AsunaRobot
+RUN git clone -b shiken https://github.com/AnimeKaizoku/AsunaRobot /root/LaylaRobot
 WORKDIR /root/AsunaRobot
 
 #Copy config file to /root/AsunaRobot/AsunaRobot
-COPY ./LaylaRobot/sample_config.py ./AsunaRobot/config.py* /root/LaylaRobot/LaylaRobot/
+COPY ./AsunaRobot/sample_config.py ./AsunaRobot/config.py* /root/AsunaRobot/AsunaRobot/
 
 ENV PATH="/home/bot/bin:$PATH"
 

@@ -1,5 +1,5 @@
 {
-      "name": "PrincessAsunaRobot",
+      "name": "Asuna Robot",
       "description": "An Anime Theme Telegram group management bot.",
       "keywords": [
          "telegram",
@@ -10,7 +10,7 @@
       ],
     
    "logo":    "https://telegra.ph/file/a303f7801d60dc1ea3017.jpg",  
-   "repository": "https://github.com/HuntingBots/Princess-Asuna-Robot",
+   "repository": "https://github.com/HuntingBots/AsunaRobot",
    "addons": [
           {
          "options": {

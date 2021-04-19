@@ -1,5 +1,23 @@
 {
-      "
+      "name": "PrincessAsunaRobot",
+      "description": "An Anime Theme Telegram group management bot.",
+      "keywords": [
+         "telegram",
+         "anime",
+         "group",
+         "manager",
+         "Asuna"
+      ],
+    
+   "logo":    "https://telegra.ph/file/a303f7801d60dc1ea3017.jpg",  
+   "repository": "https://github.com/HuntingBots/Princess-Asuna-Robot",
+   "addons": [
+          {
+         "options": {
+            "version": "12"
+         },
+         "plan": "heroku-postgresql"
+      }
    ],
    "buildpacks": [
     {

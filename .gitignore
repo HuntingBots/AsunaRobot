@@ -1,17 +1,17 @@
 # Config files, logs and stuff
-SaitamaRobot/modules/helper_funcs/temp.txt
-SaitamaRobot/elevated_users.json
-SaitamaRobot/config.py
-SaitamaRobot/config.ini
+AsunaRobot/modules/helper_funcs/temp.txt
+AsunaRobot/elevated_users.json
+AsunaRobot/config.py
+AsunaRobot/config.ini
 log.txt
 kangsticker.png
 updates.txt
 start_service.bat
 
 # Session files
-SaitamaRobot/*.session
-SaitamaRobot/*.session-journal
-saitama.session-journal
+AsunaRobot/*.session
+AsunaRobot/*.session-journal
+Asuna.session-journal
 *.session
 
 # Byte-compiled / optimized / DLL files

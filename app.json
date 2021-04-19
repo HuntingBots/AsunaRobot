@@ -8,12 +8,9 @@
          "manager",
          "Anusa"
       ],   
+   "logo":    "https://telegra.ph/file/a303f7801d60dc1ea3017.jpg",  
    "repository": "https://github.com/HuntingBots/AsunaRobot",
-   "addons": [
-      {
-     "logo":   "https://telegra.ph/file/a303f7801d60dc1ea3017.jpg",
-
-   "options": {
+   "addons": {
             "version": "12"
          },
          "plan": "heroku-postgresql"

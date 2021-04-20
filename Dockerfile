@@ -68,7 +68,7 @@ RUN pip3 install --upgrade pip setuptools
 RUN git clone -b shiken https://github.com/HuntingBots/AsunaRobot /root/AsunaRobot
 WORKDIR /root/AsunaRobot
 
-#Copy config file to /root/MashaRoBot/AsunaRobot
+#Copy config file to /root/AsunaRobot/AsunaRobot
 COPY ./AsunaRobot/sample_config.py ./AsunaRobot/config.py* /root/AsunaRobot/AsunaRobot/
 
 ENV PATH="/home/bot/bin:$PATH"

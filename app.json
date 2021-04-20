@@ -58,7 +58,7 @@
          "value": "The_Ghost_Hunter"
       },
       "SUPPORT_CHAT": {
-         "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to saitama support than consider you made an enemy.",
+         "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to asunarobot support than consider you made an enemy.",
          "required": true,
          "value": "@AsunaRobotSupport"
       },

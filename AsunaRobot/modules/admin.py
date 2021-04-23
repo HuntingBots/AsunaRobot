@@ -15,19 +15,19 @@ from AsunaRobot.modules.helper_funcs.chat_status import (
     user_admin,
     ADMIN_CACHE,
 )
-from YoneRobot.helper_extra.admin_rights import (
+from AsunaRobot.helper_extra.admin_rights import (
     user_can_pin,
     user_can_promote,
     user_can_changeinfo,
 )
 
-from YoneRobot.modules.helper_funcs.extraction import (
+from AsunaRobot.modules.helper_funcs.extraction import (
     extract_user,
     extract_user_and_text,
 )
-from YoneRobot.modules.log_channel import loggable
-from YoneRobot.modules.helper_funcs.alternate import send_message
-from YoneRobot.modules.helper_funcs.alternate import typing_action
+from AsunaRobot.modules.log_channel import loggable
+from AsunaRobot.modules.helper_funcs.alternate import send_message
+from AsunaRobot.modules.helper_funcs.alternate import typing_action
 
 
 @run_async

@@ -25,13 +25,13 @@ from google_trans_new import google_translator
 from telethon import events
 from telethon.tl.types import ChatBannedRights
 
-from YoneRobot import BOT_ID
-from YoneRobot.conf import get_int_key, get_str_key
+from AsunaRobot import BOT_ID
+from AsunaRobot.conf import get_int_key, get_str_key
 
-# from YoneRobot.db.mongo_helpers.nsfw_guard import add_chat, get_all_nsfw_chats, is_chat_in_db, rm_chat
-from YoneRobot.pyrogramee.telethonbasics import is_admin
-from YoneRobot.events import register
-from YoneRobot import MONGO_DB_URI 
+# from AsunaRobot.db.mongo_helpers.nsfw_guard import add_chat, get_all_nsfw_chats, is_chat_in_db, rm_chat
+from AsunaRobot.pyrogramee.telethonbasics import is_admin
+from AsunaRobot.events import register
+from AsunaRobot import MONGO_DB_URI 
 from pymongo import MongoClient
 from YoneRobot.modules.sql_extended.nsfw_watch_sql import (
     add_nsfwatch,

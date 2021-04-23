@@ -6,8 +6,8 @@ import time
 import uuid
 from io import BytesIO
 
-import YoneRobot.modules.sql.feds_sql as sql
-from YoneRobot import (
+import AsunaRobot.modules.sql.feds_sql as sql
+from AsunaRobot import (
     EVENT_LOGS,
     LOGGER,
     SUPPORT_CHAT,
@@ -17,15 +17,15 @@ from YoneRobot import (
     WOLVES,
     dispatcher,
 )
-from YoneRobot.modules.disable import DisableAbleCommandHandler
-from YoneRobot.modules.helper_funcs.alternate import send_message
-from YoneRobot.modules.helper_funcs.chat_status import is_user_admin
-from YoneRobot.modules.helper_funcs.extraction import (
+from AsunaRobot.modules.disable import DisableAbleCommandHandler
+from AsunaRobot.modules.helper_funcs.alternate import send_message
+from AsunaRobot.modules.helper_funcs.chat_status import is_user_admin
+from AsunaRobot.modules.helper_funcs.extraction import (
     extract_unt_fedban,
     extract_user,
     extract_user_fban,
 )
-from YoneRobot.modules.helper_funcs.string_handling import markdown_parser
+from AsunaRobot.modules.helper_funcs.string_handling import markdown_parser
 from telegram import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,

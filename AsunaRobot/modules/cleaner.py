@@ -1,15 +1,15 @@
 
 import html
 
-from YoneRobot import ALLOW_EXCL, CustomCommandHandler, dispatcher
-from YoneRobot.modules.disable import DisableAbleCommandHandler
-from YoneRobot.modules.helper_funcs.chat_status import (
+from AsunaRobot import ALLOW_EXCL, CustomCommandHandler, dispatcher
+from AsunaRobot.modules.disable import DisableAbleCommandHandler
+from AsunaRobot.modules.helper_funcs.chat_status import (
     bot_can_delete,
     connection_status,
     dev_plus,
     user_admin,
 )
-from YoneRobot.modules.sql import cleaner_sql as sql
+from AsunaRobot.modules.sql import cleaner_sql as sql
 from telegram import ParseMode, Update
 from telegram.ext import (
     CallbackContext,

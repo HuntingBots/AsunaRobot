@@ -1,4 +1,4 @@
-from AsunaRobot import LOAD, LOGGER, NO_LOAD
+from YoneRobot import LOAD, LOGGER, NO_LOAD
 
 
 def __list_all_modules():

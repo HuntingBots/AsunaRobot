@@ -3,14 +3,14 @@ import html
 # AI module using Intellivoid's Coffeehouse API by @TheRealPhoenix
 from time import sleep, time
 
-import YoneRobot.modules.sql.chatbot_sql as sql
+import AsunaRobot.modules.sql.chatbot_sql as sql
 from coffeehouse.api import API
 from coffeehouse.exception import CoffeeHouseError as CFError
 from coffeehouse.lydia import LydiaAI
-from YoneRobot import AI_API_KEY, OWNER_ID, SUPPORT_CHAT, dispatcher
-from YoneRobot.modules.helper_funcs.chat_status import user_admin
-from YoneRobot.modules.helper_funcs.filters import CustomFilters
-from YoneRobot.modules.log_channel import gloggable
+from AsunaRobot import AI_API_KEY, OWNER_ID, SUPPORT_CHAT, dispatcher
+from AsunaRobot.modules.helper_funcs.chat_status import user_admin
+from AsunaRobot.modules.helper_funcs.filters import CustomFilters
+from AsunaRobot.modules.log_channel import gloggable
 from telegram import Update
 from telegram.error import BadRequest, RetryAfter, Unauthorized
 from telegram.ext import (

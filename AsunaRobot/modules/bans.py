@@ -5,7 +5,7 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
 from telegram.utils.helpers import mention_html
 
-from YoneRobot import (
+from AsunaRobot import (
     DEV_USERS,
     LOGGER,
     OWNER_ID,
@@ -15,8 +15,8 @@ from YoneRobot import (
     WOLVES,
     dispatcher,
 )
-from YoneRobot.modules.disable import DisableAbleCommandHandler
-from YoneRobot.modules.helper_funcs.chat_status import (
+from AsunaRobot.modules.disable import DisableAbleCommandHandler
+from AsunaRobot.modules.helper_funcs.chat_status import (
     bot_admin,
     can_restrict,
     connection_status,
@@ -27,9 +27,9 @@ from YoneRobot.modules.helper_funcs.chat_status import (
     user_can_ban,
     can_delete,
 )
-from YoneRobot.modules.helper_funcs.extraction import extract_user_and_text
-from YoneRobot.modules.helper_funcs.string_handling import extract_time
-from YoneRobot.modules.log_channel import gloggable, loggable
+from AsunaRobot.modules.helper_funcs.extraction import extract_user_and_text
+from AsunaRobot.modules.helper_funcs.string_handling import extract_time
+from AsunaRobot.modules.log_channel import gloggable, loggable
 
 
 @run_async

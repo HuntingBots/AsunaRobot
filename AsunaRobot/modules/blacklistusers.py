@@ -1,7 +1,7 @@
 # Module to blacklist users and prevent them from using commands by @TheRealPhoenix
 import html
-import YoneRobot.modules.sql.blacklistusers_sql as sql
-from YoneRobot import (
+import AsunaRobot.modules.sql.blacklistusers_sql as sql
+from AsunaRobot import (
     DEV_USERS,
     OWNER_ID,
     DRAGONS,
@@ -10,12 +10,12 @@ from YoneRobot import (
     WOLVES,
     dispatcher,
 )
-from YoneRobot.modules.helper_funcs.chat_status import dev_plus
-from YoneRobot.modules.helper_funcs.extraction import (
+from AsunaRobot.modules.helper_funcs.chat_status import dev_plus
+from AsunaRobot.modules.helper_funcs.extraction import (
     extract_user,
     extract_user_and_text,
 )
-from YoneRobot.modules.log_channel import gloggable
+from AsunaRobot.modules.log_channel import gloggable
 from telegram import ParseMode, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, run_async

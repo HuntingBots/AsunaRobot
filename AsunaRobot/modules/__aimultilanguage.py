@@ -1,6 +1,6 @@
-#    Copyright (C) 2020-2021 by @AmarnathCdj & @InukaAsith
-#    Chatbot system written by @AmarnathCdj databse added and recoded for pyrogram by @InukaAsith
-#    This programme is a part of yone (TG bot) project
+#    Copyright (C) 2020-2021 by @AmarnathCdj & @The_Ghost_Hunter
+#    Chatbot system written by @AmarnathCdj databse added and recoded for pyrogram by @The_Ghost_Hunter
+#    This programme is a part of Asuna (TG bot) project
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -15,7 +15,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 #    Kang with the credits
-#    Special credits to @AmarnathCdj
+#    Special credits to @The_Ghost_Hunter
 import re
 
 import emoji
@@ -28,7 +28,7 @@ from pyrogram import filters
 from YoneRobot import BOT_ID
 from YoneRobot.helper_extra.aichat import add_chat, get_session, remove_chat
 from YoneRobot.pyrogramee.pluginshelper import admins_only, edit_or_reply
-from YoneRobot import pbot as yone
+from YoneRobot import pbot as Asuna
 
 translator = google_translator()
 
@@ -39,7 +39,7 @@ def extract_emojis(s):
 
 yone_chats = []
 en_chats = []
-# AI Chat (C) 2020-2021 by @InukaAsith
+# AI Chat (C) 2020-2021 by @The_Ghost_Hunter
 
 
 @yone.on_message(filters.command("chatbot") & ~filters.edited & ~filters.bot)
@@ -57,7 +57,7 @@ async def hmm(_, message):
         lel = await edit_or_reply(message, "`Processing...`")
         lol = add_chat(int(message.chat.id))
         if not lol:
-            await lel.edit("yone AI Already Activated In This Chat")
+            await lel.edit("Asuna AI Already Activated In This Chat")
             return
         await lel.edit(
             f"yone AI Successfully Added For Users In The Chat {message.chat.id}"
@@ -67,10 +67,10 @@ async def hmm(_, message):
         lel = await edit_or_reply(message, "`Processing...`")
         Escobar = remove_chat(int(message.chat.id))
         if not Escobar:
-            await lel.edit("yone AI Was Not Activated In This Chat")
+            await lel.edit("Asuna AI Was Not Activated In This Chat")
             return
         await lel.edit(
-            f"yone AI Successfully Deactivated For Users In The Chat {message.chat.id}"
+            f"Asuna AI Successfully Deactivated For Users In The Chat {message.chat.id}"
         )
 
     elif status == "EN" or status == "en" or status == "english":
@@ -101,8 +101,8 @@ async def hmm(client, message):
         message.continue_propagation()
     if chat_id in en_chats:
         test = msg
-        test = test.replace("yone", "Aco")
-        test = test.replace("yone", "Aco")
+        test = test.replace("Asuna", "Aco")
+        test = test.replace("Asuna", "Aco")
         querystring = {
             "bid": "178",
             "key": "sX5A2PcYZbsN5EY6",
@@ -122,7 +122,7 @@ async def hmm(client, message):
         result = result.replace("<\/a>", "</a>")
         pro = result
         try:
-            await yone.send_chat_action(message.chat.id, "typing")
+            await Asuna.send_chat_action(message.chat.id, "typing")
             await message.reply_text(pro)
         except CFError as e:
             print(e)
@@ -162,9 +162,9 @@ async def hmm(client, message):
 
         # test = emoji.demojize(test.strip())
 
-        # Kang with the credits bitches @InukaASiTH
-        test = test.replace("yone", "Aco")
-        test = test.replace("yone", "Aco")
+        # Kang with the credits bitches @The_Ghost_Hunter
+        test = test.replace("Asuna", "Aco")
+        test = test.replace("Asuna", "Aco")
         querystring = {
             "bid": "178",
             "key": "sX5A2PcYZbsN5EY6",
@@ -179,7 +179,7 @@ async def hmm(client, message):
         result = response.text
         result = result.replace('{"cnt":"', "")
         result = result.replace('"}', "")
-        result = result.replace("Aco", "yone")
+        result = result.replace("Aco", "Asuna")
         result = result.replace("<a href=\\", "<a href =")
         result = result.replace("<\/a>", "</a>")
         pro = result
@@ -232,9 +232,9 @@ async def inuka(client, message):
 
     # test = emoji.demojize(test.strip())
 
-    # Kang with the credits bitches @InukaASiTH
-    test = test.replace("yone", "Aco")
-    test = test.replace("yone", "Aco")
+    # Kang with the credits bitches @The_Ghost_Hunter
+    test = test.replace("Asuna", "Aco")
+    test = test.replace("Asuna", "Aco")
     querystring = {
         "bid": "178",
         "key": "sX5A2PcYZbsN5EY6",
@@ -249,7 +249,7 @@ async def inuka(client, message):
     result = response.text
     result = result.replace('{"cnt":"', "")
     result = result.replace('"}', "")
-    result = result.replace("Aco", "yone")
+    result = result.replace("Aco", "Asuna")
     result = result.replace("<a href=\\", "<a href =")
     result = result.replace("<\/a>", "</a>")
     pro = result
@@ -309,9 +309,9 @@ async def inuka(client, message):
 
     # test = emoji.demojize(test.strip())
 
-    # Kang with the credits bitches @InukaASiTH
-    test = test.replace("yone", "Aco")
-    test = test.replace("yone", "Aco")
+    # Kang with the credits bitches @The_Ghost_Hunter
+    test = test.replace("Asuna", "Aco")
+    test = test.replace("Asuna", "Aco")
     querystring = {
         "bid": "178",
         "key": "sX5A2PcYZbsN5EY6",
@@ -326,7 +326,7 @@ async def inuka(client, message):
     result = response.text
     result = result.replace('{"cnt":"', "")
     result = result.replace('"}', "")
-    result = result.replace("Aco", "yone")
+    result = result.replace("Aco", "Asuna")
     result = result.replace("<a href=\\", "<a href =")
     result = result.replace("<\/a>", "</a>")
     pro = result

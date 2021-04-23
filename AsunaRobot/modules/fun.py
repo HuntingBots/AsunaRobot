@@ -2,11 +2,11 @@ import html
 import random
 import time
 
-import YoneRobot.modules.fun_strings as fun_strings
-from YoneRobot import dispatcher
-from YoneRobot.modules.disable import DisableAbleCommandHandler
-from YoneRobot.modules.helper_funcs.chat_status import is_user_admin
-from YoneRobot.modules.helper_funcs.extraction import extract_user
+import AsunaRobot.modules.fun_strings as fun_strings
+from AsunaRobot import dispatcher
+from AsunaRobot.modules.disable import DisableAbleCommandHandler
+from AsunaRobot.modules.helper_funcs.chat_status import is_user_admin
+from AsunaRobot.modules.helper_funcs.extraction import extract_user
 from telegram import ChatPermissions, ParseMode, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, run_async

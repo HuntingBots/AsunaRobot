@@ -1,7 +1,7 @@
 from typing import List, Optional
 
-from YoneRobot import LOGGER
-from YoneRobot.modules.users import get_user_id
+from AsunaRobot import LOGGER
+from AsunaRobot.modules.users import get_user_id
 from telegram import Message, MessageEntity
 from telegram.error import BadRequest
 

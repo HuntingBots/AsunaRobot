@@ -1,11 +1,11 @@
-from YoneRobot import telethn as tbot
+from AsunaRobot import telethn as tbot
 import os
 import re
 import bs4
 import requests
 from telethon import types
 from telethon.tl import functions
-from YoneRobot.events import register
+from AsunaRobot.events import register
 
 langi = "en"
 

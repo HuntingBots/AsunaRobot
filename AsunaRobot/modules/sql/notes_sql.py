@@ -1,7 +1,7 @@
 # Note: chat_id's are stored as strings because the int is too large to be stored in a PSQL database.
 import threading
 
-from YoneRobot.modules.helper_funcs.msg_types import Types
+from AsunaRobot.modules.helper_funcs.msg_types import Types
 from YoneRobot.modules.sql import BASE, SESSION
 from sqlalchemy import Boolean, Column, Integer, String, UnicodeText, distinct, func
 

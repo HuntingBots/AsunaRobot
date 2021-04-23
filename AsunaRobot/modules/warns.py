@@ -3,9 +3,9 @@ import re
 from typing import Optional
 
 import telegram
-from YoneRobot import TIGERS, WOLVES, dispatcher
-from YoneRobot.modules.disable import DisableAbleCommandHandler
-from YoneRobot.modules.helper_funcs.chat_status import (
+from AsunaRobot import TIGERS, WOLVES, dispatcher
+from AsunaRobot.modules.disable import DisableAbleCommandHandler
+from AsunaRobot.modules.helper_funcs.chat_status import (
     bot_admin,
     can_restrict,
     is_user_admin,
@@ -19,11 +19,11 @@ from YoneRobot.modules.helper_funcs.extraction import (
     extract_user,
     extract_user_and_text,
 )
-from YoneRobot.modules.helper_funcs.filters import CustomFilters
-from YoneRobot.modules.helper_funcs.misc import split_message
-from YoneRobot.modules.helper_funcs.string_handling import split_quotes
-from YoneRobot.modules.log_channel import loggable
-from YoneRobot.modules.sql import warns_sql as sql
+from AsunaRobot.modules.helper_funcs.filters import CustomFilters
+from AsunaRobot.modules.helper_funcs.misc import split_message
+from AsunaRobot.modules.helper_funcs.string_handling import split_quotes
+from AsunaRobot.modules.log_channel import loggable
+from AsunaRobot.modules.sql import warns_sql as sql
 from telegram import (
     CallbackQuery,
     Chat,
@@ -45,7 +45,7 @@ from telegram.ext import (
     run_async,
 )
 from telegram.utils.helpers import mention_html
-from YoneRobot.modules.sql.approve_sql import is_approved
+from AsunaRobot.modules.sql.approve_sql import is_approved
 
 WARN_HANDLER_GROUP = 9
 CURRENT_WARNING_FILTER_STRING = "<b>Current warning filters in this chat:</b>\n"

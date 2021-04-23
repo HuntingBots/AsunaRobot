@@ -1,7 +1,7 @@
 import threading
 from typing import Union
 
-from YoneRobot.modules.sql import BASE, SESSION
+from AsunaRobot.modules.sql import BASE, SESSION
 from sqlalchemy import Boolean, Column, Integer, String
 
 

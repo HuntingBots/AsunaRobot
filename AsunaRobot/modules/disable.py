@@ -2,9 +2,9 @@ import importlib
 from typing import Union
 
 from future.utils import string_types
-from YoneRobot import dispatcher
-from YoneRobot.modules.helper_funcs.handlers import CMD_STARTERS, SpamChecker
-from YoneRobot.modules.helper_funcs.misc import is_module_loaded
+from AsunaRobot import dispatcher
+from AsunaRobot.modules.helper_funcs.handlers import CMD_STARTERS, SpamChecker
+from AsunaRobot.modules.helper_funcs.misc import is_module_loaded
 from telegram import ParseMode, Update
 from telegram.ext import (
     CallbackContext,
@@ -20,12 +20,12 @@ FILENAME = __name__.rsplit(".", 1)[-1]
 # If module is due to be loaded, then setup all the magical handlers
 if is_module_loaded(FILENAME):
 
-    from YoneRobot.modules.helper_funcs.chat_status import (
+    from AsunaRobot.modules.helper_funcs.chat_status import (
         connection_status,
         is_user_admin,
         user_admin,
     )
-    from YoneRobot.modules.sql import disable_sql as sql
+    from AsunaRobot.modules.sql import disable_sql as sql
     from telegram.ext.dispatcher import run_async
 
     DISABLE_CMDS = []

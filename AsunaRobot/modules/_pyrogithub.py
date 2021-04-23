@@ -1,8 +1,8 @@
-# © @Mr_Dark_Prince
+# © @The_Ghost_Hunter
 import aiohttp
 from pyrogram import filters
-from YoneRobot import pbot
-from YoneRobot.pyrogramee.errors import capture_err
+from AsunaRobot import pbot
+from AsunaRobot.pyrogramee.errors import capture_err
 
 
 __mod_name__ = "Github"

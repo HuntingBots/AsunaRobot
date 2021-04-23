@@ -2,8 +2,8 @@ import random
 import threading
 from typing import Union
 
-from YoneRobot.modules.helper_funcs.msg_types import Types
-from YoneRobot.modules.sql import BASE, SESSION
+from AsunaRobot.modules.helper_funcs.msg_types import Types
+from AsunaRobot.modules.sql import BASE, SESSION
 from sqlalchemy import BigInteger, Boolean, Column, Integer, String, UnicodeText
 
 DEFAULT_WELCOME = "Hey {first}, how are you?"

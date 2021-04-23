@@ -1,4 +1,4 @@
-# credits @InukaAsith, @Mr_dark_prince
+# credits  @The_Ghost_Hunter
 
 import logging
 import time

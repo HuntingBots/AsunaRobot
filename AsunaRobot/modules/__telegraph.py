@@ -1,5 +1,5 @@
-from YoneRobot.events import register
-from YoneRobot import telethn as tbot
+from AsunaRobot.events import register
+from AsunaRobot import telethn as tbot
 TMP_DOWNLOAD_DIRECTORY = "./"
 from telethon import events
 import os

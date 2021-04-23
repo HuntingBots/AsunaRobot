@@ -1,8 +1,8 @@
 import time
 from telethon import events
 
-from YoneRobot import telethn
-from YoneRobot.modules.helper_funcs.telethn.chatstatus import (
+from AsunaRobot import telethn
+from AsunaRobot.modules.helper_funcs.telethn.chatstatus import (
     can_delete_messages,
     user_is_admin,
 )

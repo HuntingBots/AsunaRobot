@@ -1,8 +1,8 @@
 import importlib
 import collections
 
-from YoneRobot import dispatcher, telethn
-from YoneRobot.__main__ import (
+from AsunaRobot import dispatcher, telethn
+from AsunaRobot.__main__ import (
     CHAT_SETTINGS,
     DATA_EXPORT,
     DATA_IMPORT,
@@ -13,7 +13,7 @@ from YoneRobot.__main__ import (
     USER_INFO,
     USER_SETTINGS,
 )
-from YoneRobot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
+from AsunaRobot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler, run_async
 
@@ -28,7 +28,7 @@ def load(update: Update, context: CallbackContext):
     )
 
     try:
-        imported_module = importlib.import_module("YoneRobot.modules." + text)
+        imported_module = importlib.import_module("AsunaRobot.modules." + text)
     except:
         load_messasge.edit_text("Does that module even exist?")
         return

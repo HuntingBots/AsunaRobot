@@ -63,4 +63,3 @@ For starters click on this button
 
 ## Credits, and Thanks to 
 *   [The Ghost Hunter](https://telegram.dog/The_Ghost_Hunter)
-*   [Majid Ansari](https://telegram.dog/Mr_GODFATHER9)

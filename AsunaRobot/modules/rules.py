@@ -1,9 +1,9 @@
 from typing import Optional
 
-import YoneRobot.modules.sql.rules_sql as sql
-from YoneRobot import dispatcher
-from YoneRobot.modules.helper_funcs.chat_status import user_admin
-from YoneRobot.modules.helper_funcs.string_handling import markdown_parser
+import AsunaRobot.modules.sql.rules_sql as sql
+from AsunaRobot import dispatcher
+from AsunaRobot.modules.helper_funcs.chat_status import user_admin
+from AsunaRobot.modules.helper_funcs.string_handling import markdown_parser
 from telegram import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,

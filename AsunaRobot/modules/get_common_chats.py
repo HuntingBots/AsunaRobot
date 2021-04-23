@@ -1,9 +1,9 @@
 import os
 from time import sleep
 
-from YoneRobot import OWNER_ID, dispatcher
-from YoneRobot.modules.helper_funcs.extraction import extract_user
-from YoneRobot.modules.sql.users_sql import get_user_com_chats
+from AsunaRobot import OWNER_ID, dispatcher
+from AsunaRobot.modules.helper_funcs.extraction import extract_user
+from AsunaRobot.modules.sql.users_sql import get_user_com_chats
 from telegram import Update
 from telegram.error import BadRequest, RetryAfter, Unauthorized
 from telegram.ext import CallbackContext, CommandHandler, Filters

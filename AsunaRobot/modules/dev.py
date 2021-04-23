@@ -5,10 +5,10 @@ import sys
 from contextlib import suppress
 from time import sleep
 
-import YoneRobot
+import AsunaRobot
 
-from YoneRobot import dispatcher
-from YoneRobot.modules.helper_funcs.chat_status import dev_plus
+from AsunaRobot import dispatcher
+from AsunaRobot.modules.helper_funcs.chat_status import dev_plus
 from telegram import TelegramError, Update
 from telegram.error import Unauthorized
 from telegram.ext import CallbackContext, CommandHandler, run_async

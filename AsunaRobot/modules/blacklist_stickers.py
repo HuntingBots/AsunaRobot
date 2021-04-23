@@ -1,17 +1,17 @@
 import html
 from typing import Optional
 
-import YoneRobot.modules.sql.blsticker_sql as sql
-from YoneRobot import LOGGER, dispatcher
-from YoneRobot.modules.connection import connected
-from YoneRobot.modules.disable import DisableAbleCommandHandler
-from YoneRobot.modules.helper_funcs.alternate import send_message
-from YoneRobot.modules.helper_funcs.chat_status import user_admin, user_not_admin
-from YoneRobot.modules.helper_funcs.misc import split_message
-from YoneRobot.modules.helper_funcs.string_handling import extract_time
+import AsunaRobot.modules.sql.blsticker_sql as sql
+from AsunaRobot import LOGGER, dispatcher
+from AsunaRobot.modules.connection import connected
+from AsunaRobot.modules.disable import DisableAbleCommandHandler
+from AsunaRobot.modules.helper_funcs.alternate import send_message
+from AsunaRobot.modules.helper_funcs.chat_status import user_admin, user_not_admin
+from AsunaRobot.modules.helper_funcs.misc import split_message
+from AsunaRobot.modules.helper_funcs.string_handling import extract_time
 
-from YoneRobot.modules.log_channel import loggable
-from YoneRobot.modules.warns import warn
+from AsunaRobot.modules.log_channel import loggable
+from AsunaRobot.modules.warns import warn
 from telegram import Chat, Message, ParseMode, Update, User, ChatPermissions
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters, MessageHandler

@@ -3,8 +3,8 @@ from google_trans_new import LANGUAGES, google_translator
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, run_async
 
-from YoneRobot import dispatcher
-from YoneRobot.modules.disable import DisableAbleCommandHandler
+from AsunaRobot import dispatcher
+from AsunaRobot.modules.disable import DisableAbleCommandHandler
 
 
 @run_async

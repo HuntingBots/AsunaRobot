@@ -5,9 +5,9 @@ import time
 from functools import partial
 from contextlib import suppress
 
-import YoneRobot.modules.sql.welcome_sql as sql
-import YoneRobot
-from YoneRobot import (
+import AsunaRobot.modules.sql.welcome_sql as sql
+import AsunaRobot
+from AsunaRobot import (
     DEV_USERS,
     LOGGER,
     OWNER_ID,
@@ -19,18 +19,18 @@ from YoneRobot import (
     dispatcher,
     JOIN_LOGGER
 )
-from YoneRobot.modules.helper_funcs.chat_status import (
+from AsunaRobot.modules.helper_funcs.chat_status import (
     is_user_ban_protected,
     user_admin,
 )
-from YoneRobot.modules.helper_funcs.misc import build_keyboard, revert_buttons
-from YoneRobot.modules.helper_funcs.msg_types import get_welcome_type
-from YoneRobot.modules.helper_funcs.string_handling import (
+from AsunaRobot.modules.helper_funcs.misc import build_keyboard, revert_buttons
+from AsunaRobot.modules.helper_funcs.msg_types import get_welcome_type
+from AsunaRobot.modules.helper_funcs.string_handling import (
     escape_invalid_curly_brackets,
     markdown_parser,
 )
-from YoneRobot.modules.log_channel import loggable
-from YoneRobot.modules.sql.global_bans_sql import is_user_gbanned
+from AsunaRobot.modules.log_channel import loggable
+from AsunaRobot.modules.sql.global_bans_sql import is_user_gbanned
 from telegram import (
     ChatPermissions,
     InlineKeyboardButton,

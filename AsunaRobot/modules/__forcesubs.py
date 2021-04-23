@@ -12,9 +12,9 @@ from pyrogram.errors.exceptions.bad_request_400 import (
 )
 from pyrogram.types import ChatPermissions, InlineKeyboardButton, InlineKeyboardMarkup
 
-from YoneRobot import DRAGONS as SUDO_USERS
-from YoneRobot import pbot
-from YoneRobot.modules.sql_extended import forceSubscribe_sql as sql
+from AsunaRobot import DRAGONS as SUDO_USERS
+from AsunaRobot import pbot
+from AsunaRobot.modules.sql_extended import forceSubscribe_sql as sql
 
 logging.basicConfig(level=logging.INFO)
 

@@ -1,11 +1,11 @@
 # credits  @chsaiujwal @daisyxrobot
-# ported to masha @Mr_Dark_Prince
+# ported to Asuna @The_Ghost_Hunter
 
 import urllib.request
 
 from bs4 import BeautifulSoup
 from telethon import events
-from YoneRobot import telethn as tbot
+from AsunaRobot import telethn as tbot
 from telethon.tl import functions, types
 from telethon.tl.types import *
 

@@ -14,9 +14,9 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import mention_html
 
-import YoneRobot.modules.sql.global_bans_sql as sql
-from YoneRobot.modules.sql.users_sql import get_user_com_chats
-from YoneRobot import (
+import AsunaRobot.modules.sql.global_bans_sql as sql
+from AsunaRobot.modules.sql.users_sql import get_user_com_chats
+from AsunaRobot import (
     DEV_USERS,
     EVENT_LOGS,
     OWNER_ID,
@@ -30,16 +30,16 @@ from YoneRobot import (
     sw,
     dispatcher,
 )
-from YoneRobot.modules.helper_funcs.chat_status import (
+from AsunaRobot.modules.helper_funcs.chat_status import (
     is_user_admin,
     support_plus,
     user_admin,
 )
-from YoneRobot.modules.helper_funcs.extraction import (
+from AsunaRobot.modules.helper_funcs.extraction import (
     extract_user,
     extract_user_and_text,
 )
-from YoneRobot.modules.helper_funcs.misc import send_to_list
+from AsunaRobot.modules.helper_funcs.misc import send_to_list
 
 GBAN_ENFORCE_GROUP = 6
 

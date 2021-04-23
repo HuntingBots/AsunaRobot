@@ -1,8 +1,8 @@
 
-from YoneRobot import telethn as tbot
+from AsunaRobot import telethn as tbot
 from datetime import datetime
-from YoneRobot.mongo import db
-from YoneRobot import MONGO_DB_URI, OWNER_ID
+from AsunaRobot.mongo import db
+from AsunaRobot import MONGO_DB_URI, OWNER_ID
 from telethon import events, types
 import asyncio
 

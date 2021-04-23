@@ -1,15 +1,15 @@
-from YoneRobot import telethn as tbot
-from YoneRobot.events import register
+from AsunaRobot import telethn as tbot
+from AsunaRobot.events import register
 import os
 import asyncio
 import os
 import time
 from datetime import datetime
-from YoneRobot import OWNER_ID
-from YoneRobot import TEMP_DOWNLOAD_DIRECTORY as path
-from YoneRobot import TEMP_DOWNLOAD_DIRECTORY
+from AsunaRobot import OWNER_ID
+from AsunaRobot import TEMP_DOWNLOAD_DIRECTORY as path
+from AsunaRobot import TEMP_DOWNLOAD_DIRECTORY
 from datetime import datetime
-water = './YoneRobot/resources/yone.jpg'
+water = './AsunaRobot/resources/Asuna.jpg'
 client = tbot
 
 @register(pattern=r"^/send ?(.*)")
@@ -21,7 +21,7 @@ async def Prof(event):
     thumb = water
     message_id = event.message.id
     input_str = event.pattern_match.group(1)
-    the_plugin_file = "./YoneRobot/modules/{}.py".format(input_str)
+    the_plugin_file = "./AsunaRobot/modules/{}.py".format(input_str)
     if os.path.exists(the_plugin_file):
      message_id = event.message.id
      await event.client.send_file(

@@ -6,18 +6,18 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, MessageHandler, Filters, run_async
 from telegram.utils.helpers import mention_html
 
-import YoneRobot.modules.sql.blacklist_sql as sql
-from YoneRobot import dispatcher, LOGGER
-from YoneRobot.modules.disable import DisableAbleCommandHandler
-from YoneRobot.modules.helper_funcs.chat_status import user_admin, user_not_admin
-from YoneRobot.modules.helper_funcs.extraction import extract_text
-from YoneRobot.modules.helper_funcs.misc import split_message
-from YoneRobot.modules.log_channel import loggable
-from YoneRobot.modules.warns import warn
-from YoneRobot.modules.helper_funcs.string_handling import extract_time
-from YoneRobot.modules.connection import connected
-from YoneRobot.modules.sql.approve_sql import is_approved
-from YoneRobot.modules.helper_funcs.alternate import send_message, typing_action
+import AsunaRobot.modules.sql.blacklist_sql as sql
+from AsunaRobot import dispatcher, LOGGER
+from AsunaRobot.modules.disable import DisableAbleCommandHandler
+from AsunaRobot.modules.helper_funcs.chat_status import user_admin, user_not_admin
+from AsunaRobot.modules.helper_funcs.extraction import extract_text
+from AsunaRobot.modules.helper_funcs.misc import split_message
+from AsunaRobot.modules.log_channel import loggable
+from AsunaRobot.modules.warns import warn
+from AsunaRobot.modules.helper_funcs.string_handling import extract_time
+from AsunaRobot.modules.connection import connected
+from AsunaRobot.modules.sql.approve_sql import is_approved
+from AsunaRobot.modules.helper_funcs.alternate import send_message, typing_action
 
 BLACKLIST_GROUP = 11
 

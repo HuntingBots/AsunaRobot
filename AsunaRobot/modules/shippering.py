@@ -1,5 +1,5 @@
-from YoneRobot import pbot as app
-from YoneRobot.utils.dbfunc import get_couple, save_couple
+from AsunaRobot import pbot as app
+from AsunaRobot.utils.dbfunc import get_couple, save_couple
 from pyrogram import filters
 import random
 from datetime import datetime

@@ -33,7 +33,7 @@ from AsunaRobot.pyrogramee.telethonbasics import is_admin
 from AsunaRobot.events import register
 from AsunaRobot import MONGO_DB_URI 
 from pymongo import MongoClient
-from YoneRobot.modules.sql_extended.nsfw_watch_sql import (
+from AsunaRobot.modules.sql_extended.nsfw_watch_sql import (
     add_nsfwatch,
     get_all_nsfw_enabled_chat,
     is_nsfwatch_indb,

@@ -37,12 +37,12 @@ def extract_emojis(s):
     return "".join(c for c in s if c in emoji.UNICODE_EMOJI)
 
 
-yone_chats = []
+Asuna_chats = []
 en_chats = []
 # AI Chat (C) 2020-2021 by @The_Ghost_Hunter
 
 
-@yone.on_message(filters.command("chatbot") & ~filters.edited & ~filters.bot)
+@Asuna.on_message(filters.command("chatbot") & ~filters.edited & ~filters.bot)
 @admins_only
 async def hmm(_, message):
     global yone_chats

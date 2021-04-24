@@ -2,7 +2,7 @@
 import threading
 
 from AsunaRobot.modules.helper_funcs.msg_types import Types
-from YoneRobot.modules.sql import BASE, SESSION
+from AsunaRobot.modules.sql import BASE, SESSION
 from sqlalchemy import Boolean, Column, Integer, String, UnicodeText, distinct, func
 
 

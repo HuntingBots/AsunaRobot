@@ -22,7 +22,7 @@ from telethon.tl.types import ChatBannedRights
 
 from AsunaRobot.events import register
 from AsunaRobot.mongo import db
-from YoneRobot import telethn as tbot
+from AsunaRobot import telethn as tbot
 
 nightmod = db.nightmode
 

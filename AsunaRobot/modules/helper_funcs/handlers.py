@@ -9,7 +9,6 @@ from pyrate_limiter import (
     Duration,
     RequestRate,
     Limiter,
-from AsunaRobot import dispatcher, DEV_USERS, OWNER_ID
     MemoryListBucket,
 )
 

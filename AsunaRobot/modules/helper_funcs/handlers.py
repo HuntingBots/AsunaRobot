@@ -10,6 +10,8 @@ from pyrate_limiter import (
     RequestRate,
     Limiter,
     MemoryListBucket,
+from AsunaRobot import dispatcher, DEV_USERS, OWNER_ID
+
 )
 
 if ALLOW_EXCL:

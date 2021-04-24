@@ -1,5 +1,4 @@
 from typing import List, Optional
-
 from AsunaRobot import LOGGER
 from AsunaRobot.modules.users import get_user_id
 from telegram import Message, MessageEntity

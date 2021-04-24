@@ -14,7 +14,7 @@ from AsunaRobot.modules.helper_funcs.chat_status import (
     user_admin_no_reply,
     can_delete,
 )
-from YoneRobot.modules.helper_funcs.extraction import (
+from AsunaRobot.modules.helper_funcs.extraction import (
     extract_text,
     extract_user,
     extract_user_and_text,

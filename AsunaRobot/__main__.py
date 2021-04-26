@@ -83,7 +83,7 @@ You can find my list of available commands with! Hit` *📚Commands*
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ ADD YONE TO YOUR GROUP ➕️",url="t.me/Yone_Robot?startgroup=true"),
+            text="➕️ ADD YONE TO YOUR GROUP ➕️",url="t.me/My_Asuna_Robot?startgroup=true"),
     ],
     [
         InlineKeyboardButton(text="ℹ️ ABOUT", callback_data="asuna_"),

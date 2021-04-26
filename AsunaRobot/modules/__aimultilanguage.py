@@ -192,7 +192,7 @@ async def hmm(client, message):
             print(e)
 
 
-@yone.on_message(filters.text & filters.private & filters.reply & ~filters.bot)
+@Asuna.on_message(filters.text & filters.private & filters.reply & ~filters.bot)
 async def inuka(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
@@ -262,7 +262,7 @@ async def inuka(client, message):
         print(e)
 
 
-@yone.on_message(
+@Asuna.on_message(
     filters.regex("yone|Yone|kittu|hello|hi")
     & ~filters.bot
     & ~filters.via_bot

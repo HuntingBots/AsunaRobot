@@ -75,7 +75,9 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 `Hello` [🌺](https://telegra.ph/file/5c9c60b5360a9a31896a0.jpg) `My name is` *asuna*
-`I'm here to help you manage your groups! Hit` *📚Commands*   
+`I am powerful  group management bot.
+Build by The Ghost Hunter for Your Telegram Group , I specialize in managing Entertainment type groups.
+You can find my list of available commands with! Hit` *📚Commands*   
 """
 
 buttons = [

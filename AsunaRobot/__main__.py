@@ -88,10 +88,15 @@ buttons = [
     [
         InlineKeyboardButton(text="ℹ️ ABOUT", callback_data="asuna_"),
         InlineKeyboardButton(text="📚 COMMANDS", callback_data="help_back"),
+     
+    ],
+    [     InlineKeyboardButton(
+            text="🤴 OWNER", url="https://telegram.dog/The_Ghost_Hunter"),
+    
     ],
     [
         InlineKeyboardButton(
-            text="🤴 OWNER", url="https://telegram.dog/The_Ghost_Hunter"),
+            text="💭 Star Wolrd Entertainment", url="https://telegram.dog/fire_world_entertainment"),
     ],
     [
         InlineKeyboardButton(

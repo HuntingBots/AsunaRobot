@@ -83,13 +83,26 @@ You can find my list of available commands with! Hit` *📚Commands*
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ Add Yone To Your Group ➕️", url="t.me/Yone_Robot?startgroup=true"),
+            text="➕️ ADD YONE TO YOUR GROUP ➕️", url="t.me/http://t.me/princess_AsunaRobot?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="About", callback_data="yone_"),
+        InlineKeyboardButton(text="ℹ️ ABOUT", callback_data="yone_"),
+        InlineKeyboardButton(text="📚 COMMANDS", callback_data="help_back"),
+    ],
+    [
         InlineKeyboardButton(
-            text="Support", url=f"https://t.me/{SUPPORT_CHAT}"
+            text="🤴 OWNER", url="https://telegram.dog/The_Ghost_Hunter"),
+    ],
+    [
+        InlineKeyboardButton(
+            text="📕 Logis", url="https://t.me/AsunaLogUpdate"),
+          
+
+
+InlineKeyboardButton(
+            text="👥 SUPPORT", url="https://telegram.dog/AsunaRobotSupport"
         ),
+
     ],
     [
         InlineKeyboardButton(text="Help & Commands", callback_data="help_back"),

@@ -73,11 +73,8 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-
 PM_START_TEXT = """
-
-`Hello` [🤗](https://telegra.ph/file/7e61fe06a9c02747249c4.jpg) `My name is` *asuna*
-I am powerful  group management bot.
+`Hello My name is` Asuna I am powerful  group management bot.
 Build by The Ghost Hunter for Your Telegram Group , I specialize in managing Entertainment type groups.
 You can find my list of available commands! Hit` *📚Commands*   
 """
@@ -100,10 +97,11 @@ buttons = [
 
 
 HELP_STRINGS = """
-`Hi.. I'm` [asuna🛠️](https://telegra.ph/file/8cab4bb122cf76702b06d.jpg)
+`Hi.. I'm` [Asuna 🛠️]("https://telegra.ph/file/8cab4bb122cf76702b06d.jpg") 
 `Click on the buttons below to get documentation about specific modules..`"""
 
 
+ASUNA_IMG = "https://telegra.ph/file/7e61fe06a9c02747249c4.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
  You can support the project via [Paypal](#) or by contacting @kittu5588 \

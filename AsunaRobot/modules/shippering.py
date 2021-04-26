@@ -71,9 +71,9 @@ __New couple of the day may be chosen at 12AM {tomorrow}__"""
                 message.chat.id,
                 text=couple_selection_message
             )
-    # except Exception as e:
-    #     print(e)
-    #     await message.reply_text(e)
+     except Exception as e:
+        print(e)
+        await message.reply_text(e)
 
 
 

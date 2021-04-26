@@ -74,7 +74,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-`Hello My name is` Asuna I am powerful  group management bot.
+`Hellow`My name is` *Asuna* I am powerful  group management bot.
 Build by The Ghost Hunter for Your Telegram Group , I specialize in managing Entertainment type groups.
 You can find my list of available commands! Hit` *📚Commands*   
 """
@@ -97,7 +97,7 @@ buttons = [
 
 
 HELP_STRINGS = """
-`Hi.. I'm` [🛠️asuna](https://telegra.ph/file/8cab4bb122cf76702b06d.jpg) 
+`Hi.. I'm` [asuna🙋‍♀️](https://telegra.ph/file/7e61fe06a9c02747249c4.jpg)
 `Click on the buttons below to get documentation about specific modules..`"""
 
 

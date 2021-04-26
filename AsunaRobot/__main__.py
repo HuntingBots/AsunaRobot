@@ -346,7 +346,7 @@ def help_button(update, context):
 
 
 @run_async
-def yone_about_callback(update, context):
+def asuna_about_callback(update, context):
     query = update.callback_query
     if query.data == "Asuna_":
         query.message.edit_text(

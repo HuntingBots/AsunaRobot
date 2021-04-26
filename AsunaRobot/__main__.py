@@ -408,7 +408,7 @@ def Source_about_callback(update, context):
     if query.data == "source code_":
         query.message.edit_text(
             text=""" Hi..💟 I'm *Asuna*
-                 \nHere is the
+                 \nHere is the [Source](https://github.com/HuntingBots/AsunaRobot).""", 
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(

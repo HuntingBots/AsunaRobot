@@ -5,7 +5,7 @@ from AsunaRobot.modules.disable import (
     DisableAbleCommandHandler,
     DisableAbleMessageHandler,
 )
-from AsunaRobot.modules.sql.modules.sql import afk_sql as sql
+from AsunaRobot.modules.sql import afk_sql as sql
 from AsunaRobot.modules.users import get_user_id
 from telegram import MessageEntity, Update
 from telegram.error import BadRequest

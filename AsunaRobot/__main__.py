@@ -97,7 +97,7 @@ buttons = [
 
 
 HELP_STRINGS = """
-`Hi.. I'm` Asuna
+`Hi.. I'm` asuna
 `Click on the buttons below to get documentation about specific modules..`"""
 
 

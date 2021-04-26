@@ -110,7 +110,8 @@ InlineKeyboardButton(
 
     ],
     [
-        InlineKeyboardButton(text="Help & Commands", callback_data="help_back"),
+        InlineKeyboardButton(
+                  text="💟 Source Code", url=https://github.com/HuntingBots/AsunaRobot"),
     ],
 ]
 

@@ -96,7 +96,7 @@ buttons = [
 
 
 HELP_STRINGS = """
-`Hi.. I'm` [yone🙋‍♀️](https://telegra.ph/file/7e61fe06a9c02747249c4.jpg)
+`Hi.. I'm` [asuna🙋‍♀️](https://telegra.ph/file/7e61fe06a9c02747249c4.jpg)
 `Click on the buttons below to get documentation about specific modules..`"""
 
 

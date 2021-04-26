@@ -86,7 +86,7 @@ async def hmm(_, message):
         )
 
 
-@yone.on_message(
+@Asuna.on_message(
     filters.text & filters.reply & ~filters.bot & ~filters.via_bot & ~filters.forwarded,
     group=2,
 )

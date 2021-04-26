@@ -72,11 +72,12 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-ASUNA_IMG = "https://telegra.ph/file/a0518cd506643d784b9c5.jpg"
 
 
 PM_START_TEXT = """
-`Hellow`My name is` *Asuna* I am powerful  group management bot.
+ASUNA_IMG = "https://telegra.ph/file/a0518cd506643d784b9c5.jpg"
+
+`Hello`My name is` *Asuna* I am powerful  group management bot.
 Build by The Ghost Hunter for Your Telegram Group , I specialize in managing Entertainment type groups.
 You can find my list of available commands! Hit` *📚Commands*   
 """

@@ -74,10 +74,9 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-`Hi {}, my name is {}! 
-I am powerful  group management bot.
-Build by The Ghost Hunter for Your Telegram Group , I specialize in managing all type groups.
-You can find my list of available commands with /help.
+`Hellow`My name is` *Asuna* I am powerful  group management bot.
+Build by The Ghost Hunter for Your Telegram Group , I specialize in managing Entertainment type groups.
+You can find my list of available commands! Hit` *📚Commands*   
 """
 
 buttons = [
@@ -98,10 +97,7 @@ buttons = [
 
 
 HELP_STRINGS = """
-Hey there! My name is *{}*.
-I'm a powerful group manager bot and help admins for manage their groups with Some Powerful ! Have a look at the following for an idea of some of \
-the things I can help you with.
-
+`Hi.. I'm` [asuna🙋‍♀️](https://telegra.ph/file/7e61fe06a9c02747249c4.jpg)
 `Click on the buttons below to get documentation about specific modules..`"""
 
 

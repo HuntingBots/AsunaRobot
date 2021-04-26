@@ -39,7 +39,7 @@ from AsunaRobot.modules.sql_extended.nsfw_watch_sql import (
     is_nsfwatch_indb,
     rmnsfwatch,
 )
-from YoneRobot import telethn as tbot
+from AsunaRobot import telethn as tbot
 
 translator = google_translator()
 MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)

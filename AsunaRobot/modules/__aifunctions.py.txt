@@ -1,5 +1,6 @@
 # 🙈 Give me ⭐️ before kanging code
 # © @Mr_Dark_Prince 🌚
+# made by @The_Ghost_Hunter
 
 import requests
 url = "https://iamai.p.rapidapi.com/ask"

@@ -45,7 +45,7 @@ en_chats = []
 @Asuna.on_message(filters.command("chatbot") & ~filters.edited & ~filters.bot)
 @admins_only
 async def hmm(_, message):
-    global yone_chats
+    global asuna_chats
     if len(message.command) != 2:
         await message.reply_text(
             "I only recognize `/chatbot on` and /chatbot `off only`"
@@ -263,7 +263,7 @@ async def inuka(client, message):
 
 
 @Asuna.on_message(
-    filters.regex("yone|Yone|kittu|hello|hi")
+    filters.regex("Asuna|Asuna|HuntingBots|hello|hi")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded

@@ -414,7 +414,7 @@ def Source_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="source_code")
+                    InlineKeyboardButton(text="Go Back", callback_data="asuna")
                  ]
                 ]
             ),

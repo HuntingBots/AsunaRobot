@@ -60,7 +60,7 @@ async def hmm(_, message):
             await lel.edit("Asuna AI Already Activated In This Chat")
             return
         await lel.edit(
-            f"yone AI Successfully Added For Users In The Chat {message.chat.id}"
+            f"asuna AI Successfully Added For Users In The Chat {message.chat.id}"
         )
 
     elif status == "OFF" or status == "off" or status == "Off":
@@ -117,7 +117,7 @@ async def hmm(client, message):
         result = response.text
         result = result.replace('{"cnt":"', "")
         result = result.replace('"}', "")
-        result = result.replace("Aco", "yone")
+        result = result.replace("Aco", "asuna")
         result = result.replace("<a href=\\", "<a href =")
         result = result.replace("<\/a>", "</a>")
         pro = result
@@ -333,7 +333,7 @@ async def inuka(client, message):
     if not "en" in lan and not lan == "":
         pro = translator.translate(pro, lang_tgt=lan[0])
     try:
-        await yone.send_chat_action(message.chat.id, "typing")
+        await asuna.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
     except CFError as e:
         print(e)

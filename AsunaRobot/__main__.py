@@ -405,7 +405,7 @@ def asuna_about_callback(update, context):
 @run_async
 def Source_about_callback(update, context):
     query = update.callback_query
-    if query.data == "source code_":
+    if query.data == "source_":
         query.message.edit_text(
             text=""" Hi..💟 I'm *Asuna*
                  \nHere is the [Source](https://github.com/HuntingBots/AsunaRobot/).""", 
@@ -414,7 +414,7 @@ def Source_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="asuna")
+                    InlineKeyboardButton(text="Go Back", callback_data="source_back")
                  ]
                 ]
             ),

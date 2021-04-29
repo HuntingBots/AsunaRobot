@@ -110,7 +110,7 @@ async def hmm(client, message):
             "msg": {test},
         }
         headers = {
-            "x-rapidapi-key": "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
+            "x-rapidapi-key": "28aef3c2e6msh3b049ffb82fe8bep1df4bdjsn356a120c7f9e",
             "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
         }
         response = requests.request("GET", url, headers=headers, params=querystring)
@@ -172,7 +172,7 @@ async def hmm(client, message):
             "msg": {test},
         }
         headers = {
-            "x-rapidapi-key": "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
+            "x-rapidapi-key": "28aef3c2e6msh3b049ffb82fe8bep1df4bdjsn356a120c7f9e",
             "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
         }
         response = requests.request("GET", url, headers=headers, params=querystring)
@@ -242,7 +242,7 @@ async def inuka(client, message):
         "msg": {test},
     }
     headers = {
-        "x-rapidapi-key": "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
+        "x-rapidapi-key": "28aef3c2e6msh3b049ffb82fe8bep1df4bdjsn356a120c7f9e",
         "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
     }
     response = requests.request("GET", url, headers=headers, params=querystring)
@@ -319,7 +319,7 @@ async def inuka(client, message):
         "msg": {test},
     }
     headers = {
-        "x-rapidapi-key": "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
+        "x-rapidapi-key": "28aef3c2e6msh3b049ffb82fe8bep1df4bdjsn356a120c7f9e",
         "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
     }
     response = requests.request("GET", url, headers=headers, params=querystring)

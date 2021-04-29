@@ -1,4 +1,4 @@
-Copyright (C) 2020-2021 by @AmarnathCdj & @The_Ghost_Hunter
+#    Copyright (C) 2020-2021 by @AmarnathCdj & @The_Ghost_Hunter
 #    Chatbot system written by @AmarnathCdj databse added and recoded for pyrogram by @The_Ghost_Hunter
 #    This programme is a part of Asuna (TG bot) project
 #

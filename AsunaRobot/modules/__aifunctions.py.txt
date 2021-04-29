@@ -18,7 +18,7 @@ async def hmm(event):
   headers = {
     'content-type': "application/json",
     'x-forwarded-for': "<user's ip>",
-    'x-rapidapi-key': "28aef3c2e6msh3b049ffb82fe8bep1df4bdjsn356a120c7f9e",
+    'x-rapidapi-key': "de74833c94msh537352dee3a2aa1p1b91c7jsn0fcff8d73c9e",
     'x-rapidapi-host': "waifu-ai.p.rapidapi.com"
     }
 

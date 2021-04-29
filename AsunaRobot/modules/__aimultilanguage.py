@@ -1,4 +1,4 @@
-#    Copyright (C) 2020-2021 by @AmarnathCdj & @The_Ghost_Hunter
+Copyright (C) 2020-2021 by @AmarnathCdj & @The_Ghost_Hunter
 #    Chatbot system written by @AmarnathCdj databse added and recoded for pyrogram by @The_Ghost_Hunter
 #    This programme is a part of Asuna (TG bot) project
 #
@@ -110,7 +110,7 @@ async def hmm(client, message):
             "msg": {test},
         }
         headers = {
-            "x-rapidapi-key": "de74833c94msh537352dee3a2aa1p1b91c7jsn0fcff8d73c9e",
+            "x-rapidapi-key": "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
             "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
         }
         response = requests.request("GET", url, headers=headers, params=querystring)
@@ -172,7 +172,7 @@ async def hmm(client, message):
             "msg": {test},
         }
         headers = {
-            "x-rapidapi-key": "de74833c94msh537352dee3a2aa1p1b91c7jsn0fcff8d73c9e",
+            "x-rapidapi-key": "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
             "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
         }
         response = requests.request("GET", url, headers=headers, params=querystring)
@@ -242,7 +242,7 @@ async def inuka(client, message):
         "msg": {test},
     }
     headers = {
-        "x-rapidapi-key": "de74833c94msh537352dee3a2aa1p1b91c7jsn0fcff8d73c9e",
+        "x-rapidapi-key": "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
         "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
     }
     response = requests.request("GET", url, headers=headers, params=querystring)
@@ -319,7 +319,7 @@ async def inuka(client, message):
         "msg": {test},
     }
     headers = {
-        "x-rapidapi-key": "de74833c94msh537352dee3a2aa1p1b91c7jsn0fcff8d73c9e",
+        "x-rapidapi-key": "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
         "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
     }
     response = requests.request("GET", url, headers=headers, params=querystring)

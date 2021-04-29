@@ -60,7 +60,7 @@ async def hmm(_, message):
             await lel.edit("Asuna AI Already Activated In This Chat")
             return
         await lel.edit(
-            f"asuna AI Successfully Added For Users In The Chat {message.chat.id}"
+            f"Asuna AI Successfully Added For Users In The Chat {message.chat.id}"
         )
 
     elif status == "OFF" or status == "off" or status == "Off":
@@ -117,7 +117,7 @@ async def hmm(client, message):
         result = response.text
         result = result.replace('{"cnt":"', "")
         result = result.replace('"}', "")
-        result = result.replace("Aco", "asuna")
+        result = result.replace("Aco", "Asuna")
         result = result.replace("<a href=\\", "<a href =")
         result = result.replace("<\/a>", "</a>")
         pro = result

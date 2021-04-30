@@ -268,8 +268,7 @@ async def inuka(client, message):
     & ~filters.via_bot
     & ~filters.forwarded
     & ~filters.reply
-    & ~filters.channel
-    & ~filters.tag
+    & ~filters.channel  
 )
 async def inuka(client, message):
     msg = message.text

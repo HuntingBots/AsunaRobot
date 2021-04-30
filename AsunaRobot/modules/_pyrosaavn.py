@@ -5,8 +5,8 @@ import requests
 import wget
 from pyrogram import filters
 
-from YoneRobot import pbot as Jebot
-from YoneRobot.pyrogramee.dark import get_arg
+from AsunaRobot import pbot as Jebot
+from AsunaRobot.pyrogramee.dark import get_arg
 
 
 @Jebot.on_message(filters.command("saavn"))

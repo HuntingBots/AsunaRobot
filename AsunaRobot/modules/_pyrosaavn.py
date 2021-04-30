@@ -9,9 +9,9 @@ from Python_ARQ import ARQ
 from AsunaRobot import pbot as Jebot
 from AsunaRobot.pyrogramee.dark import get_arg
 
-arq = ARQ(ARQ_API)
 
-ARQ_API = "https://thearq.tech"
+arq = ARQ(https://thearq.tech)
+
 
 app.on_message(filters.command("saavn") & ~filters.edited)
 async def jssong(_, message):

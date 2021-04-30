@@ -263,12 +263,13 @@ async def inuka(client, message):
 
 
 @asuna.on_message(
-    filters.regex("asuna|Asuna|kittu|hello|hi")
+    filters.regex("asuna|Asuna|huntinbots|hello|hi")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
     & ~filters.reply
     & ~filters.channel
+    & ~filters.tag
 )
 async def inuka(client, message):
     msg = message.text

@@ -16,6 +16,7 @@ zalgo-text
 geopy
 nltk
 psutil
+aiohttp>=2.2.5
 Pillow>=4.2.0
 CurrencyConverter
 #googletrans
@@ -57,9 +58,7 @@ pytz
 lyricsgenius
 tswift
 envparse
-ffmpeg-python
-aiohttp
-aiofiles
+
 #profanity (Credits to Julia)
 better_profanity
 textblob 

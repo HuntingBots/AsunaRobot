@@ -122,7 +122,7 @@ async def hmm(client, message):
         result = result.replace("<\/a>", "</a>")
         pro = result
         try:
-            await yone.send_chat_action(message.chat.id, "typing")
+            await asuna.send_chat_action(message.chat.id, "typing")
             await message.reply_text(pro)
         except CFError as e:
             print(e)
@@ -256,7 +256,7 @@ async def inuka(client, message):
     if not "en" in lan and not lan == "":
         pro = translator.translate(pro, lang_tgt=lan[0])
     try:
-        await yone.send_chat_action(message.chat.id, "typing")
+        await asuna.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
     except CFError as e:
         print(e)

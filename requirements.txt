@@ -58,7 +58,9 @@ pytz
 lyricsgenius
 tswift
 envparse
-
+ffmpeg-python
+aiohttp
+aiofiles
 #profanity (Credits to Julia)
 better_profanity
 textblob 

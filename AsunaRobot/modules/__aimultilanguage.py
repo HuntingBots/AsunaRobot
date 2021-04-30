@@ -25,7 +25,6 @@ url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
 from google_trans_new import google_translator
 from pyrogram import filters
 
-from AsunaRobot import BOT_ID
 from AsunaRobot.helper_extra.aichat import add_chat, get_session, remove_chat
 from AsunaRobot.pyrogramee.pluginshelper import admins_only, edit_or_reply
 from AsunaRobot import pbot as asuna
@@ -36,7 +35,7 @@ translator = google_translator()
 def extract_emojis(s):
     return "".join(c for c in s if c in emoji.UNICODE_EMOJI)
 
-
+BOT_ID = 1746875218
 asuna_chats = []
 en_chats = []
 # AI Chat (C) 2020-2021 by @InukaAsith
@@ -192,7 +191,7 @@ async def hmm(client, message):
             print(e)
 
 
-@asuna.on_message(filters.text & filters.reply & ~filters.bot)
+@asuna.on_message(filters.text & filters.private & filters.reply & ~filters.bot)
 async def inuka(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):

@@ -5,7 +5,7 @@ import requests
 import wget
 from pyrogram import filters
 
-from AsunaRobot import pbot as Jebot
+from AsunaRobot import pbot as app
 from AsunaRobot.pyrogramee.dark import get_arg
 
 @app.on_message(filters.command("saavn") & ~filters.edited)

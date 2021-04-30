@@ -96,7 +96,7 @@ buttons = [
     ],
     [
         InlineKeyboardButton(
-            text="💭 Star Wolrd Entertainment", url="https://telegram.dog/fire_world_entertainment"),
+            text="📺 Star Wolrd Entertainment", url="https://telegram.dog/fire_world_entertainment"),
     ],
     [
         InlineKeyboardButton(

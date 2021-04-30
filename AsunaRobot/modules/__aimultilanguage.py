@@ -1,6 +1,6 @@
-#    Copyright (C) 2020-2021 by @AmarnathCdj & @InukaAsith
-#    Chatbot system written by @AmarnathCdj databse added and recoded for pyrogram by @InukaAsith
-#    This programme is a part of yone (TG bot) project
+#    Copyright (C) 2020-2021 by @AmarnathCdj & @The_Ghost_Hunter
+#    Chatbot system written by @AmarnathCdj databse added and recoded for pyrogram by @The_Ghost_Hunter
+#    This programme is a part of Asuna (TG bot) project
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -13,6 +13,10 @@
 #
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+#    Kang with the credits
+#    Special credits to @The_Ghost_Hunter
+import re
 
 import emoji
 import requests

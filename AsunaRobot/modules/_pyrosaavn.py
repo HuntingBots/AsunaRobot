@@ -45,7 +45,7 @@ async def jssong(_, message):
         os.remove(song)
         await m.delete()
     except Exception as e:
-        is_downloading = False
+        is_downloading = True
         await m.edit(str(e))
         return
-    is_downloading = False
+    is_downloading = True

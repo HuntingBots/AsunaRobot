@@ -18,7 +18,6 @@ arq = ARQ(ARQ_API)
 
 
 @app.on_message(filters.command("saavn") & ~filters.edited)
-@capture_err
 async def jssong(_, message):
     global is_downloading
     if len(message.command) < 2:

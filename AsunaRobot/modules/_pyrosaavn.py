@@ -5,32 +5,46 @@ import requests
 import wget
 from pyrogram import filters
 
+from Python_ARQ import ARQ
 from AsunaRobot import pbot as Jebot
 from AsunaRobot.pyrogramee.dark import get_arg
 
 
-@Jebot.on_message(filters.command("saavn"))
-async def song(client, message):
-    message.chat.id
-    message.from_user["id"]
-    args = get_arg(message) + " " + "song"
-    if args.startswith(" "):
-        await message.reply("<b>Enter song name❗</b>")
-        return ""
-    m = await message.reply_text(
-        "Downloading your song,\nPlz wait ⏳️"
-    )
+arq = ARQ(http://www.saavn.com/api.php)
+
+
+app.on_message(filters.command("saavn") & ~filters.edited)
+async def jssong(_, message):
+    global is_downloading
+    if len(message.command) < 2:
+        await message.reply_text("/saavn requires an argument.")
+        return
+    if is_downloading:
+        await message.reply_text("Another download is in progress, try again after sometime.")
+        return
+    is_downloading = True
+    text = message.text.split(None, 1)[1]
+    query = text.replace(" ", "%20")
+    m = await message.reply_text("Searching...")
     try:
-        r = requests.get(f"https://snobybuddymusic.herokuapp.com/result/?query={args}")
+        songs = await arq.saavn(query)
+        sname = songs[0].song
+        slink = songs[0].media_url
+        ssingers = songs[0].singers
+        await m.edit("Downloading")
+        song = await download_song(slink)
+        await m.edit("Uploading")
+        await message.reply_audio(
+            audio=song,
+            title=sname,
+            caption=f"「 `{format_size(await file_size_from_url(slink))}` 」",
+            performer=ssingers,
+            duration=int(songs[0].duration)
+        )
+        os.remove(song)
+        await m.delete()
     except Exception as e:
+        is_downloading = False
         await m.edit(str(e))
         return
-    sname = r.json()[0]["song"]
-    slink = r.json()[0]["media_url"]
-    ssingers = r.json()[0]["singers"]
-    file = wget.download(slink)
-    ffile = file.replace("mp4", "m4a")
-    os.rename(file, ffile)
-    await message.reply_audio(audio=ffile, title=sname, performer=ssingers)
-    os.remove(ffile)
-    await m.delete()
+    is_downloading = False

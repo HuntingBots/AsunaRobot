@@ -14,7 +14,11 @@ from AsunaRobot.pyrogramee.dark import get_arg
 arq = ARQ(ARQ_API)
 
 
-app.on_message(filters.command("saavn") & ~filters.edited)
+# Jiosaavn Music
+
+
+@app.on_message(filters.command("saavn") & ~filters.edited)
+@capture_err
 async def jssong(_, message):
     global is_downloading
     if len(message.command) < 2:
@@ -45,7 +49,7 @@ async def jssong(_, message):
         os.remove(song)
         await m.delete()
     except Exception as e:
-        is_downloading = True
+        is_downloading = False
         await m.edit(str(e))
         return
-    is_downloading = True
+    is_downloading = False

@@ -5,12 +5,13 @@ import requests
 import wget
 from pyrogram import filters
 
+from arqlink import ARQ_API_BASE_URL as ARQ_API
 from Python_ARQ import ARQ
-from AsunaRobot import pbot as Jebot
+from AsunaRobot import pbot as app
 from AsunaRobot.pyrogramee.dark import get_arg
 
 
-arq = ARQ(https://thearq.tech)
+arq = ARQ(ARQ_API)
 
 
 app.on_message(filters.command("saavn") & ~filters.edited)

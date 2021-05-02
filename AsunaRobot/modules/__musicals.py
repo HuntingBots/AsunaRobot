@@ -7,5 +7,4 @@ __help__ = """
 /lyrics <i>song name</i> : This plugin searches for song lyrics with song name.
 /glyrics <i> song name </i> : This plugin searches for song lyrics with song name and artist.
 /song <i> song name </i> Uploads the song in it's best quality available
-/saavn <i> song name </i> Download song from saavn.
 """

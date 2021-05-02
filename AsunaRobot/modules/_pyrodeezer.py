@@ -9,7 +9,7 @@ from AsunaRobot import pbot as Jebot
 from AsunaRobot.pyrogramee.dark import get_arg
 
 @App.on_message(filters.command("deezer") & ~filters.edited)
-@capture_err
+
 async def deezsong(_, message):
     global is_downloading
     if len(message.command) < 2:

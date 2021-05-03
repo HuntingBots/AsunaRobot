@@ -39,7 +39,7 @@ async def couple(_, message):
                 if not i.user.is_bot:
                     list_of_users.append(i.user.id)
             if len(list_of_users) < 2:
-                 message.reply_text("Not enough users")
+                await message.reply_text("Not enough users")
                 return
             c1_id = random.choice(list_of_users)
             c2_id = random.choice(list_of_users)
@@ -81,7 +81,5 @@ __New couple of the day may be chosen at 12AM {tomorrow}__"""
 
 __help__ = """
  ❍ /couples - To Choose Couple Of The Day
-
  """
 __mod_name__ = "Couples"
-

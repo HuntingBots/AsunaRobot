@@ -39,7 +39,7 @@ async def couple(_, message):
                 if not i.user.is_bot:
                     list_of_users.append(i.user.id)
             if len(list_of_users) < 2:
-                await message.reply_text("Not enough users")
+                 message.reply_text("Not enough users")
                 return
             c1_id = random.choice(list_of_users)
             c2_id = random.choice(list_of_users)

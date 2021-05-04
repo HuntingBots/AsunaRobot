@@ -27,6 +27,7 @@ url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
 from google_trans_new import google_translator
 from pyrogram import filters
 
+from AsunaRobot import BOT_ID
 from AsunaRobot.helper_extra.aichat import add_chat, get_session, remove_chat
 from AsunaRobot.pyrogramee.pluginshelper import admins_only, edit_or_reply
 from AsunaRobot import pbot as asuna

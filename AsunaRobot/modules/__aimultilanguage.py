@@ -28,9 +28,9 @@ from google_trans_new import google_translator
 from pyrogram import filters
 
 from AsunaRobot import BOT_ID
-from AsunaRobot.helpers.aichat import add_chat, get_session, remove_chat
-from AsunaRobot.function.pluginhelpers import admins_only, edit_or_reply
-from AsunaRobot.services.pyrogram import pbot as asuna
+from AsunaRobot.helper_extra.aichat import add_chat, get_session, remove_chat
+from AsunaRobot.pyrogramee.pluginshelper import admins_only, edit_or_reply
+from AsunaRobot.services.pyrogram import pbot as daisyx
 
 translator = google_translator()
 

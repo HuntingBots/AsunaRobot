@@ -30,7 +30,7 @@ from pyrogram import filters
 from AsunaRobot import BOT_ID
 from AsunaRobot.db.mongo_helpers.aichat import add_chat, get_session, remove_chat
 from AsunaRobot.function.pluginhelpers import admins_only, edit_or_reply
-from AsunaRobot.services.pyrogram import pbot as asuna
+from AsunaRobot.services.pyrogram import pbot as asunarobot
 
 translator = google_translator()
 
@@ -39,11 +39,11 @@ def extract_emojis(s):
     return "".join(c for c in s if c in emoji.UNICODE_EMOJI)
 
 
-asuna_chats = []
+asunarobot_chats = []
 en_chats = []
 # AI Chat (C) 2020-2021 by @InukaAsith
 """
-@asuna.on_message(
+@asunarobot.on_message(
     filters.voice & filters.reply & ~filters.bot & ~filters.via_bot & ~filters.forwarded,
     group=2,
 )
@@ -75,7 +75,7 @@ async def hmm(client, message):
 """
 
 
-@asuna.on_message(filters.command("chatbot") & ~filters.edited & ~filters.bot)
+@asunarobot.on_message(filters.command("chatbot") & ~filters.edited & ~filters.bot)
 @admins_only
 async def hmm(_, message):
     global daisy_chats
@@ -100,10 +100,10 @@ async def hmm(_, message):
         lel = await edit_or_reply(message, "`Processing...`")
         Escobar = remove_chat(int(message.chat.id))
         if not Escobar:
-            await lel.edit("Daisy AI Was Not Activated In This Chat")
+            await lel.edit("Asuna AI Was Not Activated In This Chat")
             return
         await lel.edit(
-            f"Daisy AI Successfully Deactivated For Users In The Chat {message.chat.id}"
+            f"Asuna AI Successfully Deactivated For Users In The Chat {message.chat.id}"
         )
 
     elif status == "EN" or status == "en" or status == "english":

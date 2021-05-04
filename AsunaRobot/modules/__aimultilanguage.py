@@ -26,8 +26,33 @@ IBM_WATSON_CRED_PASSWORD = "UQ1MtTzZhEsMGK094klnfa-7y_4MCpJY1yhd52MXOo3Y"
 url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
 from google_trans_new import google_translator
 from pyrogram import filters
+#    Copyright (C) 2020-2021 by @AmarnathCdj & @InukaAsith
+#    Chatbot system written by @AmarnathCdj databse added and recoded for pyrogram by @InukaAsith
+#    This programme is a part of asuna (TG bot) project
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+#
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from AsunaRobot import BOT_ID
+#    Kang with the credits
+#    Special credits to @AmarnathCdj
+import re
+
+import emoji
+import requests
+
+url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
+from google_trans_new import google_translator
+from pyrogram import filters
+
 from AsunaRobot.helper_extra.aichat import add_chat, get_session, remove_chat
 from AsunaRobot.pyrogramee.pluginshelper import admins_only, edit_or_reply
 from AsunaRobot import pbot as asuna
@@ -38,47 +63,16 @@ translator = google_translator()
 def extract_emojis(s):
     return "".join(c for c in s if c in emoji.UNICODE_EMOJI)
 
-
+BOT_ID = 1746875218
 asuna_chats = []
 en_chats = []
 # AI Chat (C) 2020-2021 by @InukaAsith
-"""
-@asuna.on_message(
-    filters.voice & filters.reply & ~filters.bot & ~filters.via_bot & ~filters.forwarded,
-    group=2,
-)
-async def hmm(client, message):
-    if not get_session(int(message.chat.id)):
-        message.continue_propagation()
-    if message.reply_to_message.from_user.id != BOT_ID:
-        message.continue_propagation()
-    previous_message = message
-    required_file_name = message.download()
-    if IBM_WATSON_CRED_URL is None or IBM_WATSON_CRED_PASSWORD is None:
-        await message.reply(
-            "You need to set the required ENV variables for this module. \nModule stopping"
-        )
-    else:
-        headers = {
-            "Content-Type": previous_message.voice.mime_type,
-        }
-        data = open(required_file_name, "rb").read()
-        response = requests.post(
-            IBM_WATSON_CRED_URL + "/v1/recognize",
-            headers=headers,
-            data=data,
-            auth=("apikey", IBM_WATSON_CRED_PASSWORD),
-        )
-        r = response.json()
-        print(r)
-        await client.send_message(message, r)
-"""
 
 
 @asuna.on_message(filters.command("chatbot") & ~filters.edited & ~filters.bot)
 @admins_only
 async def hmm(_, message):
-    global daisy_chats
+    global asuna_chats
     if len(message.command) != 2:
         await message.reply_text(
             "I only recognize `/chatbot on` and /chatbot `off only`"
@@ -90,20 +84,20 @@ async def hmm(_, message):
         lel = await edit_or_reply(message, "`Processing...`")
         lol = add_chat(int(message.chat.id))
         if not lol:
-            await lel.edit("Asuna AI Already Activated In This Chat")
+            await lel.edit("asuna AI Already Activated In This Chat")
             return
         await lel.edit(
-            f"Asuna AI Successfully Added For Users In The Chat {message.chat.id}"
+            f"asuna AI Successfully Added For Users In The Chat {message.chat.id}"
         )
 
     elif status == "OFF" or status == "off" or status == "Off":
         lel = await edit_or_reply(message, "`Processing...`")
         Escobar = remove_chat(int(message.chat.id))
         if not Escobar:
-            await lel.edit("Asuna AI Was Not Activated In This Chat")
+            await lel.edit("asuna AI Was Not Activated In This Chat")
             return
         await lel.edit(
-            f"Asuna AI Successfully Deactivated For Users In The Chat {message.chat.id}"
+            f"asuna AI Successfully Deactivated For Users In The Chat {message.chat.id}"
         )
 
     elif status == "EN" or status == "en" or status == "english":
@@ -124,8 +118,6 @@ async def hmm(_, message):
     group=2,
 )
 async def hmm(client, message):
-    if not get_session(int(message.chat.id)):
-        message.continue_propagation()
     if message.reply_to_message.from_user.id != BOT_ID:
         message.continue_propagation()
     msg = message.text
@@ -135,7 +127,7 @@ async def hmm(client, message):
     if chat_id in en_chats:
         test = msg
         test = test.replace("asuna", "Aco")
-        test = test.replace("Asuna", "Aco")
+        test = test.replace("asuna", "Aco")
         querystring = {
             "bid": "178",
             "key": "sX5A2PcYZbsN5EY6",
@@ -150,7 +142,7 @@ async def hmm(client, message):
         result = response.text
         result = result.replace('{"cnt":"', "")
         result = result.replace('"}', "")
-        result = result.replace("Aco", "Asuna")
+        result = result.replace("Aco", "asuna")
         result = result.replace("<a href=\\", "<a href =")
         result = result.replace("<\/a>", "</a>")
         pro = result
@@ -197,7 +189,7 @@ async def hmm(client, message):
 
         # Kang with the credits bitches @InukaASiTH
         test = test.replace("asuna", "Aco")
-        test = test.replace("Asuna", "Aco")
+        test = test.replace("asuna", "Aco")
         querystring = {
             "bid": "178",
             "key": "sX5A2PcYZbsN5EY6",
@@ -212,7 +204,7 @@ async def hmm(client, message):
         result = response.text
         result = result.replace('{"cnt":"', "")
         result = result.replace('"}', "")
-        result = result.replace("Aco", "Asuna")
+        result = result.replace("Aco", "asuna")
         result = result.replace("<a href=\\", "<a href =")
         result = result.replace("<\/a>", "</a>")
         pro = result
@@ -267,7 +259,7 @@ async def inuka(client, message):
 
     # Kang with the credits bitches @InukaASiTH
     test = test.replace("asuna", "Aco")
-    test = test.replace("Asuna", "Aco")
+    test = test.replace("asuna", "Aco")
     querystring = {
         "bid": "178",
         "key": "sX5A2PcYZbsN5EY6",
@@ -282,26 +274,26 @@ async def inuka(client, message):
     result = response.text
     result = result.replace('{"cnt":"', "")
     result = result.replace('"}', "")
-    result = result.replace("Aco", "Asuna")
+    result = result.replace("Aco", "asuna")
     result = result.replace("<a href=\\", "<a href =")
     result = result.replace("<\/a>", "</a>")
     pro = result
     if not "en" in lan and not lan == "":
         pro = translator.translate(pro, lang_tgt=lan[0])
     try:
-        await daisyx.send_chat_action(message.chat.id, "typing")
+        await asuna.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
     except CFError as e:
         print(e)
 
 
 @asuna.on_message(
-    filters.regex("Asuna||Asuna|asuna|Asuna")
+    filters.regex("asuna|Asuna|huntinbots|hello|hi")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
     & ~filters.reply
-    & ~filters.channel
+    & ~filters.channel  
 )
 async def inuka(client, message):
     msg = message.text
@@ -343,8 +335,8 @@ async def inuka(client, message):
     # test = emoji.demojize(test.strip())
 
     # Kang with the credits bitches @InukaASiTH
-    test = test.replace("daisy", "Aco")
-    test = test.replace("Daisy", "Aco")
+    test = test.replace("asuna", "Aco")
+    test = test.replace("asuna", "Aco")
     querystring = {
         "bid": "178",
         "key": "sX5A2PcYZbsN5EY6",
@@ -359,7 +351,7 @@ async def inuka(client, message):
     result = response.text
     result = result.replace('{"cnt":"', "")
     result = result.replace('"}', "")
-    result = result.replace("Aco", "Daisy")
+    result = result.replace("Aco", "asuna")
     result = result.replace("<a href=\\", "<a href =")
     result = result.replace("<\/a>", "</a>")
     pro = result
@@ -370,27 +362,3 @@ async def inuka(client, message):
         await message.reply_text(pro)
     except CFError as e:
         print(e)
-
-
-__help__ = """
-<b> Chatbot </b>
-<i> PRESENTING ASUNA AI 3.0. THE ONLY AI SYSTEM WHICH CAN DETECT & REPLY UPTO 200 LANGUAGES </i>
- - /chatbot <i>ON/OFF</i>: Enables and disables AI Chat mode (EXCLUSIVE)
-* DaisyAI can detect and reply upto 200 languages by now *
- - /chatbot EN : Enables English only chatbot
- 
-<b> Lydia </b>
-<i> PRESENTING DAISY'S LYDIA, EXCLUSIVE CHAT FEATURE DETECT UPTO 200 LANGUAGES & REPLY USING LYDIA AI</i>
- - /addlydia: Activates lydia on your group
-* Daisy AI can detect and reply upto 200 languages by now *
- - /enlydia : Enables English only chat AI
- - /rmlydia : Deactivates lydia on your group (UNSTABLE)
- 
-<b> Assistant </b>
- - /ask <i>question</i>: Ask question from daisy
- - /ask <i> reply to voice note</i>: Get voice reply
- 
-<i> Lydia AI can be unstable sometimes </i>
-"""
-
-__mod_name__ = "AI Assistant"

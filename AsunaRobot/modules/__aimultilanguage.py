@@ -366,7 +366,7 @@ async def inuka(client, message):
     if not "en" in lan and not lan == "":
         pro = translator.translate(pro, lang_tgt=lan[0])
     try:
-        await daisyx.send_chat_action(message.chat.id, "typing")
+        await asuna.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
     except CFError as e:
         print(e)
@@ -374,7 +374,7 @@ async def inuka(client, message):
 
 __help__ = """
 <b> Chatbot </b>
-<i> PRESENTING DAISY AI 3.0. THE ONLY AI SYSTEM WHICH CAN DETECT & REPLY UPTO 200 LANGUAGES </i>
+<i> PRESENTING ASUNA AI 3.0. THE ONLY AI SYSTEM WHICH CAN DETECT & REPLY UPTO 200 LANGUAGES </i>
  - /chatbot <i>ON/OFF</i>: Enables and disables AI Chat mode (EXCLUSIVE)
 * DaisyAI can detect and reply upto 200 languages by now *
  - /chatbot EN : Enables English only chatbot

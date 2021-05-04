@@ -28,9 +28,9 @@ from google_trans_new import google_translator
 from pyrogram import filters
 
 from AsunaRobot import BOT_ID
-from AsunaRobot.db.mongo_helpers.aichat import add_chat, get_session, remove_chat
+from AsunaRobot.helpers.aichat import add_chat, get_session, remove_chat
 from AsunaRobot.function.pluginhelpers import admins_only, edit_or_reply
-from AsunaRobot.services.pyrogram import pbot as asunarobot
+from AsunaRobot.services.pyrogram import pbot as asuna
 
 translator = google_translator()
 
@@ -39,11 +39,11 @@ def extract_emojis(s):
     return "".join(c for c in s if c in emoji.UNICODE_EMOJI)
 
 
-asunarobot_chats = []
+asuna_chats = []
 en_chats = []
 # AI Chat (C) 2020-2021 by @InukaAsith
 """
-@asunarobot.on_message(
+@asuna.on_message(
     filters.voice & filters.reply & ~filters.bot & ~filters.via_bot & ~filters.forwarded,
     group=2,
 )
@@ -75,7 +75,7 @@ async def hmm(client, message):
 """
 
 
-@asunarobot.on_message(filters.command("chatbot") & ~filters.edited & ~filters.bot)
+@asuna.on_message(filters.command("chatbot") & ~filters.edited & ~filters.bot)
 @admins_only
 async def hmm(_, message):
     global daisy_chats

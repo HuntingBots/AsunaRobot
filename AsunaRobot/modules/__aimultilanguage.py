@@ -134,8 +134,8 @@ async def asuna(client, message):
 
 
 
-@asuna.on_message(filters.text & filters.private & ~filters.reply & ~filters.bot)
-async def redaura(client, message):
+@asuna.on_message(filters.text & filters.private & filters.reply & ~filters.bot)
+async def inuka(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()

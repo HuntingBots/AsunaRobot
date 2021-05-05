@@ -3,7 +3,7 @@ import aiohttp
 import emoji
 import requests
 import re
-from AsunaRobot.helper_extra.aichat import add_chat, get_session, remove_chat
+
 from AsunaRobot.pyrogramee.pluginshelper import admins_only, edit_or_reply
 from AsunaRobot import pbot as asuna
 

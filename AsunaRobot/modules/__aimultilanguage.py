@@ -1,33 +1,123 @@
-import asyncio
-import aiohttp
-import emoji
-import requests
+#    Copyright (C) 2020-2021 by @AmarnathCdj & @InukaAsith
+#    Chatbot system written by @AmarnathCdj databse added and recoded for pyrogram by @InukaAsith
+#    This programme is a part of asuna (TG bot) project
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+#
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+#    Kang with the credits
+#    Special credits to @AmarnathCdj
 import re
 
+import emoji
+import requests
+
+IBM_WATSON_CRED_URL = "https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/bd6b59ba-3134-4dd4-aff2-49a79641ea15"
+IBM_WATSON_CRED_PASSWORD = "UQ1MtTzZhEsMGK094klnfa-7y_4MCpJY1yhd52MXOo3Y"
+url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
+from google_trans_new import google_translator
+from pyrogram import filters
+#    Copyright (C) 2020-2021 by @AmarnathCdj & @InukaAsith
+#    Chatbot system written by @AmarnathCdj databse added and recoded for pyrogram by @InukaAsith
+#    This programme is a part of asuna (TG bot) project
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+#
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+#    Kang with the credits
+#    Special credits to @AmarnathCdj
+import re
+
+import emoji
+import requests
+
+url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
+from google_trans_new import google_translator
+from pyrogram import filters
+
+from AsunaRobot.helper_extra.aichat import add_chat, get_session, remove_chat
 from AsunaRobot.pyrogramee.pluginshelper import admins_only, edit_or_reply
 from AsunaRobot import pbot as asuna
 
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from pyrogram import Client, filters
-from google_trans_new import google_translator
-url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
-
 translator = google_translator()
 
-BOT_ID = 1746875218
 
 def extract_emojis(s):
     return "".join(c for c in s if c in emoji.UNICODE_EMOJI)
 
-#Chatbot Modules By  @InukaAsith
-
+BOT_ID = 1746875218
+asuna_chats = []
 en_chats = []
+# AI Chat (C) 2020-2021 by @InukaAsith
+
+
+@asuna.on_message(filters.command("chatbot") & ~filters.edited & ~filters.bot)
+@admins_only
+async def hmm(_, message):
+    global asuna_chats
+    if len(message.command) != 2:
+        await message.reply_text(
+            "I only recognize `/chatbot on` and /chatbot `off only`"
+        )
+        message.continue_propagation()
+    status = message.text.split(None, 1)[1]
+    chat_id = message.chat.id
+    if status == "ON" or status == "on" or status == "On":
+        lel = await edit_or_reply(message, "`Processing...`")
+        lol = add_chat(int(message.chat.id))
+        if not lol:
+            await lel.edit("asuna AI Already Activated In This Chat")
+            return
+        await lel.edit(
+            f"asuna AI Successfully Added For Users In The Chat {message.chat.id}"
+        )
+
+    elif status == "OFF" or status == "off" or status == "Off":
+        lel = await edit_or_reply(message, "`Processing...`")
+        Escobar = remove_chat(int(message.chat.id))
+        if not Escobar:
+            await lel.edit("asuna AI Was Not Activated In This Chat")
+            return
+        await lel.edit(
+            f"asuna AI Successfully Deactivated For Users In The Chat {message.chat.id}"
+        )
+
+    elif status == "EN" or status == "en" or status == "english":
+        if not chat_id in en_chats:
+            en_chats.append(chat_id)
+            await message.reply_text("English AI chat Enabled!")
+            return
+        await message.reply_text("AI Chat Is Already Disabled.")
+        message.continue_propagation()
+    else:
+        await message.reply_text(
+            "I only recognize `/chatbot on` and /chatbot `off only`"
+        )
+
 
 @asuna.on_message(
     filters.text & filters.reply & ~filters.bot & ~filters.via_bot & ~filters.forwarded,
     group=2,
 )
-async def asuna(client, message):
+async def hmm(client, message):
     if message.reply_to_message.from_user.id != BOT_ID:
         message.continue_propagation()
     msg = message.text
@@ -35,9 +125,9 @@ async def asuna(client, message):
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
     if chat_id in en_chats:
-        aura = msg
-        aura = aura.replace("asuna", "Aco")
-        aura = aura.replace("Asuna", "Aco")
+        test = msg
+        test = test.replace("asuna", "Aco")
+        test = test.replace("asuna", "Aco")
         querystring = {
             "bid": "178",
             "key": "sX5A2PcYZbsN5EY6",
@@ -52,18 +142,13 @@ async def asuna(client, message):
         result = response.text
         result = result.replace('{"cnt":"', "")
         result = result.replace('"}', "")
-        result = result.replace("Aco", "Asuna")
-        result = result.replace("Asuna", "@My_Asuna_Robot")
-        result = result.replace("Hi~", "Hello Friend I Am @My_Asuna_Robot")
-        result = result.replace("My dear great botmaster, AsunaRobot Team.", "Made By @The_Ghost_Hunter")
-        result = result.replace("Have the control right.", "My Father Is @The_Ghost_Hunter")
-        result = result.replace("I was created by AsunaRobot Team.", "I was created by  @AsunaRobotSupport Team.")
+        result = result.replace("Aco", "asuna")
         result = result.replace("<a href=\\", "<a href =")
         result = result.replace("<\/a>", "</a>")
-        red = result
+        pro = result
         try:
-            await Asuna.send_chat_action(message.chat.id, "typing")
-            await message.reply_text(red)
+            await asuna.send_chat_action(message.chat.id, "typing")
+            await message.reply_text(pro)
         except CFError as e:
             print(e)
     else:
@@ -94,18 +179,22 @@ async def asuna(client, message):
             rm = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", msg)
         else:
             rm = msg
+            # print (rm)
             lan = translator.detect(rm)
-        aura = rm
+        test = rm
         if not "en" in lan and not lan == "":
-            aura = translator.translate(aura, lang_tgt="en")
+            test = translator.translate(test, lang_tgt="en")
 
-        aura = aura.replace("asuna", "Aco")
-        aura = aura.replace("Asuna", "Aco")
+        # test = emoji.demojize(test.strip())
+
+        # Kang with the credits bitches @InukaASiTH
+        test = test.replace("asuna", "Aco")
+        test = test.replace("asuna", "Aco")
         querystring = {
             "bid": "178",
             "key": "sX5A2PcYZbsN5EY6",
             "uid": "mashape",
-            "msg": {aura},
+            "msg": {test},
         }
         headers = {
             "x-rapidapi-key": "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
@@ -115,20 +204,15 @@ async def asuna(client, message):
         result = response.text
         result = result.replace('{"cnt":"', "")
         result = result.replace('"}', "")
-        result = result.replace("Aco", "Asuna")
-        result = result.replace("Asuna", "@My_Asuna_Robot")
-        result = result.replace("Hi~", "Hello Friend I Am @My_Asuna_Robot")
-        result = result.replace("My dear great botmaster, AsunaRobot Team.", "Made By @The_Ghost_Hunter")
-        result = result.replace("Have the control right.", "My Father Is @The_Ghost_Hunter")
-        result = result.replace("I was created by AsunaRobot Team.", "I was created by @AsunaRobotSupport Team.")
+        result = result.replace("Aco", "asuna")
         result = result.replace("<a href=\\", "<a href =")
         result = result.replace("<\/a>", "</a>")
-        red = result
+        pro = result
         if not "en" in lan and not lan == "":
-            pro = translator.translate(red, lang_tgt=lan[0])
+            pro = translator.translate(pro, lang_tgt=lan[0])
         try:
-            await Asuna.send_chat_action(message.chat.id, "typing")
-            await message.reply_text(red)
+            await asuna.send_chat_action(message.chat.id, "typing")
+            await message.reply_text(pro)
         except CFError as e:
             print(e)
 
@@ -165,19 +249,22 @@ async def inuka(client, message):
         rm = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", msg)
     else:
         rm = msg
+        # print (rm)
         lan = translator.detect(rm)
-    aura = rm
+    test = rm
     if not "en" in lan and not lan == "":
-        aura = translator.translate(aura, lang_tgt="en")
+        test = translator.translate(test, lang_tgt="en")
 
-   
-    aura = aura.replace("asuna", "Aco")
-    aura = aura.replace("Asuna", "Aco")
+    # test = emoji.demojize(test.strip())
+
+    # Kang with the credits bitches @InukaASiTH
+    test = test.replace("asuna", "Aco")
+    test = test.replace("asuna", "Aco")
     querystring = {
         "bid": "178",
         "key": "sX5A2PcYZbsN5EY6",
         "uid": "mashape",
-        "msg": {aura},
+        "msg": {test},
     }
     headers = {
         "x-rapidapi-key": "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
@@ -187,33 +274,28 @@ async def inuka(client, message):
     result = response.text
     result = result.replace('{"cnt":"', "")
     result = result.replace('"}', "")
-    result = result.replace("Aco", "Asuna")
-    result = result.replace("Asuna", "@My_Asuna_Robot")
-    result = result.replace("Hi~", "Hello Friend I Am @My_Asuna_Robot")
-    result = result.replace("My dear great botmaster, AsunaRobot Team.", "Made By @madepranav")
-    result = result.replace("Have the control right.", "My Father Is @The_Ghost_Hunter")
-    result = result.replace("I was created by AsunaRobot Team.", "I was created by @My_Asuna_Robot Team.")
+    result = result.replace("Aco", "asuna")
     result = result.replace("<a href=\\", "<a href =")
     result = result.replace("<\/a>", "</a>")
-    red = result
+    pro = result
     if not "en" in lan and not lan == "":
-        red = translator.translate(red, lang_tgt=lan[0])
+        pro = translator.translate(pro, lang_tgt=lan[0])
     try:
-        await LYCIA.send_chat_action(message.chat.id, "typing")
-        await message.reply_text(red)
+        await asuna.send_chat_action(message.chat.id, "typing")
+        await message.reply_text(pro)
     except CFError as e:
         print(e)
 
 
-@LYCIA.on_message(
-    filters.regex("Asuna|asuna|ASUNA")
+@asuna.on_message(
+    filters.regex("asuna|Asuna|huntinbots|hello|hi")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
     & ~filters.reply
-    & ~filters.channel
+    & ~filters.channel  
 )
-async def redaura(client, message):
+async def inuka(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
@@ -244,19 +326,22 @@ async def redaura(client, message):
         rm = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", msg)
     else:
         rm = msg
+        # print (rm)
         lan = translator.detect(rm)
-    aura = rm
+    test = rm
     if not "en" in lan and not lan == "":
-        aura = translator.translate(aura, lang_tgt="en")
+        test = translator.translate(test, lang_tgt="en")
 
+    # test = emoji.demojize(test.strip())
 
-    aura = aura.replace("asuna", "Aco")
-    aura = aura.replace("Aauna", "Aco")
+    # Kang with the credits bitches @InukaASiTH
+    test = test.replace("asuna", "Aco")
+    test = test.replace("asuna", "Aco")
     querystring = {
         "bid": "178",
         "key": "sX5A2PcYZbsN5EY6",
         "uid": "mashape",
-        "msg": {aura},
+        "msg": {test},
     }
     headers = {
         "x-rapidapi-key": "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
@@ -266,21 +351,14 @@ async def redaura(client, message):
     result = response.text
     result = result.replace('{"cnt":"', "")
     result = result.replace('"}', "")
-    result = result.replace("Aco", "Asuna")
-    result = result.replace("Asuna", "@My_Asuna_Robot")
-    result = result.replace("Hi~", "Hello Friend I Am @My_Asuna_Robot")
-    result = result.replace("My dear great botmaster, AsunaRobot Team.", "Made By @madepranav")
-    result = result.replace("Have the control right.", "My Father Is @The_Ghost_Hunter")
-    result = result.replace("I was created by Lyciabot Team.", "I was created by @@AsunaRobotSupport Team.")
+    result = result.replace("Aco", "asuna")
     result = result.replace("<a href=\\", "<a href =")
     result = result.replace("<\/a>", "</a>")
     pro = result
     if not "en" in lan and not lan == "":
-        red = translator.translate(red, lang_tgt=lan[0])
+        pro = translator.translate(pro, lang_tgt=lan[0])
     try:
-        await Asuna.send_chat_action(message.chat.id, "typing")
-        await message.reply_text(red)
+        await asuna.send_chat_action(message.chat.id, "typing")
+        await message.reply_text(pro)
     except CFError as e:
         print(e)
-        
-       

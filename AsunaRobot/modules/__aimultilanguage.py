@@ -133,7 +133,6 @@ async def asuna(client, message):
             print(e)
 
 
-
 @asuna.on_message(filters.text & filters.private & filters.reply & ~filters.bot)
 async def inuka(client, message):
     msg = message.text
@@ -143,7 +142,9 @@ async def inuka(client, message):
     emj = extract_emojis(msg)
     msg = msg.replace(emj, "")
     if (
-        [(k) for k in u if k.startswith("@")]
+
+   
+         [(k) for k in u if k.startswith("@")]
         and [(k) for k in u if k.startswith("#")]
         and [(k) for k in u if k.startswith("/")]
         and re.findall(r"\[([^]]+)]\(\s*([^)]+)\s*\)", msg) != []

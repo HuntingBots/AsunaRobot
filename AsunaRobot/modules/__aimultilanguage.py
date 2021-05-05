@@ -3,7 +3,10 @@ import aiohttp
 import emoji
 import requests
 import re
-from AsunaRobot import asuna
+from AsunaRobot.helper_extra.aichat import add_chat, get_session, remove_chat
+from AsunaRobot.pyrogramee.pluginshelper import admins_only, edit_or_reply
+from AsunaRobot import pbot as asuna
+
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram import Client, filters
 from google_trans_new import google_translator

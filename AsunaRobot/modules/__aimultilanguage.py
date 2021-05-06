@@ -288,7 +288,7 @@ async def inuka(client, message):
 
 
 @asuna.on_message(
-    filters.regex("asuna|Asuna|huntinbots|")
+    filters.regex("asuna|Asuna|huntinbots|hello|hi")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded

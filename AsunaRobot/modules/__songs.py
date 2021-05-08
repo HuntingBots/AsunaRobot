@@ -5,11 +5,11 @@ import requests
 import wget
 from pyrogram import filters
 
-from AsunaRobot import pbot as Jebot
-from AsunaRobot.pyrogramee.dark import get_arg
+from YoneRobot import pbot as Jebot
+from YoneRobot.pyrogramee.dark import get_arg
 
 
-@Jebot.on_message(filters.command("deezer"))
+@Jebot.on_message(filters.command("saavn"))
 async def song(client, message):
     message.chat.id
     message.from_user["id"]

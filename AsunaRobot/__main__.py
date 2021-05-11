@@ -140,7 +140,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("ShasaBot.modules." + module_name)
+    imported_module = importlib.import_module("AsunaRobot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -370,9 +370,9 @@ def help_button(update, context):
 @run_async
 def shasa_about_callback(update, context):
     query = update.callback_query
-    if query.data == "shasa_":
+    if query.data == "asuna_":
         query.message.edit_text(
-            text=""" ℹ️ I'm *shasa*, a powerful group management bot built to help you manage your group easily.
+            text=""" ℹ️ I'm *Asuna*, a powerful group management bot built to help you manage your group easily.
                  \n❍ I can restrict users.
                  \n❍ I can greet users with customizable welcome messages and even set a group's rules.
                  \n❍ I have an advanced anti-flood system.
@@ -380,19 +380,19 @@ def shasa_about_callback(update, context):
                  \n❍ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
                  \n❍ I check for admins' permissions before executing any command and more stuffs
                  \n\n_shasa's licensed under the GNU General Public License v3.0_
-                 \nHere is the [💾Repository](https://github.com/MdNoor786/ShasaBot).
+                 \nHere is the [💾Repository](https://github.com/HuntingBots/AsunaRobot).
                  \n\nIf you have any question about shasa, let us know at .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Back", callback_data="shasa_back")
+                    InlineKeyboardButton(text="Back", callback_data="asuna_back")
                  ]
                 ]
             ),
         )
-    elif query.data == "shasa_back":
+    elif query.data == "asuna_back":
         query.message.edit_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
@@ -407,8 +407,8 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..🤗 I'm *shasa*
-                 \nHere is the [Source Code](https://github.com/MdNoor786/ShasaBot) .""",
+            text=""" Hi..👸 I'm *Asuna*
+                 \nHere is the [Source Code](https://github.com/HuntingBots/AsunaRobot) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -703,7 +703,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Yes I'm alive 😹")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Yes I'm online now!")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
@@ -720,7 +720,7 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
-    about_callback_handler = CallbackQueryHandler(shasa_about_callback, pattern=r"shasa_")
+    about_callback_handler = CallbackQueryHandler(shasa_about_callback, pattern=r"asuna_")
     source_callback_handler = CallbackQueryHandler(Source_about_callback, pattern=r"source_")
 
     donate_handler = CommandHandler("donate", donate)

@@ -370,9 +370,9 @@ def help_button(update, context):
 @run_async
 def asuna_about_callback(update, context):
     query = update.callback_query
-    if query.data == "Asuna_":
+    if query.data == "source_":
         query.message.edit_text(
-            text=""" ℹ️ I'm *asuna*, a powerful group management bot built to help you manage your group easily.
+            text=""" ℹ️ I'm *AsunaRobot*, a powerful group management bot built to help you manage your group easily.
                  \n❍ I can restrict users.
                  \n❍ I can greet users with customizable welcome messages and even set a group's rules.
                  \n❍ I have an advanced anti-flood system.
@@ -392,7 +392,7 @@ def asuna_about_callback(update, context):
                 ]
             ),
         )
-    elif query.data == "asuna_back":
+    elif query.data == "source_back":
         query.message.edit_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),

@@ -174,7 +174,6 @@ for module_name in ALL_MODULES:
     if hasattr(imported_module, "__user_settings__"):
         USER_SETTINGS[imported_module.__mod_name__.lower()] = imported_module
 
-
 # do not async
 def send_help(chat_id, text, keyboard=None):
     if not keyboard:
@@ -237,7 +236,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            "Jinda Hoon Abhi!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+            "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -311,6 +310,7 @@ def help_button(update, context):
     back_match = re.match(r"help_back", query.data)
 
     print(query.message.chat.id)
+
 
     try:
         if mod_match:

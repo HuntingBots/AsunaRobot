@@ -16,7 +16,7 @@ __help__ = """
  • `/wallpaper`*:* sends random best anime wallpapers.
  
 
-*Style your text with PglRobot!*
+*Style your text with AsunaRobot!*
  • `/weebify <text>`*:* weebify your text!
  • `/bubble <text>`*:* bubble your text!
  • `/fbubble <text>`*:* bubble-filled your text!

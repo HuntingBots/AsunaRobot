@@ -5,24 +5,54 @@ from pyrogram import filters
 import random
 from datetime import datetime
 
-name: Japanese
-couple: 本日のカップル
-shipped: 本日のカップルはもう選ばれています
-update: カップルをまた選べるまでは後
-few: カップルを選ぶためにデータが足りません。
-hours:
-  - 時
-minutes:
-  - 分
-seconds:
-  - 秒間
-select_lang: 👋 言語をお選びください。
-set_lang: 👍 チャット言語は日本語に設定されています。ありがとうございます。
-chat_only: 😅 Sorry, this command is only for chats.
-admin_lang: Only admins can change current language.
-help: |
-  💕 <b>SHIPPERING</b> is a bot that will choose a couple of the day in your chat. Everyone who writes a message in your chat will be added to the list of candidates for a couple of the day. Add this bot to your chat and wait for it to gather enough participants before sending shipping command.
+def dt():
+    now = datetime.now()
+    dt_string = now.strftime("%d/%m/%Y %H:%M")
+    dt_list = dt_string.split(' ')
+    return dt_list
 
+
+def dt_tom():
+    a = str(int(dt()[0].split('/')[0]) + 1)+"/" + \
+        dt()[0].split('/')[1]+"/" + dt()[0].split('/')[2]
+    return a
+
+
+today = str(dt()[0])
+tomorrow = str(dt_tom())
+
+
+@app.on_message(filters.command("couples") & ~filters.edited)
+@capture_err
+async def couple(_, message):
+    if message.chat.type == "private":
+        await message.reply_text("This command only works in groups.")
+        return
+    try:
+        chat_id = message.chat.id
+        is_selected = await get_couple(chat_id, today)
+        if not is_selected:
+            list_of_users = []
+            async for i in app.iter_chat_members(message.chat.id):
+                if not i.user.is_bot:
+                    list_of_users.append(i.user.id)
+            if len(list_of_users) < 2:
+                await message.reply_text("Not enough users")
+                return
+            c1_id = random.choice(list_of_users)
+            c2_id = random.choice(list_of_users)
+            while c1_id == c2_id:
+                c1_id = random.choice(list_of_users)
+            c1_mention = (await app.get_users(c1_id)).mention
+            c2_mention = (await app.get_users(c2_id)).mention
+
+            couple_selection_message = f"""**Couple of the day:**
+{c1_mention} + {c2_mention} = ❤️
+__New couple of the day may be chosen at 12AM {tomorrow}__"""
+            await app.send_message(
+                message.chat.id,
+                text=couple_selection_message
+            )
   /help — This message
   /shipping — Choose a couple of the day
   /last — Last chosen couples

@@ -28,7 +28,7 @@ tomorrow = str(dt_tom())
 @capture_err
 async def couple(_, message):
     if message.chat.type == "private":
-         message.reply_text("This command only works in groups.")
+        await message.reply_text("This command only works in groups.")
         return
     try:
         chat_id = message.chat.id

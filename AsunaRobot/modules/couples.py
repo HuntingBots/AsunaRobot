@@ -5,6 +5,8 @@ from pyrogram import filters
 import random
 from datetime import datetime
 
+
+# Date and time
 def dt():
     now = datetime.now()
     dt_string = now.strftime("%d/%m/%Y %H:%M")
@@ -53,19 +55,31 @@ __New couple of the day may be chosen at 12AM {tomorrow}__"""
                 message.chat.id,
                 text=couple_selection_message
             )
-  /help — This message
-  /shipping — Choose a couple of the day
-  /last — Last chosen couples
-  /lang — Choose a language for the bot (in chat only for admins)
-  /top — Top lovers
-  /autopin — Autopin (silently) when pair was chosen (bot must be admin)
-  /setminusers — Set minimum users to choose a pair
-start: |
-  👋 Hello! <b>SHIPPERING</b> is a bot that will choose a couple of the day in your chat.
+            couple = {
+                "c1_id": c1_id,
+                "c2_id": c2_id
+            }
+            await save_couple(chat_id, today, couple)
 
-  Use /help for more info.
-last_couples: Last chosen couples
-times:
-  - times
-chats:
-  - chats
+        elif is_selected:
+            c1_id = int(is_selected['c1_id'])
+            c2_id = int(is_selected['c2_id'])
+            c1_name = (await app.get_users(c1_id)).first_name
+            c2_name = (await app.get_users(c2_id)).first_name
+            couple_selection_message = f"""Couple of the day:
+[{c1_name}](tg://openmessage?user_id={c1_id}) + [{c2_name}](tg://openmessage?user_id={c2_id}) = ❤️
+__New couple of the day may be chosen at 12AM {tomorrow}__"""
+            await app.send_message(
+                message.chat.id,
+                text=couple_selection_message
+            )
+    except Exception as e:
+        print(e)
+        await message.reply_text(e)
+
+
+
+__help__ = """
+ ❍ /Couples - To Choose Couple Of The Day
+ """
+__mod_name__ = "couples"

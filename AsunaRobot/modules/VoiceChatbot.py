@@ -34,16 +34,16 @@ async def Lycia(_, message):
         return
     text = message.text.split(None, 1)[1]
     lycia = text.replace(" ", "%20")
-    m = await message.reply_text("Lydia Is Best...")
+    m = await message.reply_text("Asuna Is Best...")
     try:
         L = await fetch(f"https://api.affiliateplus.xyz/api/chatbot?message={lycia}&botname=Asuna&ownername=Pranav&user=1")
         chatbot = L["message"]
-        VoiceAi = f"https://lyciavoice.herokuapp.com/lycia?text={chatbot}&lang=en"
-        name = "lycia"
+        VoiceAi = f"https://lyciavoice.herokuapp.com/lycia?text={chatbot}&lang=hi"
+        name = "asuna"
     except Exception as e:
         await m.edit(str(e))
         return
-    await m.edit("Made By @madepranav...")
+    await m.edit("Made By @The_Ghost_Hunter...")
     LyciaVoice = await ai_lycia(VoiceAi)
     await m.edit("Repyping...")
     await message.reply_audio(audio=LyciaVoice, title=chatbot, performer=name)

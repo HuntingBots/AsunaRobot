@@ -1,7 +1,7 @@
 # Thanks to @infinity_bots - Williambutcherbot
 import os
 
-*saavn*
+#Saavn
 
 import requests
 import wget
@@ -37,7 +37,7 @@ async def song(client, message):
     os.remove(ffile)
     await m.delete()
 
-*deezer*
+#Deezer
 # Credits for @TheHamkerCat
 
 import os

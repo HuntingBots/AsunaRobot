@@ -69,7 +69,7 @@ __New couple of the day may be chosen at 12AM {tomorrow}__"""
             couple_selection_message = f"""Couple of the day:
 [{c1_name}](tg://openmessage?user_id={c1_id}) + [{c2_name}](tg://openmessage?user_id={c2_id}) = ❤️
 __New couple of the day may be chosen at 12AM {tomorrow}__"""
-             app.send_message(
+           await  app.send_message(
                 message.chat.id,
                 text=couple_selection_message
             )

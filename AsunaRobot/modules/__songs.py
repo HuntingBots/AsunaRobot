@@ -21,7 +21,7 @@ async def song(client, message):
         "Downloading your song,\nPlz wait ⏳️"
     )
     try:
-        r = requests.get(f"https://snobybuddymusic.herokuapp.com/result/?query={args}")
+        r = requests.get(f"https://jevcplayerbot-saavndl.herokuapp.com/result/?query={args}")
     except Exception as e:
         await m.edit(str(e))
         return

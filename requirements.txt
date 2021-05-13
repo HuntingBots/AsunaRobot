@@ -68,3 +68,4 @@ nudepy
 
 motor
 aiogram
+sentry_sdk

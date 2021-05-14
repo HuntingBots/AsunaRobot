@@ -36,7 +36,6 @@ spamwatch
 alphabet_detector
 pyrate-limiter
 cachetools
-Config
 ujson
 pretty_errors
 TgCrypto

@@ -75,7 +75,7 @@ __New couple of the day may be chosen at 12AM {tomorrow}__"""
             )
     except Exception as e:
         print(e)
-        await message.reply_text(e)
+        message.reply_text(e)
 
 
 

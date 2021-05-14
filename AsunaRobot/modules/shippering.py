@@ -64,8 +64,8 @@ __New couple of the day may be chosen at 12AM {tomorrow}__"""
         elif is_selected:
             c1_id = int(is_selected['c1_id'])
             c2_id = int(is_selected['c2_id'])
-            c1_name = (app.get_users(c1_id)).first_name
-            c2_name = (app.get_users(c2_id)).first_name
+            c1_name = (await app.get_users(c1_id)).first_name
+            c2_name = (await app.get_users(c2_id)).first_name
             couple_selection_message = f"""Couple of the day:
 [{c1_name}](tg://openmessage?user_id={c1_id}) + [{c2_name}](tg://openmessage?user_id={c2_id}) = ❤️
 __New couple of the day may be chosen at 12AM {tomorrow}__"""
@@ -84,4 +84,3 @@ __help__ = """
 
  """
 __mod_name__ = "Couples"
-

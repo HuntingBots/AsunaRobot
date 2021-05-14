@@ -33,7 +33,6 @@ telethon
 telegraph
 heroku3
 spamwatch
-services_telethon
 alphabet_detector
 pyrate-limiter
 cachetools

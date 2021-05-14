@@ -16,7 +16,7 @@
 
 from telethon import TelegramClient
 
-from AsunaRobot.config import get_int_key, get_str_key
+from AsunaRobot.conf import get_int_key, get_str_key
 
 TOKEN = get_str_key("TOKEN", required=True)
 NAME = TOKEN.split(":")[0]

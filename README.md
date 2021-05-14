@@ -9,8 +9,8 @@
 <a href="https://t.me/AsunaRobotSupport" alt="Telegram!"> <img src="https://aleen42.github.io/badges/src/telegram.svg" /> </a>
 
 ### Bot And Channel 
-* Bot Link:  <a href="http://t.me/princess_Asuna_Robot" alt="princessAsunaRobot"> <img src="https://img.shields.io/badge/%F0%9F%A4%96%20-princessAsunaRobot-blue" /> </a>
-* Support Channel: <a  href="https://t.me/AsunaLogUpdate" alt="Help Centre Logs"> <img  src="https://img.shields.io/badge/%F0%9F%92%A1-princessAsunaRobot%20Log%20Channel-9cf" /> </a>
+* Bot Link:  <a href="http://t.me/princess_Asuna_Robot" alt="AsunaRobot"> <img src="https://img.shields.io/badge/%F0%9F%A4%96%20-princessAsunaRobot-blue" /> </a>
+* Support Channel: <a  href="https://t.me/AsunaLogUpdate" alt="Help Centre Logs"> <img  src="https://img.shields.io/badge/%F0%9F%92%A1-AsunaRobot%20Log%20Channel-9cf" /> </a>
 
 ### Creating your own modules.
 

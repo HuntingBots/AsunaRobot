@@ -3,7 +3,6 @@ import time
 import re
 from sys import argv
 from typing import Optional
-from AnimeWatchBot import GogoAnime
 
 from AsunaRobot import (
     ALLOW_EXCL,

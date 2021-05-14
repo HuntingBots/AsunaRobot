@@ -6,7 +6,6 @@ gtts
 beautifulsoup4
 requests==2.20.0
 python-telegram-bot==12.8
-telethon==1.16.4
 sqlalchemy==1.3.20
 psycopg2-binary
 feedparser

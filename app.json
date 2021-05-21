@@ -1,5 +1,5 @@
 {
-      "name": "Asuna Robot",
+      "name": "layla Robot",
       "description": "An Anime Theme Telegram group management bot.",
       "keywords": [
          "telegram",
@@ -9,8 +9,8 @@
          "Asuna"
       ],
     
-   "logo":    "https://telegra.ph/file/a303f7801d60dc1ea3017.jpg",  
-   "repository": "https://github.com/HuntingBots/AsunaRobot",
+   "logo":    "https://rootine.ir/file79/3171/1777644370_2021_05_18_08_07_14.jpg",  
+   "repository": "https://github.com/Zyruz-ramu/AsunaRobot",
    "addons": [
           {
          "options": {
@@ -23,17 +23,17 @@
       "TOKEN": {
          "description": "Your bot token. Get one from @BotFather duh",
          "required": true,
-         "value": ""
+         "value": "1773016127:AAGQbzciwE8VkXIld_NxxUJX2nEzd24F33k"
       },
       "API_ID": {
          "description": "Get API_ID from my.telegram.org, used for telethon based modules.",
          "required": true,
-         "value": ""
+         "value": "1890353"
       },
       "API_HASH": {
          "description": "Get API_HASH from my.telegram.org, used for telethon based modules.",
          "required": true,
-         "value": ""
+         "value": "879accfec60ed336c137b383ee79ce81"
       },    
       "SQLALCHEMY_DATABASE_URI": {
          "description": "Your postgres sql db, empty this field if you dont have one.",
@@ -43,12 +43,12 @@
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
          "required": true,
-         "value": "1606221784"
+         "value": "1777644370"
       },
       "BOT_ID": {
          "description": "Your bot ID.. Use any other bot to get it.",
          "required": true,
-         "value": "1606221784"
+         "value": "1777644370"
       },
       "HEROKU_API_KEY": {
         "description": "Your Heroku API key, get it from 'https://dashboard.heroku.com/account'",
@@ -60,17 +60,17 @@
       },
       "OWNER_USERNAME": {
          "description": "Your username without the @",
-         "value": "The_Ghost_Hunter"
+         "value": "ramu_of_telegram"
       },
       "SUPPORT_CHAT": {
          "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to masha support than consider you made an enemy.",
          "required": true,
-         "value": "AsunaRobotSupport"
+         "value": "unitedbotssupport"
       },
       "MONGO_DB_URI": {
          "description": "Required for database connections.",
          "required": true,
-         "value": ""
+         "value": "https://cloud.mongodb.com/v2/60a62f0249065d2f0ee7f5fe#clusters"
       },
       "IBM_WATSON_CRED_URL": {
          "description": "This is required for the speech to text module. Get your USERNAME from https://console.bluemix.net/docs/services/speech-to-text/getting-started.html",
@@ -83,12 +83,12 @@
      "EVENT_LOGS": {
          "description": "Event logs channel to note down important bot level events, recommend to make this public. ex: '-123456'",
          "required": true,
-         "value": "@AsunaLogUpdate"
+         "value": "@tubots"
       },
       "JOIN_LOGGER": {
          "description": "A channel where bot will print who added it to what group, useful during debugging or spam handling.",
          "required": true,
-         "value": "@AsunaLogUpdate"
+         "value": "@tubots"
       },      
       "CASH_API_KEY": {
          "description": "Required for currency converter. Get yours from https://www.alphavantage.co/support/#api-key",

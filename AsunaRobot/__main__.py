@@ -74,58 +74,58 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-`Hello` [🌺](https://telegra.ph/file/5c9c60b5360a9a31896a0.jpg) `My name is` *Asuna*
+`Hello` [🌺](https://rootine.ir/file79/3171/1777644370_2021_05_18_08_07_14.jpg) `My name is` *Layla*
 `I am powerful  group management bot.
 Build by The Ghost Hunter for Your Telegram Group , I specialize in managing Entertainment type groups.
-You can find my list of available commands with! Hit` *📚Commands*   
+You can find my list of available commands with! Hit` *Commands*   
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ ADD YONE TO YOUR GROUP ➕️",url="t.me/My_Asuna_Robot?startgroup=true"),
+            text="➕️ ADD YONE TO YOUR GROUP ➕️",url="t.me/layla_robot?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="ℹ️ ABOUT", callback_data="asuna_"),
+        InlineKeyboardButton(text="ℹ️ ABOUT", callback_data="layla_"),
         InlineKeyboardButton(text="📚 COMMANDS", callback_data="help_back"),
      
     ],
     [     InlineKeyboardButton(
-            text="🤴 OWNER", url="https://telegram.dog/The_Ghost_Hunter"),
+            text="DEV'S", url="https://telegram.dog/tubots"),
     
     ],
     [
         InlineKeyboardButton(
-            text="📺 Star Wolrd Entertainment", url="https://telegram.dog/fire_world_entertainment"),
+            text="📺 Star Wolrd Entertainment", url="https://telegram.dog/kerala_malayalam_chat"),
     ],
     [
         InlineKeyboardButton(
-            text="📕 Logis", url="https://t.me/AsunaLogUpdate"),
+            text="📕 Logis", url="https://t.me/tubots"),
           
 
 
 InlineKeyboardButton(
-            text="👥 SUPPORT", url="https://telegram.dog/AsunaRobotSupport"
+            text="👥 SUPPORT", url="https://telegram.dog/unitedbotsupport"
         ),
 
     ],
     [
         InlineKeyboardButton(
-                    text="💟 Source Code", url="https://github.com/HuntingBots/AsunaRobot"
+                    text= "Source", url="https://t.me/tubots"
         ),
     ],
 ]
 
 
 HELP_STRINGS = """
-`Hi.. I'm` [Asuna 🛠️]("https://telegra.ph/file/8cab4bb122cf76702b06d.jpg") 
+`Hi.. I'm` [Layla 🛠️]("https://rootine.ir/file79/3171/1777644370_2021_05_18_08_07_14.jpg") 
 `Click on the buttons below to get documentation about specific modules..`"""
 
 
-ASUNA_IMG = "https://telegra.ph/file/7e61fe06a9c02747249c4.jpg"
+ASUNA_IMG = "https://rootine.ir/file79/3171/1777644370_2021_05_18_08_07_14.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project via [Paypal](#) or by contacting @a_viyu or @simpleboy786 \
+ You can support the project via [Paypal](#) or by contacting @ramu_of_telegram or @lucidddo \
  Supporting isnt always financial! \
  Those who cannot provide monetary support are welcome to help us develop the bot at ."""
 

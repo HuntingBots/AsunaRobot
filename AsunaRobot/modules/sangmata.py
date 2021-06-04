@@ -7,7 +7,7 @@ from AsunaRobot.events import register
 from AsunaRobot.services.telethonuserbot import ubot 
 from time import sleep
 
-@register(outgoing=True, pattern="^.sg(?: |$)(.*)")
+@register(pattern="^/sg ?(.*)")
 async def _(event):
     if event.fwd_from:
         return

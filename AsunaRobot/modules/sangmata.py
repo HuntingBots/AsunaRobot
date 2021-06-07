@@ -1,52 +1,107 @@
+# -0,0 +1,96 @@
+# Made For DARK COBRA and TELEBOT...
+# Made by team cobra with @xditya
+# Retrieves the name history and the username history of the replied user..
 
-import datetime
-from telethon import events
+import asyncio
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from telethon.tl.functions.account import UpdateNotifySettingsRequest
-from AsunaRobot.events import register 
-from AsunaRobot.services.telethonuserbot import ubot 
-from time import sleep
+from telethon.tl import functions, types
+
+from AsunaRobot.events import register
+from AsunaRobot import telethn 
+from AsunaRobot.services.telethonuserbot import ubot
+
+
+async def is_register_admin(chat, user):
+
+    if isinstance(chat, (types.InputPeerChannel, types.InputChannel)):
+
+        return isinstance(
+            (
+                await telethn(functions.channels.GetParticipantRequest(chat, user))
+            ).participant,
+            (types.ChannelParticipantAdmin, types.ChannelParticipantCreator),
+        )
+    if isinstance(chat, types.InputPeerChat):
+
+        ui = await telethn.get_peer_id(user)
+        ps = (
+            await telethn(functions.messages.GetFullChatRequest(chat.chat_id))
+        ).full_chat.participants.participants
+        return isinstance(
+            next((p for p in ps if p.user_id == ui), None),
+            (types.ChatParticipantAdmin, types.ChatParticipantCreator),
+        )
+    return None
+
+
+async def silently_send_message(conv, text):
+    await conv.send_message(text)
+    response = await conv.get_response()
+    await conv.mark_read(message=response)
+    return response
+
 
 @register(pattern="^/sg ?(.*)")
 async def _(event):
+
     if event.fwd_from:
+
         return
+
+    if event.is_group:
+        if await is_register_admin(event.input_chat, event.message.sender_id):
+            pass
+        else:
+            return
     if not event.reply_to_msg_id:
-       await event.edit("`Herhangi bir kullanıcı mesajına cevap verin.`")
-       return
+
+        await event.reply("```Reply to any user message.```")
+
+        return
+
     reply_message = await event.get_reply_message()
+
     if not reply_message.text:
-       await event.edit("`Mesaja cevap verin.`")
-       return
-    chat = "@SangMataInfo_bot"
-    sender = reply_message.sender
+
+        await event.reply("```reply to text message```")
+
+        return
+
+    chat = "Sangmatainfo_bot"
+    uid = reply_message.sender_id
+    reply_message.sender
+
     if reply_message.sender.bot:
-       await event.edit("`Botlara cevap veremezsiniz.`")
-       return
-    await event.edit("`İşleniyor...`")
-    async with bot.conversation(chat, exclusive=False) as conv:
-          response = None
-          try:
-              msg = await reply_message.forward_to(chat)
-              response = await conv.get_response(message=msg, timeout=5)
-          except YouBlockedUserError:
-              await event.edit(f"`Lütfen {chat} engelini kaldırın ve tekrar deneyin`")
-              return
-          except Exception as e:
-              print(e.__class__)
 
-          if not response:
-              await event.edit("`Botdan cevap alamadım!`")
-          elif response.text.startswith("Forward"):
-             await event.edit("`Gizlilik ayarları yüzenden alıntı yapamadım`")
-          else:
-             await event.edit(response.text)
-          sleep(1)
-          await bot.send_read_acknowledge(chat, max_id=(response.id+3))
-          await conv.cancel_all()
+        await event.edit("```Reply to actual users message.```")
 
-help = """
+        return
+
+    lol = await event.reply("```Processing```")
+
+    async with ubot.conversation(chat) as conv:
+
+        try:
+
+            # response = conv.wait_event(
+            #   events.NewMessage(incoming=True, from_users=1706537835)
+            # )
+
+            await silently_send_message(conv, f"/search_id {uid}")
+
+            # response = await response
+            responses = await silently_send_message(conv, f"/search_id {uid}")
+        except YouBlockedUserError:
+
+            await event.reply("```Please unblock @Sangmatainfo_bot and try again```")
+
+            return
+        await lol.edit(f"{responses.text}")
+        # await lol.edit(f"{response.message.message}")
+
+__help__ = """
   • /sg*:* Get A Name History Of User
 """
 
-mod_name = "Sang Mata"
+__mod_name__ = "Sang Mata"

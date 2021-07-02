@@ -8,7 +8,7 @@ coupledb = db.couple
 # Couple Chooser
 
 async def _get_lovers(chat_id: int):
-    lovers = await coupledb.find_one({"chat_id": chat_id})
+    lovers = coupledb.find_one({"chat_id": chat_id})
     if lovers:
         lovers = lovers["couple"]
     else:
@@ -27,7 +27,7 @@ async def get_couple(chat_id: int, date: str):
 async def save_couple(chat_id: int, date: str, couple: dict):
     lovers = await _get_lovers(chat_id)
     lovers[date] = couple
-    await coupledb.update_one(
+    coupledb.update_one(
         {"chat_id": chat_id},
         {
             "$set": {
@@ -36,3 +36,24 @@ async def save_couple(chat_id: int, date: str, couple: dict):
         },
         upsert=True
     )
+
+
+# Alpha integer 
+
+async def int_to_alpha(user_id: int) -> str:
+    alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
+    text = ""
+    user_id = str(user_id)
+    for i in user_id:
+        text += alphabet[int(i)]
+    return text
+
+
+async def alpha_to_int(user_id_alphabet: str) -> int:
+    alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
+    user_id = ""
+    for i in user_id_alphabet:
+        index = alphabet.index(i)
+        user_id += str(index)
+    user_id = int(user_id)
+    return user_id

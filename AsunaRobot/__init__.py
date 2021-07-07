@@ -7,6 +7,8 @@ import spamwatch
 import telegram.ext as tg
 from pyrogram import Client, errors
 from telethon import TelegramClient
+from aiohttp import ClientSession
+from Python_ARQ import ARQ
 
 StartTime = time.time()
 
@@ -66,6 +68,8 @@ if ENV:
     URL = os.environ.get("URL", "")  # Does not contain token
     PORT = int(os.environ.get("PORT", 5000))
     CERT_PATH = os.environ.get("CERT_PATH")
+    ARQ_API_URL = "https://thearq.tech"
+    ARQ_API_KEY = os.environ.get("ARQ_API_KEY", None)
     API_ID = os.environ.get("API_ID", None)
     API_HASH = os.environ.get("API_HASH", None)
     BOT_ID = int(os.environ.get("BOT_ID", None))
@@ -143,6 +147,8 @@ else:
 
     DB_URI = Config.SQLALCHEMY_DATABASE_URI
     MONGO_DB_URI = Config.MONGO_DB_URI
+    ARQ_API = Config.ARQ_API_KEY
+    ARQ_API_URL = Config.ARQ_API_URL
     HEROKU_API_KEY = Config.HEROKU_API_KEY
     HEROKU_APP_NAME = Config.HEROKU_APP_NAME
     TEMP_DOWNLOAD_DIRECTORY = Config.TEMP_DOWNLOAD_DIRECTORY
@@ -190,6 +196,11 @@ else:
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("asuna", API_ID, API_HASH)
 pbot = Client("asunapbot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+print("[INFO]: INITIALIZING AIOHTTP SESSION")
+aiohttpsession = ClientSession()
+# ARQ Client
+print("[INFO]: INITIALIZING ARQ CLIENT")
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 dispatcher = updater.dispatcher
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)

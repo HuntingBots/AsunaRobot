@@ -103,7 +103,7 @@ def removetag(update, context):
         return
     member = chat.get_member(int(user_id))
     chat_id = str(chat.id)[1:]
-    srem(f'tagall2_{chat_id}', mention_html(member.user.id, member.user.first_name))
+    (f'tagall2_{chat_id}', mention_html(member.user.id, member.user.first_name))
     message.reply_text(
         "{} is successfully removed from {}'s list.".format(mention_html(member.user.id, member.user.first_name),
                                                                      chat.title),
@@ -121,7 +121,7 @@ def tagg_all_button(update, context):
         if query.from_user.id == int(user_id):
             member = chat.get_member(int(user_id))
             chat_id = str(chat.id)[1:]
-            sadd(f'tagall2_{chat_id}', mention_html(member.user.id, member.user.first_name))
+            (f'tagall2_{chat_id}', mention_html(member.user.id, member.user.first_name))
             query.message.edit_text(
                 "{} is accepted! to add yourself {}'s tag list.".format(mention_html(member.user.id, member.user.first_name),
                                                                         chat.title),
@@ -159,7 +159,7 @@ def untagme(update, context):
             "You're already doesn't exist in {}'s tag list!".format(chat.title)
         )
         return
-    srem(f'tagall2_{chat_id}', mention_html(user.id, user.first_name))
+    (f'tagall2_{chat_id}', mention_html(user.id, user.first_name))
     message.reply_text(
         "{} has been removed from {}'s tag list.".format(mention_html(user.id, user.first_name),
                                                          chat.title),
@@ -180,7 +180,7 @@ def tagme(update, context):
             "You're already exist in {}'s tag list!".format(chat.title)
         ) 
         return
-    sadd(f'tagall2_{chat_id}', mention_html(user.id, user.first_name))
+    (f'tagall2_{chat_id}', mention_html(user.id, user.first_name))
     message.reply_text(
         "{} has been successfully added in {}'s tag list.".format(mention_html(user.id, user.first_name),
                                                          chat.title),

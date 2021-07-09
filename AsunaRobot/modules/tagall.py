@@ -44,7 +44,7 @@ def addtag(update, context):
         return 
     
     chat_id = str(chat.id)[1:] 
-    tagall_list = list(sunion(f'tagall2_{chat_id}'))
+    tagall_list = list(f'tagall2_{chat_id}')
     match_user = mention_html(member.user.id, member.user.first_name)
     if match_user in tagall_list:
         message.reply_text(
@@ -92,7 +92,7 @@ def removetag(update, context):
         message.reply_text("how I supposed to tag or untag myself")
         return 
     chat_id = str(chat.id)[1:] 
-    tagall_list = list(sunion(f'tagall2_{chat_id}'))
+    tagall_list = list(f'tagall2_{chat_id}')
     match_user = mention_html(member.user.id, member.user.first_name)
     if match_user not in tagall_list:
         message.reply_text(
@@ -103,7 +103,7 @@ def removetag(update, context):
         return
     member = chat.get_member(int(user_id))
     chat_id = str(chat.id)[1:]
-    REDIS.srem(f'tagall2_{chat_id}', mention_html(member.user.id, member.user.first_name))
+    srem(f'tagall2_{chat_id}', mention_html(member.user.id, member.user.first_name))
     message.reply_text(
         "{} is successfully removed from {}'s list.".format(mention_html(member.user.id, member.user.first_name),
                                                                      chat.title),
@@ -152,7 +152,7 @@ def untagme(update, context):
     user = update.effective_user 
     message = update.effective_message
     chat_id = str(chat.id)[1:] 
-    tagall_list = list(sunion(f'tagall2_{chat_id}'))
+    tagall_list = list(f'tagall2_{chat_id}')
     match_user = mention_html(user.id, user.first_name)
     if match_user not in tagall_list: 
         message.reply_text(
@@ -173,7 +173,7 @@ def tagme(update, context):
     user = update.effective_user 
     message = update.effective_message 
     chat_id = str(chat.id)[1:] 
-    tagall_list = list(sunion(f'tagall2_{chat_id}'))
+    tagall_list = list(f'tagall2_{chat_id}')
     match_user = mention_html(user.id, user.first_name)
     if match_user in tagall_list:
         message.reply_text(
@@ -201,7 +201,7 @@ def tagall(update, context):
         message.reply_text("Please give a reason why are you want to tag all!")
         return
     chat_id = str(chat.id)[1:] 
-    tagall = list(sunion(f'tagall2_{chat_id}'))
+    tagall = list(f'tagall2_{chat_id}')
     tagall.sort()
     tagall = ", ".join(tagall)
     
@@ -233,7 +233,7 @@ def untagall(update, context):
     user = update.effective_user 
     message = update.effective_message
     chat_id = str(chat.id)[1:] 
-    tagall_list = list(sunion(f'tagall2_{chat_id}'))
+    tagall_list = list(f'tagall2_{chat_id}')
     for tag_user in tagall_list:
         REDIS.srem(f'tagall2_{chat_id}', tag_user)
     message.reply_text(

@@ -111,7 +111,7 @@ def removetag(update, context):
     )
 
 @run_async
-def tagg_all_button(update, context):
+def tagall(update, context):
     query = update.callback_query
     chat = update.effective_chat  
     splitter = query.data.split('=')

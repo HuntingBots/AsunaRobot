@@ -44,7 +44,7 @@ def addtag(update, context):
         return 
     
     chat_id = str(chat.id)[1:] 
-    tagall_list = list(REDIS.sunion(f'tagall2_{chat_id}'))
+    tagall_list = list(sunion(f'tagall2_{chat_id}'))
     match_user = mention_html(member.user.id, member.user.first_name)
     if match_user in tagall_list:
         message.reply_text(
@@ -92,7 +92,7 @@ def removetag(update, context):
         message.reply_text("how I supposed to tag or untag myself")
         return 
     chat_id = str(chat.id)[1:] 
-    tagall_list = list(REDIS.sunion(f'tagall2_{chat_id}'))
+    tagall_list = list(sunion(f'tagall2_{chat_id}'))
     match_user = mention_html(member.user.id, member.user.first_name)
     if match_user not in tagall_list:
         message.reply_text(
@@ -121,7 +121,7 @@ def tagg_all_button(update, context):
         if query.from_user.id == int(user_id):
             member = chat.get_member(int(user_id))
             chat_id = str(chat.id)[1:]
-            REDIS.sadd(f'tagall2_{chat_id}', mention_html(member.user.id, member.user.first_name))
+            sadd(f'tagall2_{chat_id}', mention_html(member.user.id, member.user.first_name))
             query.message.edit_text(
                 "{} is accepted! to add yourself {}'s tag list.".format(mention_html(member.user.id, member.user.first_name),
                                                                         chat.title),
@@ -201,7 +201,7 @@ def tagall(update, context):
         message.reply_text("Please give a reason why are you want to tag all!")
         return
     chat_id = str(chat.id)[1:] 
-    tagall = list(REDIS.sunion(f'tagall2_{chat_id}'))
+    tagall = list(sunion(f'tagall2_{chat_id}'))
     tagall.sort()
     tagall = ", ".join(tagall)
     
@@ -210,14 +210,12 @@ def tagall(update, context):
         if message.reply_to_message:
             message.reply_to_message.reply_text(
                 "{}"
-                "\n\n<b>Tagged Reason:</b>"
                 "\n{}".format(tagall, tagall_reason),
                 parse_mode=ParseMode.HTML
             )
         else:
             message.reply_text(
                 "{}"
-                "\n\n<b>Tagged Reason:</b>"
                 "\n{}".format(tagall, tagall_reason),
                 parse_mode=ParseMode.HTML
             )
@@ -235,7 +233,7 @@ def untagall(update, context):
     user = update.effective_user 
     message = update.effective_message
     chat_id = str(chat.id)[1:] 
-    tagall_list = list(REDIS.sunion(f'tagall2_{chat_id}'))
+    tagall_list = list(sunion(f'tagall2_{chat_id}'))
     for tag_user in tagall_list:
         REDIS.srem(f'tagall2_{chat_id}', tag_user)
     message.reply_text(

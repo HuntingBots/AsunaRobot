@@ -159,7 +159,7 @@ def untagme(update, context):
             "You're already doesn't exist in {}'s tag list!".format(chat.title)
         )
         return
-    REDIS.srem(f'tagall2_{chat_id}', mention_html(user.id, user.first_name))
+    srem(f'tagall2_{chat_id}', mention_html(user.id, user.first_name))
     message.reply_text(
         "{} has been removed from {}'s tag list.".format(mention_html(user.id, user.first_name),
                                                          chat.title),
@@ -173,14 +173,14 @@ def tagme(update, context):
     user = update.effective_user 
     message = update.effective_message 
     chat_id = str(chat.id)[1:] 
-    tagall_list = list(REDIS.sunion(f'tagall2_{chat_id}'))
+    tagall_list = list(sunion(f'tagall2_{chat_id}'))
     match_user = mention_html(user.id, user.first_name)
     if match_user in tagall_list:
         message.reply_text(
             "You're already exist in {}'s tag list!".format(chat.title)
         ) 
         return
-    REDIS.sadd(f'tagall2_{chat_id}', mention_html(user.id, user.first_name))
+    sadd(f'tagall2_{chat_id}', mention_html(user.id, user.first_name))
     message.reply_text(
         "{} has been successfully added in {}'s tag list.".format(mention_html(user.id, user.first_name),
                                                          chat.title),

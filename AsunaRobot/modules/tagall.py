@@ -9,7 +9,7 @@ from telegram.ext import (run_async,
                           Filters, CommandHandler,
                           CallbackQueryHandler)
 
-from AsunaRobot import dispatcher,mongodb
+from AsunaRobot import dispatcher
 from AsunaRobot.modules.disable import DisableAbleCommandHandler
 from AsunaRobot.modules.helper_funcs.chat_status import (
     bot_admin,
@@ -43,7 +43,7 @@ def addtag(update, context):
         return 
     
     chat_id = str(chat.id)[1:] 
-    tagall_list = list(REDIS.sunion(f'tagall2_{chat_id}'))
+    tagall_list = list(sunion(f'tagall2_{chat_id}'))
     match_user = mention_html(member.user.id, member.user.first_name)
     if match_user in tagall_list:
         message.reply_text(

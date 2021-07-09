@@ -7,14 +7,14 @@ from telegram.ext import (run_async,
                           Filters,
                           CallbackQueryHandler)
 
-from SaitamaRobot import dispatcher, REDIS
-from SaitamaRobot.modules.disable import DisableAbleCommandHandler
-from SaitamaRobot.modules.helper_funcs.chat_status import (
+from AsunaRobot import dispatcher
+from AsunaRobot.modules.disable import DisableAbleCommandHandler
+from AsunaRobot.modules.helper_funcs.chat_status import (
     bot_admin,
     user_admin
 )
-from SaitamaRobot.modules.helper_funcs.extraction import extract_user_and_text
-from SaitamaRobot.modules.helper_funcs.alternate import typing_action
+from AsunaRobot.modules.helper_funcs.extraction import extract_user_and_text
+from AsunaRobot.modules.helper_funcs.alternate import typing_action
 
 # This Module is completely made by @meanii <https://github.com/meanii>  
 
@@ -44,7 +44,7 @@ def addtag(update, context):
         return 
     
     chat_id = str(chat.id)[1:] 
-    tagall_list = list(REDIS.sunion(f'tagall2_{chat_id}'))
+    tagall_list = list(f'tagall2_{chat_id}')
     match_user = mention_html(member.user.id, member.user.first_name)
     if match_user in tagall_list:
         message.reply_text(
@@ -92,7 +92,7 @@ def removetag(update, context):
         message.reply_text("how I supposed to tag or untag myself")
         return 
     chat_id = str(chat.id)[1:] 
-    tagall_list = list(REDIS.sunion(f'tagall2_{chat_id}'))
+    tagall_list = list(f'tagall2_{chat_id}')
     match_user = mention_html(member.user.id, member.user.first_name)
     if match_user not in tagall_list:
         message.reply_text(
@@ -103,7 +103,7 @@ def removetag(update, context):
         return
     member = chat.get_member(int(user_id))
     chat_id = str(chat.id)[1:]
-    REDIS.srem(f'tagall2_{chat_id}', mention_html(member.user.id, member.user.first_name))
+    srem(f'tagall2_{chat_id}', mention_html(member.user.id, member.user.first_name))
     message.reply_text(
         "{} is successfully removed from {}'s list.".format(mention_html(member.user.id, member.user.first_name),
                                                                      chat.title),
@@ -121,7 +121,7 @@ def tagg_all_button(update, context):
         if query.from_user.id == int(user_id):
             member = chat.get_member(int(user_id))
             chat_id = str(chat.id)[1:]
-            REDIS.sadd(f'tagall2_{chat_id}', mention_html(member.user.id, member.user.first_name))
+            sadd(f'tagall2_{chat_id}', mention_html(member.user.id, member.user.first_name))
             query.message.edit_text(
                 "{} is accepted! to add yourself {}'s tag list.".format(mention_html(member.user.id, member.user.first_name),
                                                                         chat.title),
@@ -152,14 +152,14 @@ def untagme(update, context):
     user = update.effective_user 
     message = update.effective_message
     chat_id = str(chat.id)[1:] 
-    tagall_list = list(REDIS.sunion(f'tagall2_{chat_id}'))
+    tagall_list = list(f'tagall2_{chat_id}')
     match_user = mention_html(user.id, user.first_name)
     if match_user not in tagall_list: 
         message.reply_text(
             "You're already doesn't exist in {}'s tag list!".format(chat.title)
         )
         return
-    REDIS.srem(f'tagall2_{chat_id}', mention_html(user.id, user.first_name))
+    srem(f'tagall2_{chat_id}', mention_html(user.id, user.first_name))
     message.reply_text(
         "{} has been removed from {}'s tag list.".format(mention_html(user.id, user.first_name),
                                                          chat.title),
@@ -173,14 +173,14 @@ def tagme(update, context):
     user = update.effective_user 
     message = update.effective_message 
     chat_id = str(chat.id)[1:] 
-    tagall_list = list(REDIS.sunion(f'tagall2_{chat_id}'))
+    tagall_list = list(f'tagall2_{chat_id}')
     match_user = mention_html(user.id, user.first_name)
     if match_user in tagall_list:
         message.reply_text(
             "You're already exist in {}'s tag list!".format(chat.title)
         ) 
         return
-    REDIS.sadd(f'tagall2_{chat_id}', mention_html(user.id, user.first_name))
+    sadd(f'tagall2_{chat_id}', mention_html(user.id, user.first_name))
     message.reply_text(
         "{} has been successfully added in {}'s tag list.".format(mention_html(user.id, user.first_name),
                                                          chat.title),
@@ -201,7 +201,7 @@ def tagall(update, context):
         message.reply_text("Please give a reason why are you want to tag all!")
         return
     chat_id = str(chat.id)[1:] 
-    tagall = list(REDIS.sunion(f'tagall2_{chat_id}'))
+    tagall = list(f'tagall2_{chat_id}')
     tagall.sort()
     tagall = ", ".join(tagall)
     
@@ -235,9 +235,9 @@ def untagall(update, context):
     user = update.effective_user 
     message = update.effective_message
     chat_id = str(chat.id)[1:] 
-    tagall_list = list(REDIS.sunion(f'tagall2_{chat_id}'))
+    tagall_list = list(f'tagall2_{chat_id}')
     for tag_user in tagall_list:
-        REDIS.srem(f'tagall2_{chat_id}', tag_user)
+        .srem(f'tagall2_{chat_id}', tag_user)
     message.reply_text(
         "Successully removed all users from {}'s tag list.".format(chat.title)
     )

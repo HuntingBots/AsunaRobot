@@ -237,7 +237,7 @@ def untagall(update, context):
     chat_id = str(chat.id)[1:] 
     tagall_list = list(f'tagall2_{chat_id}')
     for tag_user in tagall_list:
-        .srem(f'tagall2_{chat_id}', tag_user)
+        srem(f'tagall2_{chat_id}', tag_user)
     message.reply_text(
         "Successully removed all users from {}'s tag list.".format(chat.title)
     )

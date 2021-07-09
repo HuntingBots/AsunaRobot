@@ -210,12 +210,14 @@ def tagall(update, context):
         if message.reply_to_message:
             message.reply_to_message.reply_text(
                 "{}"
+                "\n\n<b>Tagged Reason:</b>"
                 "\n{}".format(tagall, tagall_reason),
                 parse_mode=ParseMode.HTML
             )
         else:
             message.reply_text(
                 "{}"
+                "\n\n<b>Tagged Reason:</b>"
                 "\n{}".format(tagall, tagall_reason),
                 parse_mode=ParseMode.HTML
             )

@@ -4,7 +4,7 @@ import os
 import requests
 from pyrogram import filters
 
-from AsunaRobot.pyrogramee.pluginhelper import edit_or_reply, get_text
+from AsunaRobot.pyrogramee.pluginshelper import edit_or_reply, get_text
 from AsunaRobot.services.pyrogram import pbot
 
 

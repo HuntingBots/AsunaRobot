@@ -67,3 +67,4 @@ textblob
 nudepy
 
 motor
+python-rapidjson

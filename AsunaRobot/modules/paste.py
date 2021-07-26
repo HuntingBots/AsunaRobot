@@ -2,10 +2,10 @@ import requests
 from AsunaRobot import dispatcher
 from AsunaRobot.modules.disable import DisableAbleCommandHandler
 from telegram import ParseMode, Update
-from telegram.ext import CallbackContext, run_async
+from telegram.ext import CallbackContext
+from AsunaRobot.modules.helper_funcs.decorators import kigcmd
 
-
-@run_async
+@kigcmd(command='paste', pass_args=True)
 def paste(update: Update, context: CallbackContext):
     args = context.args
     message = update.effective_message
@@ -34,10 +34,3 @@ def paste(update: Update, context: CallbackContext):
     message.reply_text(
         reply_text, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
     )
-
-
-PASTE_HANDLER = DisableAbleCommandHandler("paste", paste)
-dispatcher.add_handler(PASTE_HANDLER)
-
-__command_list__ = ["paste"]
-__handlers__ = [PASTE_HANDLER]

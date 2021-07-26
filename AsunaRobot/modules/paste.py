@@ -39,7 +39,7 @@ async def _(event):
             message = previous_message.message
     else:
         message = "SYNTAX: `.neko <long text to include>`"
-    if downloaded_file_name.endswith(".py"):
+       downloaded_file_name.endswith(".py"):
         py_file = ""
         py_file += ".py"
         data = message

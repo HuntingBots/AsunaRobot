@@ -10,8 +10,6 @@ from AsunaRobot.events import register as asuna
 async def _(event):
     if event.fwd_from:
         return
-    if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
-        os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     chosen_store = event.pattern_match.group(1)
     message = "SYNTAX: `.paste <long text to include>`"
     ohm = message

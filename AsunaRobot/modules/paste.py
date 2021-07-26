@@ -25,7 +25,7 @@ async def paste(client, message):
         elif message.reply_to_message.text:
             message_s = message.reply_to_message.text
     key = (
-        requests.post("https://nekobin.com/api/documents", json={"content": message_s})
+       https://hastebin.com/documentrequests.post", (url, data={data})
         .json()
         .get("result")
         .get("key")

@@ -15,8 +15,6 @@ async def _(event):
     if event.fwd_from:
         return
     datetime.now()
-    if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
-        os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     input_str = event.pattern_match.group(1)
     message = "SYNTAX: `.neko <long text to include>`"
     if input_str:

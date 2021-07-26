@@ -49,7 +49,6 @@ async def _(event):
             .get("key")
         )
         url = f"https://nekobin.com/{key}{py_file}"
-    else:
         data = message
         key = (
             requests.post("https://nekobin.com/api/documents", json={"content": data})

@@ -3,9 +3,10 @@ from AsunaRobot import dispatcher
 from AsunaRobot.modules.disable import DisableAbleCommandHandler
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext
-from AsunaRobot.modules.helper_funcs.decorators import kigcmd
+from AsunaRobot import events as register
 
-@kigcmd(command='paste', pass_args=True)
+
+@register(command='paste', pass_args=True)
 def paste(update: Update, context: CallbackContext):
     args = context.args
     message = update.effective_message

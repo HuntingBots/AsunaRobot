@@ -2,6 +2,7 @@ import logging
 import os
 import sys
 import time
+import httpx
 import spamwatch
 
 import telegram.ext as tg

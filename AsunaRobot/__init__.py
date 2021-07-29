@@ -2,16 +2,11 @@ import logging
 import os
 import sys
 import time
-import httpx
-import aiohttp
 import spamwatch
 
 import telegram.ext as tg
 from pyrogram import Client, errors
 from telethon import TelegramClient
-
-timeout = httpx.Timeout(40, pool=None)
-http = httpx.AsyncClient(http2=True, timeout=timeout)
 
 StartTime = time.time()
 
@@ -34,7 +29,7 @@ if sys.version_info[0] < 3 or sys.version_info[1] < 6:
 ENV = bool(os.environ.get("ENV", False))
 
 if ENV:
-    TOKEN = os.environ.get("TOKEN", None
+    TOKEN = os.environ.get("TOKEN", None)
 
     try:
         OWNER_ID = int(os.environ.get("OWNER_ID", None))

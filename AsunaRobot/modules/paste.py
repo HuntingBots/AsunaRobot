@@ -4,7 +4,8 @@ import requests
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, run_async
 
-from AsunaRobot import pbot, http, dispatcher
+from AsunaRobot.services.pyrogram import pbot
+
 from AsunaRobot import dispatcher
 from AsunaRobot.modules.disable import DisableAbleCommandHandler
 

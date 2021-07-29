@@ -68,7 +68,7 @@ def hastebin(update: Update, context: CallbackContext):
     
 
 NEKO_BIN_HANDLER = DisableAbleCommandHandler("nikobin", paste, run_async)
-HASTE_BIN_HANDLER = DisableAbleCommandHandler("paste", nikobin, run_async)
+HASTE_BIN_HANDLER = DisableAbleCommandHandler("paste", paste, run_async)
 
 dispatcher.add_handler(NEKO_BIN_HANDLER)
 dispatcher.add_handler(NEKO_BIN_HANDLER)

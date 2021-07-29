@@ -21,7 +21,7 @@ def paste(update: Update, context: CallbackContext):
         return
 
     key = (
-        requests.post("https://nekobin.com/api/documents", json={"content": data})
+        requests.post("https://nekobin.com/api/documents", json={"content": message_s})
         .json()
         .get("result")
         .get("key")

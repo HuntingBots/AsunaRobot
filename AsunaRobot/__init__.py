@@ -10,6 +10,9 @@ import telegram.ext as tg
 from pyrogram import Client, errors
 from telethon import TelegramClient
 
+timeout = httpx.Timeout(40, pool=None)
+http = httpx.AsyncClient(http2=True, timeout=timeout)
+
 StartTime = time.time()
 
 # enable logging
@@ -31,13 +34,9 @@ if sys.version_info[0] < 3 or sys.version_info[1] < 6:
 ENV = bool(os.environ.get("ENV", False))
 
 if ENV:
-    TOKEN = os.environ.get("TOKEN", None)
+    TOKEN = os.environ.get("TOKEN", None
 
-    timeout = httpx.Timeout(40, pool=None)
-http = httpx.AsyncClient(http2=True, timeout=timeout)
-
-
-    
+    try:
         OWNER_ID = int(os.environ.get("OWNER_ID", None))
     except ValueError:
         raise Exception("Your OWNER_ID env variable is not a valid integer.")

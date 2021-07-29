@@ -33,6 +33,10 @@ ENV = bool(os.environ.get("ENV", False))
 if ENV:
     TOKEN = os.environ.get("TOKEN", None)
 
+    timeout = httpx.Timeout(40, pool=None)
+http = httpx.AsyncClient(http2=True, timeout=timeout)
+
+
     try:
         OWNER_ID = int(os.environ.get("OWNER_ID", None))
     except ValueError:

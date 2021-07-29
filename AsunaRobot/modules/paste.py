@@ -25,7 +25,7 @@ def paste(update: Update, context: CallbackContext):
             "content": data
         }).json().get('result').get('key')
 
-    url = f'https://nekobin-production.up.railway.app/{key}'
+    url = f'https://ezup.dev/p/{key}'
 
     reply_text = f'Nekofied to *Nekobin* : {url}'
 

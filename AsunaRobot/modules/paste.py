@@ -61,7 +61,7 @@ def hastebin(update: Update, context: CallbackContext):
         .json()       
         .get('key')
     )
-    pasted = f"Pasted to HasteBin: https://nekobin.com/{key}"
+    pasted = f"Pasted to PasteBin: https://nekobin-production.up.railway.app/{key}"
     msg.reply_text(pasted, disable_web_page_preview=True)
     
     

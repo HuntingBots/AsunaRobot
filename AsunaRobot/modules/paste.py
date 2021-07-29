@@ -27,7 +27,7 @@ def paste(update: Update, context: CallbackContext):
         .get("key")
     )
 
-    url = f"https://nekobin.com/{key}"
+    url = f"https://nekobin-production.up.railway.app//{key}"
 
     reply_text = f"Nekofied to *Nekobin* : {url}"
 

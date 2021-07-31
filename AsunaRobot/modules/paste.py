@@ -2,6 +2,7 @@ import logging
 import os
 from datetime import datetime
 import requests
+TEMP_DOWNLOAD_DIRECTORY = "Paste-File/"
 from pyrogram.types import CallbackQuery
 from AsunaRobot import LOGGER
 from AsunaRobot.events import register

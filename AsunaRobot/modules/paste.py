@@ -102,7 +102,6 @@ from AsunaRobot.events import register
 9
 from AsunaRobot import telethn as tbot
 10
-​11
 logging.basicConfig(
 12
     format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=logging.WARNING

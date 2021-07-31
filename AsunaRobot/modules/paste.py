@@ -96,11 +96,11 @@ TEMP_DOWNLOAD_DIRECTORY = "Paste-File/"
 6
 from pyrogram.types import CallbackQuery
 7
-from Anos import LOGGER
+from AsunaRobot import LOGGER
 8
-from Anos.events import register
+from AsunaRobot.events import register
 9
-from Anos import telethn as tbot
+from AsunaRobot import telethn as tbot
 10
 ​
 11

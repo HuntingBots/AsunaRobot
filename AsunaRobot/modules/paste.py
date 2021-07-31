@@ -4,9 +4,9 @@ from datetime import datetime
 import requests
 TEMP_DOWNLOAD_DIRECTORY = "Paste-File/"
 from pyrogram.types import CallbackQuery
-from Anos import LOGGER
-from Anos.events import register
-from Anos import telethn as tbot
+from AsunaRobot import LOGGER
+from AsunaRobot.events import register
+from AsunaRobot import telethn as tbot
 
 logging.basicConfig(
     format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=logging.WARNING

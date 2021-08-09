@@ -63,7 +63,7 @@ async def install(event):
                 path1 = Path(downloaded_file_name)
                 shortname = path1.stem
                 load_module(shortname.replace(".py", ""))
-                await event.reply(" File Installed Successfully! \n `{}`".format(
+                await event.reply("Your File Installed Successfully! \n `{}`".format(
                         os.path.basename(downloaded_file_name)
                     ),
                 )
@@ -74,8 +74,8 @@ async def install(event):
                 await k.delete()
         except Exception as e:  # pylint:disable=C0103,W0703
             j = await event.reply(str(e))
-                await asyncio.sleep(3)
+            await asyncio.sleep(3)
             await j.delete()
             os.remove(downloaded_file_name)
-        await asyncio.sleep(3)
+    await asyncio.sleep(3)
     await event.delete()

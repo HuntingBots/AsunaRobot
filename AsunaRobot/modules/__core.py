@@ -8,7 +8,7 @@ import asyncio
 import traceback
 import os
 from datetime import datetime
-from AsunaRobot.services.telethon import tbot 
+from AsunaRobot import telethn as tbot
 from AsunaRobot.events import register as Asuna
 
 

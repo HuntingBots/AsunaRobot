@@ -6,7 +6,7 @@ import re
 
 import aiofiles
 from pyrogram import filters
-from AsunaRobot.services.paste import paste 
+from AsunaRobot.sql_extended.paste import paste 
 from AsunaRobot import pbot as app
 
 pattern = re.compile(r"^text/|json$|yaml$|xml$|toml$|x-sh$|x-shellscript$")

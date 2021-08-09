@@ -36,7 +36,6 @@ async def send(event):
         reply_to=message_id
     )
     end = datetime.now()
-    await event.edit("Uploaded {} in {} seconds".format(input_str, time_taken_in_ms))
     await asyncio.sleep(DELETE_TIMEOUT)
     await event.delete()
 

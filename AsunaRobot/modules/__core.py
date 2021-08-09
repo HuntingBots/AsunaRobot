@@ -8,7 +8,7 @@ import asyncio
 import traceback
 import os
 from datetime import datetime
-from AsunaRobot.services.telethonuserbot import ubot
+from AsunaRobot.services.telethon import tbot 
 from AsunaRobot.events import register as Asuna
 
 
@@ -47,10 +47,10 @@ async def Prof(event):
         try:
             downloaded_file_name = await event.client.download_media(
                 await event.get_reply_message(),
-                ubot.n_module_path  # pylint:disable=E0602
+                tbot.n_module_path  # pylint:disable=E0602
             )
             if "(" not in downloaded_file_name:
-                ubot.load_plugin_from_file(downloaded_file_name)  # pylint:disable=E0602
+                tbot.load_plugin_from_file(downloaded_file_name)  # pylint:disable=E0602
                 await event.edit("Installed module `{}`".format(os.path.basename(downloaded_file_name)))
             else: 
                 os.remove(downloaded_file_name)

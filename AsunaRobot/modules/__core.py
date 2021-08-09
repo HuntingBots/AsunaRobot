@@ -10,8 +10,7 @@ import os
 from pathlib import Path
 from datetime import datetime
 from AsunaRobot import telethn as tbot
-from AsunaRobot import OWNER_ID
-from AsunaRobot.events import load_module
+from AsunaRobot import OWNER_ID, load_module
 from AsunaRobot.events import register as Asuna
 
 

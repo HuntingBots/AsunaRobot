@@ -74,8 +74,8 @@ async def install(event):
                 await k.delete()
         except Exception as e:  # pylint:disable=C0103,W0703
             j = await event.reply(str(e))
-                await asyncio.sleep(DELETE_TIMEOUT)
+                await asyncio.sleep(3)
             await j.delete()
             os.remove(downloaded_file_name)
-        await asyncio.sleep(DELETE_TIMEOUT)
+        await asyncio.sleep(3)
     await event.delete()

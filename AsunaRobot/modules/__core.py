@@ -22,11 +22,13 @@ async def Prof(event):
     if event.fwd_from:
         return
     message_id = event.message.id
+    input_str = event.pattern_match.group(1)
     the_plugin_file = "./AsunaRobot/modules/{}.py".format(input_str)
-    start = datetime.now()
-    await event.client.send_file(  # pylint:disable=E0602
-        event.chat_id,
-        the_plugin_file,
+    if os.path.exists(the_plugin_file):
+     message_id = event.message.id
+     await event.client.send_file(
+             event.chat_id,
+             the_plugin_file,
         force_document=True,
         allow_cache=False,
         reply_to=message_id

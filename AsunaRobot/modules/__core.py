@@ -1,36 +1,62 @@
-from AsunaRobot import telethn as tbot
-from AsunaRobot.events import register
-import os
-import asyncio
-import os
-import time
-from datetime import datetime
-from AsunaRobot import OWNER_ID
-from AsunaRobot import TEMP_DOWNLOAD_DIRECTORY as path
-from AsunaRobot import TEMP_DOWNLOAD_DIRECTORY
-from datetime import datetime
-water = './AsunaRobot/resources/Asuna.jpg'
-client = tbot
+# Copyright (C) 2021 AsunaRobot
+# made by @The_Ghost_Hunter on Telegram.
+# github account : https://github.com/HuntingBots/
+# This file is part of AsunaRobot (Telegram Bot)
 
-@register(pattern=r"^/send ?(.*)")
+
+import asyncio
+import traceback
+import os
+from datetime import datetime
+from AsunaRobot.services.telethonuserbot import ubot
+from AsunaRobot.events import register as Asuna
+
+
+DELETE_TIMEOUT = 5
+
+
+# Send_Module
+
+@Asuna(pattern="^/send ?(.*)")
 async def Prof(event):
-    if event.sender_id == OWNER_ID:
-        pass
-    else:
+    if event.fwd_from:
         return
-    thumb = water
     message_id = event.message.id
-    input_str = event.pattern_match.group(1)
     the_plugin_file = "./AsunaRobot/modules/{}.py".format(input_str)
-    if os.path.exists(the_plugin_file):
-     message_id = event.message.id
-     await event.client.send_file(
-             event.chat_id,
-             the_plugin_file,
-             force_document=True,
-             allow_cache=False,
-             thumb=thumb,
-             reply_to=message_id,
-         )
-    else:
-        await event.reply("No File Found!")
+    start = datetime.now()
+    await event.client.send_file(  # pylint:disable=E0602
+        event.chat_id,
+        the_plugin_file,
+        force_document=True,
+        allow_cache=False,
+        reply_to=message_id
+    )
+    end = datetime.now()
+    time_taken_in_ms = (end - start).seconds
+    await event.edit("Uploaded {} in {} seconds".format(input_str, time_taken_in_ms))
+    await asyncio.sleep(DELETE_TIMEOUT)
+    await event.delete()
+
+# Install_Module
+
+@Asuna(pattern="^/install ?(.*)")  # pylint:disable=E0602
+async def Prof(event):
+    if event.fwd_from:
+        return
+    if event.reply_to_msg_id:
+        try:
+            downloaded_file_name = await event.client.download_media(
+                await event.get_reply_message(),
+                ubot.n_module_path  # pylint:disable=E0602
+            )
+            if "(" not in downloaded_file_name:
+                ubot.load_plugin_from_file(downloaded_file_name)  # pylint:disable=E0602
+                await event.edit("Installed module `{}`".format(os.path.basename(downloaded_file_name)))
+            else: 
+                os.remove(downloaded_file_name)
+                await event.edit("Errors! Cannot install this module.")
+        except Exception as e:  # pylint:disable=C0103,W0703
+            await event.edit(str(e))
+            os.remove(downloaded_file_name)
+    await asyncio.sleep(DELETE_TIMEOUT)
+    await event.delete()

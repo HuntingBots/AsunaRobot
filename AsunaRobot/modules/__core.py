@@ -42,14 +42,16 @@ async def Prof(event):
 # Install_Module
 
 @Asuna(pattern="^/install ?(.*)")  # pylint:disable=E0602
-async def Prof(event):
+async def install(event):
     if event.fwd_from:
         return
     if event.reply_to_msg_id:
         try:
-            downloaded_file_name = await event.client.download_media(
-                await event.get_reply_message(),
-                tbot.n_module_path  # pylint:disable=E0602
+            downloaded_file_name = (
+                await event.client.download_media(  # pylint:disable=E0602
+                    await event.get_reply_message(),
+                    "AsunaRobot/modules/",  # pylint:disable=E0602
+                )
             )
             if "(" not in downloaded_file_name:
                 tbot.load_plugin_from_file(downloaded_file_name)  # pylint:disable=E0602

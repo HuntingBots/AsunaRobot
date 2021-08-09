@@ -43,7 +43,7 @@ async def send(event):
 
 # Install_Module
 
-@register(pattern="^/install")
+@Asuna(pattern="^/install")
 async def install(event):
     if event.fwd_from:
         return

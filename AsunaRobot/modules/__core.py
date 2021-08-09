@@ -7,6 +7,7 @@
 import asyncio
 import traceback
 import os
+from pathlib import Path
 from datetime import datetime
 from AsunaRobot import telethn as tbot
 from AsunaRobot.events import register as Asuna
@@ -18,7 +19,7 @@ DELETE_TIMEOUT = 5
 # Send_Module
 
 @Asuna(pattern="^/send ?(.*)")
-async def Prof(event):
+async def send(event):
     if event.fwd_from:
         return
     message_id = event.message.id
@@ -41,26 +42,39 @@ async def Prof(event):
 
 # Install_Module
 
-@Asuna(pattern="^/install ?(.*)")  # pylint:disable=E0602
+@register(pattern="^/install")
 async def install(event):
     if event.fwd_from:
+        return
+    if event.sender_id == OWNER_ID:
+        pass
+    else:
         return
     if event.reply_to_msg_id:
         try:
             downloaded_file_name = (
                 await event.client.download_media(  # pylint:disable=E0602
                     await event.get_reply_message(),
-                    "AsunaRobot/modules/",  # pylint:disable=E0602
+                    "YoneRobot/modules/",  # pylint:disable=E0602
                 )
             )
             if "(" not in downloaded_file_name:
-                tbot.load_plugin_from_file(downloaded_file_name)  # pylint:disable=E0602
-                await event.edit("Installed module `{}`".format(os.path.basename(downloaded_file_name)))
-            else: 
+                path1 = Path(downloaded_file_name)
+                shortname = path1.stem
+                load_module(shortname.replace(".py", ""))
+                await event.reply(" File Installed Successfully! \n `{}`".format(
+                        os.path.basename(downloaded_file_name)
+                    ),
+                )
+            else:
                 os.remove(downloaded_file_name)
-                await event.edit("Errors! Cannot install this module.")
+                k = await event.reply("Errors! Cannot install this module.")
+                await asyncio.sleep(2)
+                await k.delete()
         except Exception as e:  # pylint:disable=C0103,W0703
-            await event.edit(str(e))
+            j = await event.reply(str(e))
+                await asyncio.sleep(DELETE_TIMEOUT)
+            await j.delete()
             os.remove(downloaded_file_name)
-    await asyncio.sleep(DELETE_TIMEOUT)
+        await asyncio.sleep(DELETE_TIMEOUT)
     await event.delete()

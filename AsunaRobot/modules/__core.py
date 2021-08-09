@@ -10,7 +10,7 @@ import os
 from pathlib import Path
 from datetime import datetime
 from AsunaRobot import telethn as tbot
-from AsunaRobot import OWNER_ID, load_module
+from AsunaRobot import OWNER_ID
 from AsunaRobot.events import register as Asuna
 
 
@@ -61,7 +61,7 @@ async def install(event):
             if "(" not in downloaded_file_name:
                 path1 = Path(downloaded_file_name)
                 shortname = path1.stem
-                load_module(shortname.replace(".py", ""))
+                (shortname.replace(".py", ""))
                 await event.reply("Your File Installed Successfully! \n `{}`".format(
                         os.path.basename(downloaded_file_name)
                     ),

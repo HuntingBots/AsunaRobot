@@ -4,7 +4,7 @@ from googletrans import Translator
 from AsunaRobot.events import register
 
 
-@register(admin_cmd("tr ?(.*)"))
+register(pattern="^/tr ?(.*)")
 async def _(event):
     if event.fwd_from:
         return

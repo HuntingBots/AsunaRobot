@@ -1,7 +1,7 @@
 from telegram import ParseMode, Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import CallbackContext, run_async
 
-from googletrans import SyncTranslator
+from gpytranslate import SyncTranslator
 
 from AsunaRobot import dispatcher
 from AsunaRobot.modules.disable import DisableAbleCommandHandler
@@ -75,6 +75,6 @@ TRANSLATE_HANDLER = DisableAbleCommandHandler(["tr", "tl"], totranslate)
 
 dispatcher.add_handler(TRANSLATE_HANDLER)
 
-__mod_name__ = "G-Trans"
+__mod_name__ = "Translator"
 __command_list__ = ["tr", "tl"]
 __handlers__ = [TRANSLATE_HANDLER]

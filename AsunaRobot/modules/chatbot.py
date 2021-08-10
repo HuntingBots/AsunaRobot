@@ -27,7 +27,7 @@ import aiohttp
 from googletrans import Translator as google_translator
 from pyrogram import filters
 
-from AsunaRobot import BOT_ID, pbot as gabi
+from AsunaRobot import BOT_ID, pbot as asuna
 from AsunaRobot.helper_extra.aichat import add_chat, get_session, remove_chat
 from AsunaRobot.pyrogramee.pluginshelper import admins_only, edit_or_reply
 

@@ -9,6 +9,8 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from AsunaRobot.events import register as Asuna
+from AsunaRobot import telethn as tbot
+
 
 @Asuna(pattern="^/sg ?(.*)")
 async def _(event):

@@ -29,15 +29,14 @@ async def _(event):
     if reply_message.sender.bot:
        await event.edit("```Reply to actual users message.```")
        return
-    await event.edit("```Processing Request```")
-    
-        async with telethn.conversation(chat) as conv:
-            try:
-                msg = await conv.send_message(id)
-                r = await conv.get_response()
-                response = await conv.get_response()
-
-            except YouBlockedUserError: 
+    await event.edit("```Processing Your Request```")
+    async with telethn.conversation(chat) as conv:
+          try:     
+              response = conv.wait_event(events.NewMessage(incoming=True,from_users=461843263))
+             # await telethn.forward_messages(chat, reply_message)
+              await silently_send_message(chat,"/generate")
+              response = await response 
+          except YouBlockedUserError: 
               await event.reply("```Please unblock @sangmatainfo_bot and try again```")
               return
           if response.text.startswith("Forward"):

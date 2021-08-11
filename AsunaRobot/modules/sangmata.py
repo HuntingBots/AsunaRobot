@@ -3,7 +3,7 @@ from telethon.tl import functions, types
 
 from AsunaRobot.events import register as Asuna
 from AsunaRobot import telethn as tbot
-
+from telethon import events 
 
 async def is_register_admin(chat, user):
 

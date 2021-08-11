@@ -5,11 +5,11 @@
 
 
 import datetime
-from telethon import tbot 
+from telethon import events as tbot
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from AsunaRobot.events import register as Asuna
-
+from AsunaRobot import telethn as tbot
 
 
 @Asuna(pattern="^/sg ?(.*)")

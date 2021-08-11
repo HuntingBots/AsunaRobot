@@ -4,12 +4,11 @@ import os
 import requests
 import wget
 from pyrogram import filters
-
-from AsunaRobot import pbot as Jebot
+from AsunaRobot import pbot as Asuna 
 from AsunaRobot.pyrogramee.dark import get_arg
 
 
-@Jebot.on_message(filters.command("saavn"))
+@Asuna.on_message(filters.command("saavn"))
 async def song(client, message):
     message.chat.id
     message.from_user["id"]
@@ -21,7 +20,7 @@ async def song(client, message):
         "Downloading your song,\nPlz wait ⏳️"
     )
     try:
-        r = requests.get(f"https://snobybuddymusic.herokuapp.com/result/?query={args}")
+        r = requests.get(f"https://jostapi.herokuapp.com/saavn?query={args}")
     except Exception as e:
         await m.edit(str(e))
         return

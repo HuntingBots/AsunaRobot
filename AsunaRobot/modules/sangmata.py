@@ -1,55 +1,110 @@
-# Copyright (C) 2021 AsunaRobot
-# made by @The_Ghost_Hunter on Telegram.
-# github account : https://github.com/HuntingBots/
-# This file is part of AsunaRobot (Telegram Bot)
-
-
-import datetime
-from telethon import events 
-from AsunaRobot import telethn
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from telethon.tl.functions.account import UpdateNotifySettingsRequest
-from AsunaRobot.events import register as Asuna
+from telethon.tl import functions, types
 
+from AsunaRobot.events import register as Asuna
+from AsunaRobot import telethn as tbot
+
+
+async def is_register_admin(chat, user):
+
+    if isinstance(chat, (types.InputPeerChannel, types.InputChannel)):
+
+        return isinstance(
+            (
+                await tbot(functions.channels.GetParticipantRequest(chat, user))
+            ).participant,
+            (types.ChannelParticipantAdmin, types.ChannelParticipantCreator),
+        )
+    if isinstance(chat, types.InputPeerChat):
+
+        ui = await tbot.get_peer_id(user)
+        ps = (
+            await tbot(functions.messages.GetFullChatRequest(chat.chat_id))
+        ).full_chat.participants.participants
+        return isinstance(
+            next((p for p in ps if p.user_id == ui), None),
+            (types.ChatParticipantAdmin, types.ChatParticipantCreator),
+        )
+    return None
+
+
+async def silently_send_message(conv, text):
+    await conv.send_message(text)
+    response = await conv.get_response()
+    await conv.mark_read(message=response)
+    return response
 
 
 @Asuna(pattern="^/sg ?(.*)")
 async def _(event):
+
     if event.fwd_from:
-        return 
+
+        return
+
+    if event.is_group:
+        if await is_register_admin(event.input_chat, event.message.sender_id):
+            pass
+        else:
+            return
     if not event.reply_to_msg_id:
-       await event.edit("```Reply to any user message.```")
-       return
-    reply_message = await event.get_reply_message() 
+
+        await event.reply("
+Reply to any user message.
+")
+
+        return
+
+    reply_message = await event.get_reply_message()
+
     if not reply_message.text:
-       await event.edit("```reply to text message```")
-       return
-    chat = "@SangMataInfo_bot"
-    sender = reply_message.sender
+
+        await event.reply("
+reply to text message
+")
+
+        return
+
+    chat = "Sangmatainfo_bot"
+    uid = reply_message.sender_id
+    reply_message.sender
+
     if reply_message.sender.bot:
-       await event.edit("```Reply to actual users message.```")
-       return
-    await event.edit("```Processing Your Request```")
-    async with telethn.conversation(chat) as conv:
-          try:     
-              response = conv.wait_event(events.NewMessage(incoming=True,from_users=461843263))
-             # await telethn.forward_messages(chat, reply_message)
-                          
-          except YouBlockedUserError: 
-              await event.reply("```Please unblock @sangmatainfo_bot and try again```")
-              return
-                      
-             await event.edit("```can you kindly disable your forward privacy settings for good?```")
-          else: 
-             await event.edit(f"{response.message.message}")
 
+        await event.edit("
+Reply to actual users message.
+")
 
+        return
 
+    lol = await event.reply("
+Processing
+")
 
-__mod_name__ = "Sangmata"
+    async with ubot.conversation(chat) as conv:
 
-__help__ = """
- ❍ sangmata *:* /sg - View user name history.
+        try:
+
+            # response = conv.wait_event(
+            #   events.NewMessage(incoming=True, from_users=1706537835)
+            # )
+
+            await silently_send_message(conv, f"/search_id {uid}")
+
+            # response = await response
+            responses = await silently_send_message(conv, f"/search_id {uid}")
+        except YouBlockedUserError:
+
+            await event.reply("
+Please unblock @Sangmatainfo_bot and try again
+")
+
+            return
+        await lol.edit(f"{responses.text}")
+        # await lol.edit(f"{response.message.message}")
+
+help = """
+  • /sg*:* Get A Name History Of User
 """
-__button__ = ""
-__buttons__ = ""
+
+mod_name = "Sang Mata"

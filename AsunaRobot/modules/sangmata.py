@@ -5,10 +5,11 @@
 
 
 import datetime
+from telethon import events 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from AsunaRobot.events import register as Asuna
-from AsunaRobot import telethon as tbot
+
 
 
 @Asuna(pattern="^/sg ?(.*)")
@@ -29,7 +30,7 @@ async def _(event):
        return
     await event.edit("```Processing Request```")
     
-        async with tbot.conversation(chat) as conv:
+        async with events.conversation(chat) as conv:
             try:
                 msg = await conv.send_message(id)
                 r = await conv.get_response()

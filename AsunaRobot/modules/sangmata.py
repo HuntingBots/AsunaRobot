@@ -29,7 +29,7 @@ async def _(event):
        await event.edit("```Reply to actual users message.```")
        return
     await event.edit("```Processing```")
-    async with events.conversation(chat) as conv:
+    async with tbot.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=461843263))
              # await events.forward_messages(chat, reply_message)

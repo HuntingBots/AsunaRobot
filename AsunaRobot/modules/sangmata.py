@@ -1,9 +1,14 @@
+# Copyright Friday Userbot 
+# recoded by HuntingBots | This project is a part of AsunaRobot ( a telegram group manager bot) 
+
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl import functions, types
 
+
 from AsunaRobot.events import register as Asuna
 from AsunaRobot import telethn as tbot
-from telethon import events 
+from AsunaRobot.services.telethonuserbot import ubot
+
 
 async def is_register_admin(chat, user):
 
@@ -107,4 +112,4 @@ help = """
   • /sg*:* Get A Name History Of User
 """
 
-mod_name = "Sang Mata"
+mod_name = "Sangmata"

@@ -68,6 +68,8 @@ if ENV:
     CERT_PATH = os.environ.get("CERT_PATH")
     API_ID = os.environ.get("API_ID", None)
     API_HASH = os.environ.get("API_HASH", None)
+    ARQ_API_KEY = os.environ.get("ARQ_API_KEY", None)
+    ARQ_API_URL = os.environ.get("ARQ_API_URL", None)
     BOT_ID = int(os.environ.get("BOT_ID", None))
     DB_URI = os.environ.get("DATABASE_URL")
     MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)

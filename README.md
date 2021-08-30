@@ -1,16 +1,16 @@
 <p align="center">
-  <img src="https://telegra.ph/file/a0518cd506643d784b9c5.jpg">
+  <img src="https://telegra.ph/file/e25800cc389f5f3139470.jpg">
 </p>
 
-# Asuna Robot
+# THUNDER Robot
 
 ### Telegram Group
 <p align="left">
-<a href="https://t.me/AsunaRobotSupport" alt="Telegram!"> <img src="https://aleen42.github.io/badges/src/telegram.svg" /> </a>
+<a href="https://t.me/Gymglassheroes" alt="Telegram!"> <img src="https://aleen42.github.io/badges/src/telegram.svg" /> </a>
 
 ### Bot And Channel 
-* Bot Link:  <a href="http://t.me/princess_Asuna_Robot" alt="AsunaRobot"> <img src="https://img.shields.io/badge/%F0%9F%A4%96%20-princessAsunaRobot-blue" /> </a>
-* Support Channel: <a  href="https://t.me/AsunaLogUpdate" alt="Help Centre Logs"> <img  src="https://img.shields.io/badge/%F0%9F%92%A1-AsunaRobot%20Log%20Channel-9cf" /> </a>
+* Bot Link:  <a href="http://t.me/Thundero_bot" alt="Thunder"> <img src="https://img.shields.io/badge/%F0%9F%A4%96%20-THUNDER-blue" /> </a>
+* Support Channel: <a  href="https://t.me/thunderlog2" alt="Help Centre Logs"> <img  src="https://img.shields.io/badge/%F0%9F%92%A1-THUNDER%20Log%20Channel-9cf" /> </a>
 
 ### Creating your own modules.
 
@@ -57,9 +57,9 @@ For starters click on this button
 
 ## Our Telegram Channel and Group
 
-* [Support](https://telegram.dog/AsunaRobotSupport)
-* [Discussion](https://telegram.dog/helpcentrebot1)
-* [Second Group](https://telegram.dog/fire_world_entertainment)
+* [Support](https://telegram.dog/Gymglassheroes)
+* [Discussion](https://telegram.dog/animeongoing4)
+* [OUR NETWORK](https://telegram.dog/SEKERNETWORK)
 
 ## Credits, and Thanks to 
-*   [The Ghost Hunter](https://telegram.dog/The_Ghost_Hunter)
+*   [ATOPBEGAR](https://telegram.dog/ATOPBEGAR)

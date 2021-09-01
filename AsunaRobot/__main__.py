@@ -105,7 +105,7 @@ buttons = [
 
 
 InlineKeyboardButton(
-            text="👥 SUPPORT", url="https://telegram.dog/Gymglassheroes"
+            text="👥 SUPPORT", url="https://telegram.dog/TVA_AGENCY"
         ),
 
     ],

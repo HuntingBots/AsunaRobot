@@ -1,16 +1,16 @@
 {
       "name": "Asuna Robot",
-      "description": "An Anime Theme Telegram group management bot.",
+      "description": "A Powerful  Telegram group management bot.",
       "keywords": [
          "telegram",
-         "anime",
+         "advance",
          "group",
          "manager",
          "Asuna"
       ],
     
-   "logo":    "https://telegra.ph/file/a303f7801d60dc1ea3017.jpg",  
-   "repository": "https://github.com/HuntingBots/AsunaRobot",
+   "logo":    "https://telegra.ph/file/4977514f30ff13c11363b.jpg",  
+   "repository": "https://github.com/HuntingBots/Asuna-Robot",
    "addons": [
           {
          "options": {
@@ -49,6 +49,12 @@
          "description": "Your bot ID.. Use any other bot to get it.",
          "required": true,
          "value": "1606221784"
+       },
+
+      "REDIS_URL": {
+         "description": "Get REDIS_URL from  https://app.redislabs.com, used for run your bot modules.",
+         "required": true,
+         "value": "" 
       },
       "HEROKU_API_KEY": {
         "description": "Your Heroku API key, get it from 'https://dashboard.heroku.com/account'",
@@ -58,6 +64,16 @@
         "description": "Enter the Heroku app name here (Must an exact same name with your input above).",
         "required": false
       },
+      "BOT_USERNAME": {
+         "description": "username of your bot with the @",
+         "value": ""
+      },
+
+      "BOT_ID": {
+         "description": "to get your bot_id using other bot or userbot",
+         "value": ""
+      },
+
       "OWNER_USERNAME": {
          "description": "Your username without the @",
          "value": "The_Ghost_Hunter"
@@ -100,6 +116,14 @@
          "required": true,
          "value": "-xyz"
       },
+
+      
+      "APP_HASH": {
+         "description": "Get API_HASH from my.telegram.org, used for telethon based modules.",
+         "required": true,
+         "value": ""
+      },    
+
       "API_OPENWEATHER": {
         "description": "Get your own APPID from https://api.openweathermap.org/data/2.5/weather",
         "value": "",
@@ -109,7 +133,12 @@
          "description": "ID of users who are Devs of your bot (can use /py etc.). If you are a noob and would come and bother Masha support then keep the current ID's here at they are and add yours.",
          "required": false,
          "value": ""
-      },
+     },
+        "ARQ_API_KEY": {
+            "description": "Get this from @ARQRobot.",
+            "required": true
+        },
+
       "sw_api": {
          "description": "Spamwatch API Token, Get one from @SpamWatchBot.",
          "required": false,
@@ -175,17 +204,16 @@
       "DONATION_LINK": {
          "description": "Optional: link where you would like to receive donations. If you are a noob, better leave it linking to paul",
          "required": false,
-         "value": ""
+         "value": "https://www.paypal.me/PaulSonOfLars"
       },
       "DEL_CMDS": {
          "description": "Set this to True if you want to delete command messages from users who don't have the perms to run that command.",
          "value": "True"
       },
-      "AI_API_KEY": {
-      "description": "Make your bot talk using Intellivoid's chatbot API, get your key from https://coffeehouse.intellivoid.net/",
-         "required": false,
-         "value": ""
-   },      
+        "ARQ_API": {
+            "description": "Get this from @ARQRobot.",
+            "required": true
+        },
       "BAN_STICKER": {
          "description": "ID of the sticker you want to use when banning people.",
          "required": false,

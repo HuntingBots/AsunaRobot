@@ -37,7 +37,7 @@
 
 ```
 
-* This Bot is Created by The_Ghost_Hunter, If your kanging this without fork at least give a credit to get a smile of my hard work.
+This Bot is Created by The_Ghost_Hunter, If your kanging this without fork at least give a credit to get a smile of my hard work.
  
 👉 YoneRobot
 👉 SaitamaRobot 

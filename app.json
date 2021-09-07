@@ -134,7 +134,7 @@
          "required": false,
          "value": ""
      },
-        "ARQ_API_KEY": {
+        "ARQ_API": {
             "description": "Get this from @ARQRobot.",
             "required": true
         },

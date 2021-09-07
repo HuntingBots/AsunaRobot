@@ -36,7 +36,8 @@
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/HuntingBots/AsunaRobot/)
 
 ```
-This Bot is Created by The_Ghost_Hunter, If your kanging this without fork at least give a credit to get a smile of my hard work.
+
+* This Bot is Created by The_Ghost_Hunter, If your kanging this without fork at least give a credit to get a smile of my hard work.
  
 👉 YoneRobot
 👉 SaitamaRobot 

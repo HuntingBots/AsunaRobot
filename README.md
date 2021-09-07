@@ -22,7 +22,7 @@
 
 ## Requirements
 
-- PTB >= 13.7
+- PTB >= 13.6
 - A [REDIS_URL](https://redis.com).
 - A [Telegram bot token](https://t.me/botfather).
 - A [MongoDB URI](https://telegra.ph/How-To-get-Mongodb-URI-04-06).

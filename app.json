@@ -44,12 +44,7 @@
          "description": "Your user ID as an integer.",
          "required": true,
          "value": "1606221784"
-      },
-      "BOT_ID": {
-         "description": "Your bot ID.. Use any other bot to get it.",
-         "required": true,
-         "value": "1606221784"
-       },
+     },
 
       "REDIS_URL": {
          "description": "Get REDIS_URL from  https://app.redislabs.com, used for run your bot modules.",

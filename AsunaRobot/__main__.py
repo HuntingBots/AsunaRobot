@@ -141,7 +141,7 @@ for module_name in ALL_MODULES:
         imported_module.__mod_name__ = imported_module.__name__
 
     if imported_module.__mod_name__.lower() not in IMPORTED:
-        IMPORTED[imported_module.__mod_name__.lower()] = imported_module
+   IMPORTED[imported_module.__mod_name__.lower()] = imported_module
 
     if hasattr(imported_module, "__help__") and imported_module.__help__:
         HELPABLE[imported_module.__mod_name__.lower()] = imported_module
@@ -235,7 +235,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            "I'm More Fired Up Now! \n<b>Haven't slept since:</b> <code>{}</code>".format(
+            "[I'm More Fired Up Now!](https://telegra.ph/file/9687c93c0cfb93cbdf79b.mp4) \n<b>Haven't slept since:</b> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,

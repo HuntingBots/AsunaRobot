@@ -128,6 +128,7 @@ DONATE_STRING = """Heya, glad to hear you want to donate!
 
 But My Owner Is Already Very Rich No Need To Donate."""
 
+
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
@@ -144,7 +145,7 @@ for module_name in ALL_MODULES:
         imported_module.__mod_name__ = imported_module.__name__
 
     if imported_module.__mod_name__.lower() not in IMPORTED:
-   IMPORTED[imported_module.__mod_name__.lower()] = imported_module
+        IMPORTED[imported_module.__mod_name__.lower()] = imported_module
 
     if hasattr(imported_module, "__help__") and imported_module.__help__:
         HELPABLE[imported_module.__mod_name__.lower()] = imported_module
@@ -183,6 +184,7 @@ def send_help(chat_id, text, keyboard=None):
         disable_web_page_preview=True,
         reply_markup=keyboard,
     )
+
 
 
 def test(update: Update, context: CallbackContext):

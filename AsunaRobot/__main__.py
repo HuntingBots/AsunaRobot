@@ -74,49 +74,52 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-`Hello Guys`
-`I am` [Natsu Dragneel](https://telegra.ph/file/38b55c5e631dc85b9ad11.jpg) `From Fairy Tail.`
-`You can find the list of available commands with` /help
+`ʜᴇʟʟᴏ ɢᴜʏꜱ`
+
+`ɪ ᴀᴍ` [ɴᴀᴛꜱᴜ ᴅʀᴀɢɴᴇᴇʟ](https://telegra.ph/file/6f4a1267f3a2998969ffe.jpg) `ꜰʀᴏᴍ ꜰᴀɪʀʏ ᴛᴀɪʟ.`
+
+`ʏᴏᴜ ᴄᴀɴ ꜰɪɴᴅ ᴛʜᴇ ʟɪꜱᴛ ᴏꜰ ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅꜱ ᴡɪᴛʜ` /help
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text=" ADD ME TO YOUR GROUP ", url="t.me/NatsuDragneel_0bot?startgroup=true"
+            text="ᴀᴅᴅ ᴍᴇ ᴛᴏ ᴛʜᴇ ɢʀᴏᴜᴘ", url="t.me/NatsuDragneel_0bot?startgroup=true"
         ),
     ],
     [
-        InlineKeyboardButton(text="ABOUT", callback_data="asuna_"),
-        InlineKeyboardButton(text="COMMANDS", callback_data="help_back"),
+        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="asuna_"),
+        InlineKeyboardButton(text="ᴄᴏᴍᴍᴀɴᴅꜱ" , callback_data="help_back"),
     ],
     [
         InlineKeyboardButton(
-            text="OWNER", url="https://t.me/NatsuDragneel_FT "
+            text="ᴏᴡɴᴇʀ", url="https://t.me/NatsuDragneel_FT "
         ),
     ],
     [
         InlineKeyboardButton(
-            text="ANIME CHANNEL",
+            text="ᴀɴɪᴍᴇ ᴄʜᴀɴɴᴇʟ",
             url="https://t.me/animechamberuploads",
         ),
     ],
     [
-        InlineKeyboardButton(text="MANGA CHANNEL", url="https://t.me/mangachamber"),
+        InlineKeyboardButton(text="ᴍᴀɴɢᴀ ᴄʜᴀɴɴᴇʟ", url="https://t.me/mangachamber"),
         InlineKeyboardButton(
-            text="CHAT GROUP", url="https://t.me/thechamberofanimefans"
+            text="ᴄʜᴀᴛ ɢʀᴏᴜᴘ", url="https://t.me/thechamberofanimefans"
         ),
     ],
     [
         InlineKeyboardButton(
-            text="REPORT BUGS TO", url="https://t.me/NatsuDragneel_FT"
+            text="ʀᴇᴘᴏʀᴛ ʙᴜɢꜱ ᴛᴏ", url="https://t.me/NatsuDragneel_FT"
         ),
     ],
 ]
 
 
 HELP_STRINGS = """
-`Hi.. I'm` [Natsu Dragneel]("https://telegra.ph/file/38b55c5e631dc85b9ad11.jpg") 
-`Click on the buttons below to get documentation about specific modules..`"""
+`ʜɪ.. ɪ'ᴍ` [ɴᴀᴛꜱᴜ ᴅʀᴀɢɴᴇᴇʟ](https://telegra.ph/file/38b55c5e631dc85b9ad11.jpg)
+
+`ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴏᴄᴜᴍᴇɴᴛᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ꜱᴘᴇᴄɪꜰɪᴄ ᴍᴏᴅᴜʟᴇꜱ..`"""
 
 
 ASUNA_IMG = "https://telegra.ph/file/38b55c5e631dc85b9ad11.jpg"

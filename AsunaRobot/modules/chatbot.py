@@ -144,13 +144,13 @@ async def hmm(client, message):
         message.continue_propagation()
     if chat_id in en_chats:
         test = msg
-        test = test.replace("asuna", "Aco")
-        test = test.replace("Asuna", "Aco")
+        test = test.replace("Natsu", "Nat")
+        test = test.replace("natsu", "Nat")
         response = await lunaQuery(
             test, message.from_user.id if message.from_user else 0
         )
-        response = response.replace("Aco", "Asuna")
-        response = response.replace("aco", "Asuna")
+        response = response.replace("Nat", "Natsu")
+        response = response.replace("nat", "Natsu")
 
         pro = response
         try:
@@ -202,15 +202,15 @@ async def hmm(client, message):
                 return
         # test = emoji.demojize(test.strip())
 
-        test = test.replace("asuna", "Aco")
-        test = test.replace("Asuna", "Aco")
+        test = test.replace("natsu", "Nat")
+        test = test.replace("Natsu", "Nat")
         response = await lunaQuery(
             test, message.from_user.id if message.from_user else 0
         )
-        response = response.replace("Aco", "Asuna")
-        response = response.replace("aco", "Asuna")
-        response = response.replace("Luna", "Asuna")
-        response = response.replace("luna", "Asuna")
+        response = response.replace("Aco", "Natsu")
+        response = response.replace("aco", "Natsu")
+        response = response.replace("Luna", "Natsu")
+        response = response.replace("luna", "Natsu")
         pro = response
         if not "en" in lan and not lan == "":
             try:

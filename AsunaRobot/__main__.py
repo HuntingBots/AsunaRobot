@@ -186,7 +186,6 @@ def send_help(chat_id, text, keyboard=None):
     )
 
 
-
 def test(update: Update, context: CallbackContext):
     # pprint(eval(str(update)))
     # update.effective_message.reply_text("Hola tester! _I_ *have* `markdown`", parse_mode=ParseMode.MARKDOWN)
@@ -240,7 +239,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            "[I'm More Fired Up Now!](https://telegra.ph/file/9687c93c0cfb93cbdf79b.mp4) \n<b>Haven't slept since:</b> <code>{}</code>".format(
+            "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -373,7 +372,7 @@ def asuna_about_callback(update, context):
     query = update.callback_query
     if query.data == "asuna_":
         query.message.edit_text(
-            text=""" ❗ I'm *Natsu*, a powerful group management bot built to help you manage your group easily.
+            text=""" ❗ I'm *Asuna*, a powerful group management bot built to help you manage your group easily.
                  \n❍ I can restrict users.
                  \n❍ I can greet users with customizable welcome messages and even set a group's rules.
                  \n❍ I have an advanced anti-flood system.
@@ -381,8 +380,8 @@ def asuna_about_callback(update, context):
                  \n❍ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
                  \n❍ I check for admins' permissions before executing any command and more stuffs
                  \n\n_shasa's licensed under the GNU General Public License v3.0_
-                 \nThis bot is specially made for [Anime Chamber Club](https://t.me/thechamberofanimefans).
-                 \n\nIf you have any question about *Natsu*, let us know at .""",
+                 \nHere is the [💾Repository](https://github.com/HuntingBots/AsunaRobot).
+                 \n\nIf you have any question about *Asuna*, let us know at .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -403,8 +402,8 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..I'm *Natsu*
-                 \nSource Code Is Secret, Comtact To Your Owner.""",
+            text=""" Hi..👸 I'm *Asuna*
+                 \nHere is the [Source Code](https://github.com/HuntingBots/AsunaRobot) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -694,7 +693,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}",
-                "[I'm More Fired Up Now!](https://telegra.ph/file/0c60f937c5c6fc04870ef.mp4)",
+                "[Yes I'm alive now!](https://telegra.ph/file/fefbe49175499b0646495.mp4)",
                 parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:

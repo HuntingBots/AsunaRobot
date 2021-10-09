@@ -60,7 +60,6 @@ emoji-country-flag
 countryinfo
 html2text
 bs4
-redis
 pySmartDL
 bing_image_downloader
 search_engine_parser

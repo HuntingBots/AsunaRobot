@@ -691,7 +691,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}",
-                [Yes I'm alive now!]
+                [Yes Im alive now]
                 parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:

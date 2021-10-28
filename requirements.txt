@@ -80,5 +80,5 @@ gpytranslate
 fontTools
 opencv-python-headless
 odmantic
- pip==20.2.4
-setuptools==57.5.0
+ pip
+setuptools

@@ -1,15 +1,14 @@
 # Module credits,  WilliamButcherBot & DaisyX
-#recode by @The_Ghost_Hunter On Telegram | @My_Asuna_Robot 
+# recode by @The_Ghost_Hunter On Telegram | @My_Asuna_Robot
 
 
-
-# saavn music 
+# saavn music
 import os
 import requests
 import wget
 from pyrogram import filters
 
-from AsunaRobot import pbot as Asuna 
+from AsunaRobot import pbot as Asuna
 from AsunaRobot.services.dark import get_arg
 
 
@@ -21,9 +20,7 @@ async def song(client, message):
     if args.startswith(" "):
         await message.reply("<b>Enter song name❗</b>")
         return ""
-    m = await message.reply_text(
-        "Downloading your song,\nPlz wait ⏳️"
-    )
+    m = await message.reply_text("Downloading your song,\nPlz wait ⏳️")
     try:
         r = requests.get(f"https://jostapi.herokuapp.com/saavn?query={args}")
     except Exception as e:
@@ -40,7 +37,7 @@ async def song(client, message):
     await m.delete()
 
 
-# deezer music 
+# deezer music
 
 
 import os
@@ -51,6 +48,7 @@ from AsunaRobot import pbot as ASUNA
 
 ARQ = "https://thearq.tech/"
 
+
 async def fetch(url):
     async with aiohttp.ClientSession() as session:
         async with session.get(url) as resp:
@@ -59,6 +57,7 @@ async def fetch(url):
             except:
                 data = await resp.text()
     return data
+
 
 async def download_song(url):
     song_name = f"asuna.mp3"
@@ -95,7 +94,7 @@ async def deezer(_, message):
     await m.delete()
 
 
-# youtube Video/audio & lyrics 
+# youtube Video/audio & lyrics
 
 import asyncio
 import io
@@ -256,7 +255,6 @@ async def ytmusic(client, message: Message):
             os.remove(files)
 
 
-
 @pbot.on_message(filters.command(["lyric", "lyrics"]))
 async def _(client, message):
     lel = await message.reply("Searching For Lyrics.....")
@@ -346,6 +344,3 @@ async def lyrics(client, message):
             f"**Search query**: \n`{artist} - {song}`\n\n```{songs.lyrics}```"
         )
     return
-
-
-

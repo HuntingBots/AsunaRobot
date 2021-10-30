@@ -19,6 +19,7 @@ DELETE_TIMEOUT = 5
 
 # Send_Module
 
+
 @Asuna(pattern="^/send ?(.*)")
 async def send(event):
     if event.fwd_from:
@@ -27,19 +28,21 @@ async def send(event):
     input_str = event.pattern_match.group(1)
     the_plugin_file = "./AsunaRobot/modules/{}.py".format(input_str)
     if os.path.exists(the_plugin_file):
-     message_id = event.message.id
-     await event.client.send_file(
-             event.chat_id,
-             the_plugin_file,
-        force_document=True,
-        allow_cache=False,
-        reply_to=message_id
-    )
+        message_id = event.message.id
+        await event.client.send_file(
+            event.chat_id,
+            the_plugin_file,
+            force_document=True,
+            allow_cache=False,
+            reply_to=message_id,
+        )
     end = datetime.now()
     await asyncio.sleep(DELETE_TIMEOUT)
     await event.delete()
 
+
 # Install_Module
+
 
 @Asuna(pattern="^/install")
 async def install(event):
@@ -61,7 +64,8 @@ async def install(event):
                 path1 = Path(downloaded_file_name)
                 shortname = path1.stem
                 (shortname.replace(".py", ""))
-                await event.reply("Your File Installed Successfully! \n `{}`".format(
+                await event.reply(
+                    "Your File Installed Successfully! \n `{}`".format(
                         os.path.basename(downloaded_file_name)
                     ),
                 )

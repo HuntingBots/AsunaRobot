@@ -80,7 +80,7 @@ VERIFIED_USER_WAITLIST = {}
 
 
 def extract_status_change(
-        chat_member_update: ChatMemberUpdated,
+    chat_member_update: ChatMemberUpdated,
 ) -> Optional[Tuple[bool, bool]]:
     status_change = chat_member_update.difference().get("status")
     old_is_member, new_is_member = chat_member_update.difference().get(
@@ -92,22 +92,22 @@ def extract_status_change(
 
     old_status, new_status = status_change
     was_member = (
-            old_status
-            in [
-                ChatMember.MEMBER,
-                ChatMember.CREATOR,
-                ChatMember.ADMINISTRATOR,
-            ]
-            or (old_status == ChatMember.RESTRICTED and old_is_member is True)
+        old_status
+        in [
+            ChatMember.MEMBER,
+            ChatMember.CREATOR,
+            ChatMember.ADMINISTRATOR,
+        ]
+        or (old_status == ChatMember.RESTRICTED and old_is_member is True)
     )
     is_member = (
-            new_status
-            in [
-                ChatMember.MEMBER,
-                ChatMember.CREATOR,
-                ChatMember.ADMINISTRATOR,
-            ]
-            or (new_status == ChatMember.RESTRICTED and new_is_member is True)
+        new_status
+        in [
+            ChatMember.MEMBER,
+            ChatMember.CREATOR,
+            ChatMember.ADMINISTRATOR,
+        ]
+        or (new_status == ChatMember.RESTRICTED and new_is_member is True)
     )
 
     return was_member, is_member
@@ -137,7 +137,7 @@ def send(update, message, keyboard, backup_message):
             msg = update.effective_chat.send_message(
                 markdown_parser(
                     backup_message + "\nNote: the current message has an invalid url "
-                                     "in one of its buttons. Please update.",
+                    "in one of its buttons. Please update.",
                 ),
                 parse_mode=ParseMode.MARKDOWN,
                 reply_to_message_id=reply,
@@ -146,8 +146,8 @@ def send(update, message, keyboard, backup_message):
             msg = update.effective_chat.send_message(
                 markdown_parser(
                     backup_message + "\nNote: the current message has buttons which "
-                                     "use url protocols that are unsupported by "
-                                     "telegram. Please update.",
+                    "use url protocols that are unsupported by "
+                    "telegram. Please update.",
                 ),
                 parse_mode=ParseMode.MARKDOWN,
                 reply_to_message_id=reply,
@@ -156,7 +156,7 @@ def send(update, message, keyboard, backup_message):
             msg = update.effective_chat.send_message(
                 markdown_parser(
                     backup_message + "\nNote: the current message has some bad urls. "
-                                     "Please update.",
+                    "Please update.",
                 ),
                 parse_mode=ParseMode.MARKDOWN,
                 reply_to_message_id=reply,
@@ -170,7 +170,7 @@ def send(update, message, keyboard, backup_message):
             msg = update.effective_chat.send_message(
                 markdown_parser(
                     backup_message + "\nNote: An error occured when sending the "
-                                     "custom message. Please update.",
+                    "custom message. Please update.",
                 ),
                 parse_mode=ParseMode.MARKDOWN,
                 reply_to_message_id=reply,
@@ -186,7 +186,12 @@ async def delete_service(event):
     if not clean:
         return
     try:
-        if event.user_joined or event.user_added or event.user_left or event.user_kicked:
+        if (
+            event.user_joined
+            or event.user_added
+            or event.user_left
+            or event.user_kicked
+        ):
             await event.delete()
         else:
             pass
@@ -228,10 +233,11 @@ def new_member(update: Update, context: CallbackContext):
 
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
-                bot.send_message(chat.id,
-                               text=f"Founding Titan? THE RUMBLER JUST JOINED THE GROUP!!",
-                               reply_to_message_id=reply,
-                               )
+                bot.send_message(
+                    chat.id,
+                    text=f"Founding Titan? THE RUMBLER JUST JOINED THE GROUP!!",
+                    reply_to_message_id=reply,
+                )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
@@ -240,10 +246,11 @@ def new_member(update: Update, context: CallbackContext):
 
             # Welcome Devs
             elif new_mem.id in DEV_USERS:
-                bot.send_message(chat.id,
-                               text=f"Be Cool! A Ackerman just Joined the Group",
-                               reply_to_message_id=reply,
-                               )
+                bot.send_message(
+                    chat.id,
+                    text=f"Be Cool! A Ackerman just Joined the Group",
+                    reply_to_message_id=reply,
+                )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
@@ -252,10 +259,11 @@ def new_member(update: Update, context: CallbackContext):
 
             # Welcome Sudos
             elif new_mem.id in DRAGONS:
-                bot.send_message(chat.id,
-                                text=f"Beware! A Titan Shifter just Joined the group!!",
-                                reply_to_message_id=reply,
-                               )
+                bot.send_message(
+                    chat.id,
+                    text=f"Beware! A Titan Shifter just Joined the group!!",
+                    reply_to_message_id=reply,
+                )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
@@ -264,42 +272,43 @@ def new_member(update: Update, context: CallbackContext):
 
             # Welcome Support
             elif new_mem.id in DEMONS:
-                bot.send_message(chat.id,
-                                text=f"Somone With Royal Blood Jisy Joined the group! Stay Alert!! ",
-                                reply_to_message_id=reply,
-                               )
+                bot.send_message(
+                    chat.id,
+                    text=f"Somone With Royal Blood Jisy Joined the group! Stay Alert!! ",
+                    reply_to_message_id=reply,
+                )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
                     f"Bot Support just joined the group"
                 )
 
-
             # Welcome Whitelisted
             elif new_mem.id in WOLVES:
-                bot.send_message(chat.id,
-                                text=f"Oof! A Garrison from the garrison regiment just joined the group",
-                                reply_to_message_id=reply,
-                               )
+                bot.send_message(
+                    chat.id,
+                    text=f"Oof! A Garrison from the garrison regiment just joined the group",
+                    reply_to_message_id=reply,
+                )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
                     f"A whitelisted user joined the chat"
                 )
-
 
             # Welcome Tigers
             elif new_mem.id in TIGERS:
-                bot.send_message(chat.id,
-                               text=f"Shinzou Sasageyo! A Scout just joined the group!",
-                               reply_to_message_id=reply,
-                               )
+                bot.send_message(
+                    chat.id,
+                    text=f"Shinzou Sasageyo! A Scout just joined the group!",
+                    reply_to_message_id=reply,
+                )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
                     f"A whitelisted user joined the chat"
                 )
-                                
+
             # Welcome yourself
             elif new_mem.id == bot.id:
                 bot.send_message(
@@ -311,14 +320,14 @@ def new_member(update: Update, context: CallbackContext):
                 )
                 update.effective_chat.send_message(
                     "Watashi ga kita!",
-                )                
+                )
             else:
                 buttons = sql.get_welc_buttons(chat.id)
                 keyb = build_keyboard(buttons)
                 if welc_type not in (sql.Types.TEXT, sql.Types.BUTTON_TEXT):
                     media_wel = True
                 first_name = (
-                        new_mem.first_name or "PersonWithNoName"
+                    new_mem.first_name or "PersonWithNoName"
                 )  # edge case of empty name - occurs for some bugs.
                 if cust_welcome:
                     if cust_welcome == sql.DEFAULT_WELCOME:
@@ -365,8 +374,8 @@ def new_member(update: Update, context: CallbackContext):
             reply = None
         # User exceptions from welcomemutes
         if (
-                is_user_ban_protected(chat, new_mem.id, chat.get_member(new_mem.id))
-                or human_checks
+            is_user_ban_protected(chat, new_mem.id, chat.get_member(new_mem.id))
+            or human_checks
         ):
             should_mute = False
         # Join welcome: soft mute
@@ -571,7 +580,7 @@ def left_member(update: Update, context: CallbackContext):
                 ENUM_FUNC_MAP[goodbye_type](chat.id, cust_goodbye)
                 return
             first_name = (
-                    left_mem.first_name or "PersonWithNoName"
+                left_mem.first_name or "PersonWithNoName"
             )  # edge case of empty name - occurs for some bugs.
             if cust_goodbye:
                 if cust_goodbye == sql.DEFAULT_GOODBYE:
@@ -1067,20 +1076,44 @@ user joined chat, user left chat.
  • `/welcomehelp`*:* view more formatting information for custom welcome/goodbye messages.
 """
 
-NEW_MEM_HANDLER = ChatMemberHandler(new_member, ChatMemberHandler.CHAT_MEMBER, run_async=True)
-LEFT_MEM_HANDLER = MessageHandler(Filters.status_update.left_chat_member, left_member, run_async=True)
-WELC_PREF_HANDLER = CommandHandler("welcome", welcome, filters=Filters.chat_type.groups, run_async=True)
-GOODBYE_PREF_HANDLER = CommandHandler("goodbye", goodbye, filters=Filters.chat_type.groups, run_async=True)
-SET_WELCOME = CommandHandler("setwelcome", set_welcome, filters=Filters.chat_type.groups, run_async=True)
-SET_GOODBYE = CommandHandler("setgoodbye", set_goodbye, filters=Filters.chat_type.groups, run_async=True)
-RESET_WELCOME = CommandHandler("resetwelcome", reset_welcome, filters=Filters.chat_type.groups, run_async=True)
-RESET_GOODBYE = CommandHandler("resetgoodbye", reset_goodbye, filters=Filters.chat_type.groups, run_async=True)
-WELCOMEMUTE_HANDLER = CommandHandler("welcomemute", welcomemute, filters=Filters.chat_type.groups, run_async=True)
-CLEAN_SERVICE_HANDLER = CommandHandler("cleanservice", cleanservice, filters=Filters.chat_type.groups, run_async=True)
-CLEAN_WELCOME = CommandHandler("cleanwelcome", clean_welcome, filters=Filters.chat_type.groups, run_async=True)
+NEW_MEM_HANDLER = ChatMemberHandler(
+    new_member, ChatMemberHandler.CHAT_MEMBER, run_async=True
+)
+LEFT_MEM_HANDLER = MessageHandler(
+    Filters.status_update.left_chat_member, left_member, run_async=True
+)
+WELC_PREF_HANDLER = CommandHandler(
+    "welcome", welcome, filters=Filters.chat_type.groups, run_async=True
+)
+GOODBYE_PREF_HANDLER = CommandHandler(
+    "goodbye", goodbye, filters=Filters.chat_type.groups, run_async=True
+)
+SET_WELCOME = CommandHandler(
+    "setwelcome", set_welcome, filters=Filters.chat_type.groups, run_async=True
+)
+SET_GOODBYE = CommandHandler(
+    "setgoodbye", set_goodbye, filters=Filters.chat_type.groups, run_async=True
+)
+RESET_WELCOME = CommandHandler(
+    "resetwelcome", reset_welcome, filters=Filters.chat_type.groups, run_async=True
+)
+RESET_GOODBYE = CommandHandler(
+    "resetgoodbye", reset_goodbye, filters=Filters.chat_type.groups, run_async=True
+)
+WELCOMEMUTE_HANDLER = CommandHandler(
+    "welcomemute", welcomemute, filters=Filters.chat_type.groups, run_async=True
+)
+CLEAN_SERVICE_HANDLER = CommandHandler(
+    "cleanservice", cleanservice, filters=Filters.chat_type.groups, run_async=True
+)
+CLEAN_WELCOME = CommandHandler(
+    "cleanwelcome", clean_welcome, filters=Filters.chat_type.groups, run_async=True
+)
 WELCOME_HELP = CommandHandler("welcomehelp", welcome_help, run_async=True)
 WELCOME_MUTE_HELP = CommandHandler("welcomemutehelp", welcome_mute_help, run_async=True)
-BUTTON_VERIFY_HANDLER = CallbackQueryHandler(user_button, pattern=r"user_join_", run_async=True)
+BUTTON_VERIFY_HANDLER = CallbackQueryHandler(
+    user_button, pattern=r"user_join_", run_async=True
+)
 
 dispatcher.add_handler(NEW_MEM_HANDLER)
 dispatcher.add_handler(LEFT_MEM_HANDLER)

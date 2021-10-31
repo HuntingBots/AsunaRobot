@@ -5,13 +5,12 @@ wget
 gtts
 beautifulsoup4
 requests==2.20.0
-python-telegram-bot==13.7
+python-telegram-bot==13.6
 sqlalchemy==1.3.20
 psycopg2-binary
 feedparser
 faker
 hachoir
-pykeyboard
 pynewtonmath
 aiofiles
 asyncio
@@ -32,7 +31,7 @@ regex
 bleach
 markdown2>=2.4.0
 wikipedia
-telethon==1.23.0
+telethon==1.16.4 
 telegraph
 heroku3
 spamwatch
@@ -46,8 +45,10 @@ pygithub
 TgCrypto
 Pyrogram==1.2.9
 PyDictionary
+youtube-dl==2021.6.6
+youtube_search==2.1.0
 lyrics_extractor
-apscheduler==3.8.0
+youtube_search_python==1.4.6
 cloudscraper
 dateparser==1.0.0
 pymongo==3.12.0
@@ -79,5 +80,8 @@ opencv-python-headless
 pyromod
 fuzzysearch
 ffmpeg
+uvloop
+multicolorcaptcha
 odmantic
 kontol
+

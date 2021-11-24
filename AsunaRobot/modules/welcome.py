@@ -17,7 +17,7 @@ from AsunaRobot import (
     WOLVES,
     sw,
     dispatcher,
-    JOIN_LOGGER
+    JOIN_LOGGER,
 )
 from AsunaRobot.modules.helper_funcs.chat_status import (
     is_user_ban_protected,
@@ -147,7 +147,6 @@ def send(update, message, keyboard, backup_message):
     return msg
 
 
-
 @loggable
 def new_member(update: Update, context: CallbackContext):
     bot, job_queue = context.bot, context.job_queue
@@ -267,7 +266,9 @@ def new_member(update: Update, context: CallbackContext):
                 creator = None
                 if not AsunaRobot.ALLOW_CHATS:
                     with suppress(BadRequest):
-                         update.effective_message.reply_text(f"Groups are disabled for {bot.first_name}, I'm outta here.")
+                        update.effective_message.reply_text(
+                            f"Groups are disabled for {bot.first_name}, I'm outta here."
+                        )
                     bot.leave_chat(update.effective_chat.id)
                     return
                 for x in bot.bot.get_chat_administrators(update.effective_chat.id):
@@ -505,7 +506,6 @@ def check_not_bot(member, chat_id, message_id, context):
             pass
 
 
-
 def left_member(update: Update, context: CallbackContext):
     bot = context.bot
     chat = update.effective_chat
@@ -677,7 +677,6 @@ def welcome(update: Update, context: CallbackContext):
             )
 
 
-
 @user_admin
 def goodbye(update: Update, context: CallbackContext):
     args = context.args
@@ -729,7 +728,6 @@ def goodbye(update: Update, context: CallbackContext):
             )
 
 
-
 @user_admin
 @loggable
 def set_welcome(update: Update, context: CallbackContext) -> str:
@@ -754,7 +752,6 @@ def set_welcome(update: Update, context: CallbackContext) -> str:
     )
 
 
-
 @user_admin
 @loggable
 def reset_welcome(update: Update, context: CallbackContext) -> str:
@@ -772,7 +769,6 @@ def reset_welcome(update: Update, context: CallbackContext) -> str:
         f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
         f"Reset the welcome message to default."
     )
-
 
 
 @user_admin
@@ -797,7 +793,6 @@ def set_goodbye(update: Update, context: CallbackContext) -> str:
     )
 
 
-
 @user_admin
 @loggable
 def reset_goodbye(update: Update, context: CallbackContext) -> str:
@@ -815,7 +810,6 @@ def reset_goodbye(update: Update, context: CallbackContext) -> str:
         f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
         f"Reset the goodbye message."
     )
-
 
 
 @user_admin
@@ -874,7 +868,6 @@ def welcomemute(update: Update, context: CallbackContext) -> str:
         return ""
 
 
-
 @user_admin
 @loggable
 def clean_welcome(update: Update, context: CallbackContext) -> str:
@@ -917,7 +910,6 @@ def clean_welcome(update: Update, context: CallbackContext) -> str:
         return ""
 
 
-
 @user_admin
 def cleanservice(update: Update, context: CallbackContext) -> str:
     args = context.args
@@ -950,7 +942,6 @@ def cleanservice(update: Update, context: CallbackContext) -> str:
             update.effective_message.reply_text(
                 "Welcome clean service is : <code>off</code>", parse_mode=ParseMode.HTML
             )
-
 
 
 def user_button(update: Update, context: CallbackContext):
@@ -1053,11 +1044,9 @@ WELC_MUTE_HELP_TXT = (
 )
 
 
-
 @user_admin
 def welcome_help(update: Update, context: CallbackContext):
     update.effective_message.reply_text(WELC_HELP_TXT, parse_mode=ParseMode.MARKDOWN)
-
 
 
 @user_admin

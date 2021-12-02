@@ -31,7 +31,7 @@ regex
 bleach
 markdown2>=2.4.0
 wikipedia
-telethon==1.16.4 
+telethon==1.23.0
 telegraph
 heroku3
 spamwatch

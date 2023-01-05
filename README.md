@@ -13,7 +13,7 @@
     <a href="https://github.com/HuntingBots/AsunaRobot/commits/prince"> <img src="https://img.shields.io/github/last-commit/HuntingBots/AsunaRobot?color=indigo&logo=github&logoColor=green&style=for-the-badge" /></a>
     <a href="https://github.com/HuntingBots/AsunaRobot/issues"> <img src="https://img.shields.io/github/issues/HuntingBots/AsunaRobot?color=green&logo=github&logoColor=yellow&style=for-the-badge" /></a>
     <a href="https://github.com/HuntingBots/AsunaRobot/network/members"> <img src="https://img.shields.io/github/forks/HuntingBots/AsunaRobot?color=olive&logo=github&logoColor=maroon&style=for-the-badge" /></a>  
-    <a href="https://pypi.org/project/telethon/"> <img src="https://docs.telethon.dev/en/stable?color=aqua&label=telethon&logo=python&logoColor=blue&style=for-the-badge" /></a>
+    <a href="https://pypi.org/project/telethon/"> <img src="https://pypi.org/project/telethon/?color=aqua&label=telethon&logo=python&logoColor=blue&style=for-the-badge" /></a>
 </p>
 
 <p align="center">
